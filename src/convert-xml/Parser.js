@@ -1,6 +1,7 @@
 const fs = require("fs");
 const sax = require("sax");
 const StreamPromises = require("stream/promises");
+const {Element} = require("./Element");
 
 class Parser {
     constructor(inputPath) {
@@ -9,19 +10,13 @@ class Parser {
 
     async parse() {
         this.idx = {};
-        this.root = {};
+        this.root = new Element("_ROOT", {}, null);
         this.current = this.root;
 
         const saxStream = sax.createStream();
-        saxStream.on("opentag", (node) => {
-            this.newCurrentElement(node)
-        });
-        saxStream.on("text", (text) => {
-            this.setCurrentText(text)
-        });
-        saxStream.on("closetag", () => {
-            this.popCurrent()
-        });
+        saxStream.on("opentag", (node) => { this.newCurrentElement(node)});
+        saxStream.on("text", (text) => { this.current.setText(text); });
+        saxStream.on("closetag", () => { this.popCurrent() });
         saxStream.on("error", (e) => {
             console.error("error!", e);
         })
@@ -37,25 +32,14 @@ class Parser {
         // console.dir(this.root, {depth: 4});
     }
 
-    newCurrentElement(node) {
-        const {name, attributes} = node;
-        const element = {name, attributes};
-        element.parent = this.current;
+    newCurrentElement({name, attributes}) {
+        const element = new Element(name, attributes, this.current);
 
-
-        if (attributes.ID) {
-            this.idx[attributes.ID] = element;
+        if (element.id) {
+           this.idx[element.id] = element;
         }
 
-        this.current.children ||= [];
-        this.current.children.push(element);
         this.current = element;
-    }
-
-    setCurrentText(text) {
-        if (text && text.trim()) {
-            this.current.text = text;
-        }
     }
 
     popCurrent() {
@@ -80,7 +64,7 @@ class Parser {
         return this
             .root
             .children[0] // ifc
-            .children.find((x) => x.name === "DECOMPOSITION"); // decomposition
+            .children.find((x) => x.tagName === "DECOMPOSITION"); // decomposition
     }
 
 }
