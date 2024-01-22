@@ -50,6 +50,9 @@ class Parser {
 
         function *traverse(children) {
             for(let element of children) {
+                if (!element.isNode()) {
+                    continue;
+                }
                 yield element;
                 if (element.children) {
                     yield* traverse(element.children);

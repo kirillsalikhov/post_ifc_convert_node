@@ -9,6 +9,12 @@ class Element {
         }
     }
 
+    isNode() {
+        // TODO may be check it in gltf ?
+        return !!this.attributes["OBJECTPLACEMENT"]
+            || this.tagName === "IFCPROJECT";
+    }
+
     get id() {
         return this.attributes.ID;
     }
