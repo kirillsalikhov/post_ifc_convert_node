@@ -1,14 +1,9 @@
 const _attrs = (el, res) => {
-    for (const [key, value] of Object.entries(el.attributes)) {
-        res[key] = value;
-    }
-    return res;
+    Object.assign(res, el.attributes);
 }
 
 const _nodeChildren = (el, res) => {
-    if (!el.children) {
-        return res;
-    }
+    if (!el.children) { return }
 
     const childrenIds = el.children
         .filter(el => el.isNode())
@@ -17,59 +12,50 @@ const _nodeChildren = (el, res) => {
     if (childrenIds.length) {
         res["children"] = childrenIds;
     }
-    return res;
 }
 
 const _dataChildren = (el, res) => {
-    if (!el.children) {
-        return res;
-    }
+    if (!el.children) { return }
 
     const children = el.children
         .filter(el => !el.isNode());
 
     for (let child of children) {
-        let link = child.attributes["xlink:href"]
-        if (link) {
-            const childEl = el.parser.getByLink(link);
-            res[childEl.groupingName] = childEl.toJson();
+        if (child.ref) {
+            const referencedEl = el.parser.getByRef(child.ref);
+            res[referencedEl.groupingName] = referencedEl.toJson();
         } else {
             res[child.groupingName] = child.toJson();
         }
     }
-    return res;
 }
 
 const _type = (el, res) => {
     res["ifcType"] = el.ifcType;
-    return res;
 }
 
 const _internal = (el, res) => {
     res["_id"] = el._id;
     res["GlobalId"] = el.id;
     res["parent_id"] = el.parent._id;
-    return res;
 }
 
 const typeTitle = (el) => el.ifcType;
 const nameTitle = (el) => el.attributes["Name"];
 
-const createSerializer = (schema) => {
+const combineModifiers = (schema) => {
     return (el) => {
         let res = {};
         for (const modifier of schema) {
-            res = modifier(el, res);
+            modifier(el, res);
         }
         return res;
     }
 }
 
-// this is need to cache closures
-// and not create new for each element
 // key: [toJson, groupingName]
 const _serializers = {
-    node: [createSerializer([
+    node: [combineModifiers([
         _attrs,
         _internal,
         _type,
@@ -77,15 +63,15 @@ const _serializers = {
         _dataChildren
     ]), typeTitle],
 
-    "IfcPropertySingleValue": [createSerializer([
+    "IfcPropertySingleValue": [
         (el) => { return el.attributes["NominalValue"] }
-    ]), nameTitle],
+        , nameTitle],
 
-    "IfcPropertySet": [createSerializer([
+    "IfcPropertySet": [combineModifiers([
         _dataChildren
     ]), nameTitle],
 
-    common: [createSerializer([
+    common: [combineModifiers([
         _attrs,
         _type,
         _dataChildren

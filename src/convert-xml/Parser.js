@@ -60,8 +60,8 @@ class Parser {
         yield * traverse(this.getDecompositionEl().children);
     }
 
-    getByLink(link) {
-        const id = link.substring(1)
+    getByRef(ref) {
+        const id = ref.substring(1)
         return this.idx[id];
     }
 

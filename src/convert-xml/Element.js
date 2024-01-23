@@ -21,7 +21,7 @@ class Element {
     }
 
     get id() { return this.attributes.id; }
-
+    get ref() { return this.attributes["xlink:href"]; }
     get ifcType() { return this.tagName; }
 
     addChild(child) {
