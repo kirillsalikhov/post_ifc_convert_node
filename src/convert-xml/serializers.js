@@ -3,8 +3,7 @@ const _attrs = (el, res) => {
 }
 
 const _nodeChildren = (el, res) => {
-    const childrenIds = el.children
-        .filter(el => el.isNode())
+    const childrenIds = el.nodeChildren
         .map(el => el._id);
 
     if (childrenIds.length) {
@@ -13,10 +12,7 @@ const _nodeChildren = (el, res) => {
 }
 
 const _dataChildren = (el, res) => {
-    const children = el.children
-        .filter(el => !el.isNode());
-
-    for (let child of children) {
+    for (let child of el.dataChildren) {
         if (child.ref) {
             const referencedEl = el.parser.getByRef(child.ref);
             res[referencedEl.groupingName] = referencedEl.toJson();

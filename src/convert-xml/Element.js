@@ -25,6 +25,14 @@ class Element {
     get ref() { return this.attributes["xlink:href"]; }
     get ifcType() { return this.tagName; }
 
+    get nodeChildren() {
+        return this.children.filter(el => el.isNode());
+    }
+
+    get dataChildren() {
+        return this.children.filter(el => !el.isNode());
+    }
+
     addChild(child) {
         this.children.push(child);
         child.parent = this;

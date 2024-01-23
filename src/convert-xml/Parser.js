@@ -47,17 +47,12 @@ class Parser {
 
         function *traverse(children) {
             for(let element of children) {
-                if (!element.isNode()) {
-                    continue;
-                }
                 yield element;
-                if (element.children.length) {
-                    yield* traverse(element.children);
-                }
+                yield* traverse(element.nodeChildren);
             }
         }
 
-        yield * traverse(this.getDecompositionEl().children);
+        yield * traverse(this.getDecompositionEl().nodeChildren);
     }
 
     getByRef(ref) {
