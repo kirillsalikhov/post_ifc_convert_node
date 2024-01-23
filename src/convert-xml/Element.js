@@ -1,17 +1,14 @@
 const {getSerializer} = require('./serializers');
 
 class Element {
-    constructor(parser, tagName, attributes={}, parent) {
+    constructor(parser, tagName, attributes={}) {
         // ???
         this.parser = parser;
 
         this.tagName = tagName;
         this.attributes = attributes;
-        this.parent = parent;
+        this.parent = null;
 
-        if (this.parent) {
-            this.parent.addChild(this);
-        }
         const [serializer, serializerTitle] = getSerializer(this);
         this._serializer = serializer;
         this._groupName = serializerTitle;
@@ -23,17 +20,14 @@ class Element {
             || this.tagName === "IfcProject";
     }
 
-    get id() {
-        return this.attributes.id;
-    }
+    get id() { return this.attributes.id; }
 
-    get ifcType() {
-        return this.tagName;
-    }
+    get ifcType() { return this.tagName; }
 
     addChild(child) {
         this.children ||= [];
-        this.children.push(child)
+        this.children.push(child);
+        child.parent = this;
     }
 
     setText(text) {

@@ -10,7 +10,7 @@ class Parser {
 
     async parse() {
         this.idx = {};
-        this.root = new Element(this, "_ROOT", {}, null);
+        this.root = new Element(this, "_ROOT");
         this.current = this.root;
 
         const saxStream = sax.createStream(true);
@@ -27,17 +27,15 @@ class Parser {
         await StreamPromises.pipeline(
             fs.createReadStream(this.inputPath),
             saxStream);
-
-        // console.dir(this.root, {depth: 4});
     }
 
     newCurrentElement({name, attributes}) {
-        const element = new Element(this, name, attributes, this.current);
+        const element = new Element(this, name, attributes);
 
         if (element.id) {
            this.idx[element.id] = element;
         }
-
+        this.current.addChild(element);
         this.current = element;
     }
 
@@ -71,7 +69,7 @@ class Parser {
         return this
             .root
             .children[0] // ifc
-            .children.find((x) => x.tagName === "decomposition"); // decomposition
+            .children.find((x) => x.tagName === "decomposition");
     }
 
 }
