@@ -53,6 +53,10 @@ const combineModifiers = (schema) => {
     }
 }
 
+const singleAttr = (attrName) => {
+    return (el) => { return el.attributes[attrName] }
+}
+
 // key: [toJson, groupingName]
 const _serializers = {
     node: [combineModifiers([
@@ -63,11 +67,15 @@ const _serializers = {
         _dataChildren
     ]), typeTitle],
 
-    "IfcPropertySingleValue": [
-        (el) => { return el.attributes["NominalValue"] }
-        , nameTitle],
+    "IfcPropertySingleValue": [singleAttr("NominalValue"), nameTitle],
+    "IfcQuantityLength": [singleAttr("LengthValue"), nameTitle],
+    "IfcQuantityVolume": [singleAttr("VolumeValue"), nameTitle],
+    "IfcQuantityArea": [singleAttr("AreaValue"), nameTitle],
 
     "IfcPropertySet": [combineModifiers([
+        _dataChildren
+    ]), nameTitle],
+    "IfcElementQuantity": [combineModifiers([
         _dataChildren
     ]), nameTitle],
 
