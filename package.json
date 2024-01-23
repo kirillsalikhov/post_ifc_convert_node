@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "foo": "src/cli.js convert-xml -i tmp/small-ifc/in/origin.xml -o tmp/small-ifc/out"
+    "sample": "src/cli.js convert-xml -i samples/small-ifc/origin.xml -o tmp/small-ifc"
   },
   "author": "wg",
   "license": "ISC",
@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "commander": "^11.1.0",
+    "fs-extra": "^11.2.0",
     "json-stream-stringify": "^3.1.1",
     "sax": "^1.3.0"
   }

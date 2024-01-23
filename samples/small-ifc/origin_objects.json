@@ -1,0 +1,318 @@
+[
+    {
+        "_id": 0,
+        "parent_id": 0,
+        "GlobalId": "1_lvvZuv95JRSwyjMQKiFM",
+        "originalName": "Default Project",
+        "Name": "Default Project",
+        "id": "1_lvvZuv95JRSwyjMQKiFM",
+        "children": [
+            1
+        ]
+    },
+    {
+        "_id": 1,
+        "parent_id": 0,
+        "GlobalId": "0WwdTIUhL1WR0HhBz4NDaX",
+        "originalName": "Default Site",
+        "ObjectPlacement": "1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1",
+        "RefLongitude": "54.416667",
+        "CompositionType": "ELEMENT",
+        "Name": "Default Site",
+        "RefLatitude": "24.466667",
+        "id": "0WwdTIUhL1WR0HhBz4NDaX",
+        "children": [
+            2
+        ]
+    },
+    {
+        "_id": 2,
+        "parent_id": 1,
+        "GlobalId": "18xdgeExf2UwZLLeViQoWe",
+        "originalName": "Default Building",
+        "CompositionType": "ELEMENT",
+        "ObjectPlacement": "1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1",
+        "Name": "Default Building",
+        "id": "18xdgeExf2UwZLLeViQoWe",
+        "children": [
+            3
+        ]
+    },
+    {
+        "_id": 3,
+        "parent_id": 2,
+        "GlobalId": "2RiW6$b89DfRO1Iipx061I",
+        "originalName": "",
+        "CompositionType": "ELEMENT",
+        "ObjectPlacement": "1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1",
+        "Name": "",
+        "Elevation": "0",
+        "id": "2RiW6$b89DfRO1Iipx061I",
+        "children": [
+            4,
+            7,
+            12,
+            15,
+            18
+        ]
+    },
+    {
+        "_id": 4,
+        "parent_id": 3,
+        "GlobalId": "2Y2hziXsb0$8eHVrpP9$ot",
+        "originalName": "Wall-018",
+        "ObjectPlacement": "0 -1 0 0 1 0 0 0 0 0 1 0 -30000 30000 0 1",
+        "Name": "Wall-018",
+        "id": "2Y2hziXsb0$8eHVrpP9$ot",
+        "PSet_Draughting": {
+            "Layername": "Exterior Walls",
+            "Red": "0",
+            "Green": "0",
+            "Blue": "0"
+        },
+        "children": [
+            5
+        ]
+    },
+    {
+        "_id": 5,
+        "parent_id": 4,
+        "GlobalId": "0NKdCCAdv5YhIrF6sDTugT",
+        "ObjectPlacement": "0 -1 0 0 1 0 0 0 0 0 1 0 -30000 21951.9 0 1",
+        "id": "0NKdCCAdv5YhIrF6sDTugT",
+        "children": [
+            6
+        ]
+    },
+    {
+        "_id": 6,
+        "parent_id": 5,
+        "GlobalId": "0PJGJdTg1FbgnbSJqdUtmr",
+        "originalName": "D01",
+        "ObjectPlacement": "0 -1 0 0 1 0 0 0 0 0 1 0 -30000 22851.9 0 1",
+        "OverallWidth": "1800",
+        "OverallHeight": "2100",
+        "Name": "D01",
+        "id": "0PJGJdTg1FbgnbSJqdUtmr",
+        "PSet_Draughting": {
+            "Layername": "Exterior Walls",
+            "Red": "255",
+            "Green": "101",
+            "Blue": "0"
+        },
+        "children": []
+    },
+    {
+        "_id": 7,
+        "parent_id": 3,
+        "GlobalId": "0vnM5_hV56a9H9Y5MNeg8G",
+        "originalName": "Wall-019",
+        "ObjectPlacement": "1 0 0 0 0 1 0 0 0 0 1 0 -30000 18000 0 1",
+        "Name": "Wall-019",
+        "id": "0vnM5_hV56a9H9Y5MNeg8G",
+        "PSet_Draughting": {
+            "Layername": "Exterior Walls",
+            "Red": "0",
+            "Green": "0",
+            "Blue": "0"
+        },
+        "children": [
+            8,
+            10
+        ]
+    },
+    {
+        "_id": 8,
+        "parent_id": 7,
+        "GlobalId": "2cuU_OLSTCnh2XNtgYSdtL",
+        "ObjectPlacement": "1 0 0 0 0 1 0 0 0 0 1 0 -18628 18000 900 1",
+        "id": "2cuU_OLSTCnh2XNtgYSdtL",
+        "children": [
+            9
+        ]
+    },
+    {
+        "_id": 9,
+        "parent_id": 8,
+        "GlobalId": "3LyGuY1qP65Psg2XPShToP",
+        "originalName": "W11",
+        "ObjectPlacement": "1 0 0 0 0 1 0 0 0 0 1 0 -19628 18120 900 1",
+        "OverallWidth": "2000",
+        "OverallHeight": "1500",
+        "Name": "W11",
+        "id": "3LyGuY1qP65Psg2XPShToP",
+        "PSet_Draughting": {
+            "Layername": "Exterior Walls",
+            "Red": "255",
+            "Green": "101",
+            "Blue": "0"
+        },
+        "children": []
+    },
+    {
+        "_id": 10,
+        "parent_id": 7,
+        "GlobalId": "2g6aeD1U5FVh_ZJdkp4o1w",
+        "ObjectPlacement": "1 0 0 0 0 1 0 0 0 0 1 0 -25635.9 18000 900 1",
+        "id": "2g6aeD1U5FVh_ZJdkp4o1w",
+        "children": [
+            11
+        ]
+    },
+    {
+        "_id": 11,
+        "parent_id": 10,
+        "GlobalId": "3PnuCYhB53S8Ex8NxxNjwF",
+        "originalName": "W12",
+        "ObjectPlacement": "1 0 0 0 0 1 0 0 0 0 1 0 -26635.9 18120 900 1",
+        "OverallWidth": "2000",
+        "OverallHeight": "1500",
+        "Name": "W12",
+        "id": "3PnuCYhB53S8Ex8NxxNjwF",
+        "PSet_Draughting": {
+            "Layername": "Exterior Walls",
+            "Red": "255",
+            "Green": "101",
+            "Blue": "0"
+        },
+        "children": []
+    },
+    {
+        "_id": 12,
+        "parent_id": 3,
+        "GlobalId": "3OxJbxJ5vFiuQjOIAgwnkV",
+        "originalName": "Wall-020",
+        "ObjectPlacement": "0 1 0 0 -1 0 0 0 0 0 1 0 -14000 18000 0 1",
+        "Name": "Wall-020",
+        "id": "3OxJbxJ5vFiuQjOIAgwnkV",
+        "PSet_Draughting": {
+            "Layername": "Exterior Walls",
+            "Red": "0",
+            "Green": "0",
+            "Blue": "0"
+        },
+        "children": [
+            13
+        ]
+    },
+    {
+        "_id": 13,
+        "parent_id": 12,
+        "GlobalId": "31KfkrEyP7NOoOy_1tu9DR",
+        "ObjectPlacement": "0 1 0 0 -1 0 0 0 0 0 1 0 -14000 26300 900 1",
+        "id": "31KfkrEyP7NOoOy_1tu9DR",
+        "children": [
+            14
+        ]
+    },
+    {
+        "_id": 14,
+        "parent_id": 13,
+        "GlobalId": "0tRsRFwbb1UQbEMLfPjoWs",
+        "originalName": "W10",
+        "ObjectPlacement": "0 1 0 0 -1 0 0 0 0 0 1 0 -14120 25300 900 1",
+        "OverallWidth": "2000",
+        "OverallHeight": "1500",
+        "Name": "W10",
+        "id": "0tRsRFwbb1UQbEMLfPjoWs",
+        "PSet_Draughting": {
+            "Layername": "Exterior Walls",
+            "Red": "255",
+            "Green": "101",
+            "Blue": "0"
+        },
+        "children": []
+    },
+    {
+        "_id": 15,
+        "parent_id": 3,
+        "GlobalId": "0Igoc_KBH3BR6wPghaxQSn",
+        "originalName": "Wall-021",
+        "ObjectPlacement": "-1 0 0 0 0 -1 0 0 0 0 1 0 -14000 30000 0 1",
+        "Name": "Wall-021",
+        "id": "0Igoc_KBH3BR6wPghaxQSn",
+        "PSet_Draughting": {
+            "Layername": "Exterior Walls",
+            "Red": "0",
+            "Green": "0",
+            "Blue": "0"
+        },
+        "children": [
+            16
+        ]
+    },
+    {
+        "_id": 16,
+        "parent_id": 15,
+        "GlobalId": "0f3INhhzP3AumLW7pddq3r",
+        "ObjectPlacement": "-1 0 0 0 0 -1 0 0 0 0 1 0 -26005.9 30000 900 1",
+        "id": "0f3INhhzP3AumLW7pddq3r",
+        "children": [
+            17
+        ]
+    },
+    {
+        "_id": 17,
+        "parent_id": 16,
+        "GlobalId": "0dUZA1uz16DeQWcJ$JcrHi",
+        "originalName": "W09",
+        "ObjectPlacement": "-1 0 0 0 0 -1 0 0 0 0 1 0 -25005.9 29880 900 1",
+        "OverallWidth": "2000",
+        "OverallHeight": "1500",
+        "Name": "W09",
+        "id": "0dUZA1uz16DeQWcJ$JcrHi",
+        "PSet_Draughting": {
+            "Layername": "Exterior Walls",
+            "Red": "255",
+            "Green": "101",
+            "Blue": "0"
+        },
+        "children": []
+    },
+    {
+        "_id": 18,
+        "parent_id": 3,
+        "GlobalId": "1KHqag49f2BQG2IsSiUFp0",
+        "originalName": "Wall-023",
+        "ObjectPlacement": "0 -1 0 0 1 0 0 0 0 0 1 0 -22000 29500 0 1",
+        "Name": "Wall-023",
+        "id": "1KHqag49f2BQG2IsSiUFp0",
+        "PSet_Draughting": {
+            "Layername": "Exterior Walls",
+            "Red": "0",
+            "Green": "0",
+            "Blue": "0"
+        },
+        "children": [
+            19
+        ]
+    },
+    {
+        "_id": 19,
+        "parent_id": 18,
+        "GlobalId": "0NjnIySn11IB0TAA2VH8xI",
+        "ObjectPlacement": "0 -1 0 0 1 0 0 0 0 0 1 0 -22000 25398 0 1",
+        "id": "0NjnIySn11IB0TAA2VH8xI",
+        "children": [
+            20
+        ]
+    },
+    {
+        "_id": 20,
+        "parent_id": 19,
+        "GlobalId": "3m$GcQbwH0b9V0tqrRtMu_",
+        "originalName": "D02",
+        "ObjectPlacement": "0 -1 0 0 1 0 0 0 0 0 1 0 -22000 26148 0 1",
+        "OverallWidth": "1500",
+        "OverallHeight": "2013.2",
+        "Name": "D02",
+        "id": "3m$GcQbwH0b9V0tqrRtMu_",
+        "PSet_Draughting": {
+            "Layername": "Exterior Walls",
+            "Red": "255",
+            "Green": "101",
+            "Blue": "0"
+        },
+        "children": []
+    }
+]

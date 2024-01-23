@@ -8,7 +8,7 @@ class Parser {
         this.inputPath = inputPath;
     }
 
-    async parse() {
+    async readXML() {
         this.idx = {};
         this.root = new Element(this, "_ROOT");
         this.current = this.root;
