@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "sample": "src/cli.js convert-xml -i samples/small-ifc/origin.xml -o tmp/small-ifc"
+    "sample": "src/cli.js convert-xml -i samples/small-ifc/origin.xml -o tmp/small-ifc",
+    "erp-sample": "src/cli.js convert-xml -i samples/erp-sample/origin.xml -o tmp/erp-sample"
   },
   "author": "wg",
   "license": "ISC",
