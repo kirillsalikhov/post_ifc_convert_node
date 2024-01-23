@@ -3,8 +3,6 @@ const _attrs = (el, res) => {
 }
 
 const _nodeChildren = (el, res) => {
-    if (!el.children) { return }
-
     const childrenIds = el.children
         .filter(el => el.isNode())
         .map(el => el._id);
@@ -15,8 +13,6 @@ const _nodeChildren = (el, res) => {
 }
 
 const _dataChildren = (el, res) => {
-    if (!el.children) { return }
-
     const children = el.children
         .filter(el => !el.isNode());
 

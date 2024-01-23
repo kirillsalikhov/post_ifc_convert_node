@@ -8,6 +8,7 @@ class Element {
         this.tagName = tagName;
         this.attributes = attributes;
         this.parent = null;
+        this.children = [];
 
         const [serializer, serializerTitle] = getSerializer(this);
         this._serializer = serializer;
@@ -25,7 +26,6 @@ class Element {
     get ifcType() { return this.tagName; }
 
     addChild(child) {
-        this.children ||= [];
         this.children.push(child);
         child.parent = this;
     }

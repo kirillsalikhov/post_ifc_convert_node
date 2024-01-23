@@ -51,7 +51,7 @@ class Parser {
                     continue;
                 }
                 yield element;
-                if (element.children) {
+                if (element.children.length) {
                     yield* traverse(element.children);
                 }
             }
