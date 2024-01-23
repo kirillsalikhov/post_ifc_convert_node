@@ -13,12 +13,8 @@ const _nodeChildren = (el, res) => {
 
 const _dataChildren = (el, res) => {
     for (let child of el.dataChildren) {
-        if (child.ref) {
-            const referencedEl = el.parser.getByRef(child.ref);
-            res[referencedEl.groupingName] = referencedEl.toJson();
-        } else {
-            res[child.groupingName] = child.toJson();
-        }
+        let childEl = child.ref ? el.parser.getByRef(child.ref) : child;
+        res[childEl.groupingName] = childEl.toJson();
     }
 }
 
