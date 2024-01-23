@@ -10,10 +10,10 @@ class Parser {
 
     async parse() {
         this.idx = {};
-        this.root = new Element("_ROOT", {}, null);
+        this.root = new Element(this, "_ROOT", {}, null);
         this.current = this.root;
 
-        const saxStream = sax.createStream();
+        const saxStream = sax.createStream(true);
         saxStream.on("opentag", (node) => { this.newCurrentElement(node)});
         saxStream.on("text", (text) => { this.current.setText(text); });
         saxStream.on("closetag", () => { this.popCurrent() });
@@ -28,12 +28,11 @@ class Parser {
             fs.createReadStream(this.inputPath),
             saxStream);
 
-        console.log("!");
         // console.dir(this.root, {depth: 4});
     }
 
     newCurrentElement({name, attributes}) {
-        const element = new Element(name, attributes, this.current);
+        const element = new Element(this, name, attributes, this.current);
 
         if (element.id) {
            this.idx[element.id] = element;
@@ -63,11 +62,16 @@ class Parser {
         yield * traverse(this.getDecompositionEl().children);
     }
 
+    getByLink(link) {
+        const id = link.substring(1)
+        return this.idx[id];
+    }
+
     getDecompositionEl() {
         return this
             .root
             .children[0] // ifc
-            .children.find((x) => x.tagName === "DECOMPOSITION"); // decomposition
+            .children.find((x) => x.tagName === "decomposition"); // decomposition
     }
 
 }

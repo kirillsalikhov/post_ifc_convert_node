@@ -1,5 +1,10 @@
+const {getSerializer} = require('./serializers');
+
 class Element {
-    constructor(tagName, attributes={}, parent) {
+    constructor(parser, tagName, attributes={}, parent) {
+        // ???
+        this.parser = parser;
+
         this.tagName = tagName;
         this.attributes = attributes;
         this.parent = parent;
@@ -7,16 +12,23 @@ class Element {
         if (this.parent) {
             this.parent.addChild(this);
         }
+        const [serializer, serializerTitle] = getSerializer(this);
+        this._serializer = serializer;
+        this._groupName = serializerTitle;
     }
 
     isNode() {
         // TODO may be check it in gltf ?
-        return !!this.attributes["OBJECTPLACEMENT"]
-            || this.tagName === "IFCPROJECT";
+        return !!this.attributes["ObjectPlacement"]
+            || this.tagName === "IfcProject";
     }
 
     get id() {
-        return this.attributes.ID;
+        return this.attributes.id;
+    }
+
+    get ifcType() {
+        return this.tagName;
     }
 
     addChild(child) {
@@ -29,6 +41,19 @@ class Element {
         if (val) {
             this.text = val;
         }
+    }
+
+    setInternalId(_id) {
+        this._id = _id;
+    }
+
+    // used for key in parent json
+    get groupingName() {
+        return this._groupName(this);
+    }
+
+    toJson() {
+        return this._serializer(this);
     }
 }
 

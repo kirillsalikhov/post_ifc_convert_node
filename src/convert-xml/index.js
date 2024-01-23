@@ -10,9 +10,18 @@ async function convertXml(inputXml, output) {
     const parser = new Parser(inputXml);
     await parser.parse();
 
+    // TODO revisit this, when change gltf structure (flat, rename name=>_id)
+    // setting internal _id,
+    // this should be done with gltf probably
+    let _id = 0;
+    for(let el of parser.iterateNodeTree()) {
+        el.setInternalId(_id);
+        _id += 1;
+    }
+
     const result = [];
     for(let el of parser.iterateNodeTree()) {
-        result.push(el.tagName);
+        result.push(el.toJson());
     }
 
     await StreamPromises.pipeline(
