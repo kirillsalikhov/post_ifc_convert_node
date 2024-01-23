@@ -18,6 +18,16 @@ const _dataChildren = (el, res) => {
     }
 }
 
+const _dataChildrenArr = (groupingName) => {
+    return (el, res) => {
+        for (let child of el.dataChildren) {
+            let childEl = child.ref ? el.parser.getByRef(child.ref) : child;
+            res[groupingName] ||= [];
+            res[groupingName].push(childEl.toJson());
+        }
+    }
+}
+
 const _type = (el, res) => {
     res["ifcType"] = el.ifcType;
 }
@@ -46,6 +56,7 @@ const singleAttr = (attrName) => {
 }
 
 // key: [toJson, groupingName]
+// var _serializers to store funcs, and not create them for each Element
 const _serializers = {
     node: [combineModifiers([
         _attrs,
@@ -66,6 +77,11 @@ const _serializers = {
     "IfcElementQuantity": [combineModifiers([
         _dataChildren
     ]), nameTitle],
+
+    "IfcMaterialLayerSetUsage":[combineModifiers([
+        _attrs,
+        _dataChildrenArr("MaterialLayers")
+    ]), typeTitle],
 
     common: [combineModifiers([
         _attrs,
