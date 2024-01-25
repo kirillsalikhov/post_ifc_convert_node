@@ -41,6 +41,31 @@ const categoryId = (el, res) => {
     res["CategoryId"] = getCategory(el.ifcType);
 }
 
+const revitFamilyAttrs = (el, res) => {
+    if (el.attributes["ObjectType"]) {
+        let familyName = "", typeName = "";
+
+        const parts = el.attributes["ObjectType"].split(":")
+
+        if (parts.length === 2) {
+            [familyName, typeName] = parts;
+        } else if (parts.length === 1) {
+            // for some reason in smeta5d xml file
+            // if there's no ':', only typeName is used
+            typeName = parts[0];
+        } else if (parts.length > 2) {
+            // was one example with two ':' 'Монолитная площадка:Толщина: 300 мм'
+            familyName = parts.shift();
+            typeName = parts.join(":")
+        } else {
+            // should not get here
+            console.warn(`Object type strange split for element ${el.id}`);
+        }
+        res["FamilyName"] = familyName;
+        res["TypeName"] = typeName;
+    }
+}
+
 const internal = (el, res) => {
     res["_id"] = el._id;
     res["GlobalId"] = el.id;
@@ -72,6 +97,7 @@ module.exports = {
     dataChildrenArr,
     type,
     categoryId,
+    revitFamilyAttrs,
     internal,
     typeTitle,
     nameTitle,

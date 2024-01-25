@@ -9,7 +9,8 @@ const {
     nameTitle,
     dataChildrenArr,
     singleAttr,
-    categoryId
+    categoryId,
+    revitFamilyAttrs
 } = require("./accessors");
 
 // key: [toJson, groupingName]
@@ -20,6 +21,7 @@ const _serializers = {
         internal,
         type,
         categoryId,
+        revitFamilyAttrs,
         nodeChildren,
         dataChildren
     ]), typeTitle],
