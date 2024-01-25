@@ -1,8 +1,8 @@
 const fs = require('fs');
-const fsExtra = require('fs-extra');
 const path = require('path');
 const StreamPromises = require("stream/promises");
 
+const fsExtra = require('fs-extra');
 const { JsonStreamStringify } = require('json-stream-stringify');
 
 const {Parser} = require("./Parser");
