@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "sample": "src/cli.js convert-xml -i samples/small-ifc/origin.xml -o tmp/small-ifc",
-    "erp-sample": "src/cli.js convert-xml -i samples/erp-sample/origin.xml -o tmp/erp-sample"
+    "erp-sample": "src/cli.js convert-xml -i samples/erp-sample/origin.xml -o tmp/erp-sample",
+    "glb-gltf": "gltf-transform copy --vertex-layout separate"
   },
   "author": "wg",
   "license": "ISC",
@@ -14,6 +15,7 @@
     "node": ">=20.0.0"
   },
   "dependencies": {
+    "@gltf-transform/cli": "^3.10.0",
     "commander": "^11.1.0",
     "fs-extra": "^11.2.0",
     "json-stream-stringify": "^3.1.1",
