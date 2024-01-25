@@ -1,3 +1,5 @@
+const {getCategory} = require("./dicts");
+
 const attrs = (el, res) => {
     Object.assign(res, el.attributes);
 }
@@ -32,6 +34,13 @@ const type = (el, res) => {
     res["ifcType"] = el.ifcType;
 }
 
+// returns Ancestor in Ifc classes hierarchy from IfcBuildingElement
+// or himself is not found
+// see getCategory for more info
+const categoryId = (el, res) => {
+    res["CategoryId"] = getCategory(el.ifcType);
+}
+
 const internal = (el, res) => {
     res["_id"] = el._id;
     res["GlobalId"] = el.id;
@@ -61,8 +70,9 @@ module.exports = {
     nodeChildren,
     dataChildren,
     dataChildrenArr,
-    type: type,
-    internal: internal,
+    type,
+    categoryId,
+    internal,
     typeTitle,
     nameTitle,
     combineModifiers,

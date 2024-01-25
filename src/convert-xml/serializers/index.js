@@ -7,7 +7,9 @@ const {
     dataChildren,
     typeTitle,
     nameTitle,
-    dataChildrenArr, singleAttr
+    dataChildrenArr,
+    singleAttr,
+    categoryId
 } = require("./accessors");
 
 // key: [toJson, groupingName]
@@ -17,6 +19,7 @@ const _serializers = {
         attrs,
         internal,
         type,
+        categoryId,
         nodeChildren,
         dataChildren
     ]), typeTitle],
