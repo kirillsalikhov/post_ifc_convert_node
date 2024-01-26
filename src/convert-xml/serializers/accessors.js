@@ -74,6 +74,7 @@ const internal = (el, res) => {
 
 const typeTitle = (el) => el.ifcType;
 const nameTitle = (el) => el.attributes["Name"];
+const customTitle = (title) => (el) => title;
 
 const combineModifiers = (accessors) => {
     return (el) => {
@@ -100,6 +101,7 @@ module.exports = {
     revitFamilyAttrs,
     internal,
     typeTitle,
+    customTitle,
     nameTitle,
     combineModifiers,
     singleAttr
