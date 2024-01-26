@@ -16,6 +16,9 @@ const nodeChildren = (el, res) => {
 const dataChildren = (el, res) => {
     for (let child of el.dataChildren) {
         let childEl = child.ref ? el.parser.getByRef(child.ref) : child;
+        if (res[childEl.groupingName]) {
+            console.warn(`Serialize: Element (${childEl.id})overrides already existing prop in ${el.id}`)
+        }
         res[childEl.groupingName] = childEl.toJson();
     }
 }
