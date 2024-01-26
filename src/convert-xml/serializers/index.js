@@ -51,6 +51,12 @@ const _serializers = {
         dataChildrenArr("MaterialLayers")
     ]), customTitle("MaterialUsage")],
 
+    "IfcMaterialList": [combineModifiers([
+        attrs,
+        type,
+        dataChildrenArr("Materials")
+    ]), typeTitle],
+
     common: [combineModifiers([
         attrs,
         type,
