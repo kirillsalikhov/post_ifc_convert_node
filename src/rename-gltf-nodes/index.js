@@ -8,8 +8,7 @@ const guidChars = "0123456789" +
     "abcdefghijklmnopqrstuvwxyz" +
     "_$";
 
-//uint24 would be enough but there is no such thing
-const words = new Uint32Array(5);
+const uint24s = new Uint32Array(6);
 const gltfNameToIfcId = (gltfName) => {
     //todo: explicitly assert node-name pattern?
 
@@ -21,23 +20,24 @@ const gltfNameToIfcId = (gltfName) => {
 
     // the rest is just converting 32-digit base16 number weirdly spread across the string to 22-digit base64 number.
     // (both may include leading zeroes)
-    // first we convert it to 1 uint8 + 5 uint24 stored in a number variable and uint32[5]
+    // first we convert it to 1 uint8 + 5 uint24 stored in uint32[6]
     // then just convert them to base64
-    // uint8 is converted the same as uint24, except if it was uint24 there would be two additional leading zeroes. We don't encode them.
-    // (But we do encode other leading zeroes if there are any, so no special handling for that)
-    const firstByte = parseInt(gltfName.slice(8, 10), 16);
-    words[0] = parseInt(gltfName.slice(10, 16), 16);
-    words[1] = parseInt(gltfName.slice(17, 21) + gltfName.slice(22, 24), 16);
-    words[2] = parseInt(gltfName.slice(24, 26) + gltfName.slice(27, 31), 16);
-    words[3] = parseInt(gltfName.slice(32, 38), 16);
-    words[4] = parseInt(gltfName.slice(38, 44), 16);
+    //                                                vvvv - these are also zeroes. So the first guid char can only be 0, 1, 2 or 3
+    // uint8 number in binary:  xxxxxxxx_xxxxxxxx_xxxx0000_00111111 x - are zeroes (we ignore them), 000..., 111... etc. - bits of corresponding digit in base64
+    // uint24 number in binary: xxxxxxxx_00000011_11112222_22333333
+    uint24s[0] = parseInt(gltfName.slice(8, 10), 16);// (4 leading hex-zeroes) + 2 hex digits
+    uint24s[1] = parseInt(gltfName.slice(10, 16), 16);// 6 hex digits
+    uint24s[2] = parseInt(gltfName.slice(17, 21) + gltfName.slice(22, 24), 16);// 4 + 2 hex digits
+    uint24s[3] = parseInt(gltfName.slice(24, 26) + gltfName.slice(27, 31), 16);// 2 + 4 hex digits
+    uint24s[4] = parseInt(gltfName.slice(32, 38), 16);// 6 hex digits
+    uint24s[5] = parseInt(gltfName.slice(38, 44), 16);// 6 hex digits
     //todo: .slice and general-case parseInt probably slows it down. Might get better perf if parsed manually.
 
     let result = "";
-    result += guidChars[firstByte >> 6];
-    result += guidChars[firstByte & 63];
-    for (let i = 0; i < 5; i++) {
-        const w = words[i];
+    result += guidChars[uint24s[0] >> 6];
+    result += guidChars[uint24s[0] & 63];
+    for (let i = 1; i < 6; i++) {
+        const w = uint24s[i];
         result += guidChars[w >> 18];
         result += guidChars[(w >> 12) & 63];
         result += guidChars[(w >> 6) & 63];
