@@ -81,7 +81,8 @@ async function renameGltfNodes(inputGltfFileName, objectsJsonFileName, outputGlt
         }
     }
 
-    await writeJson(outputGltfName);
+
+    await writeJson(gltf, outputGltfName);
 }
 
 module.exports = {renameGltfNodes};

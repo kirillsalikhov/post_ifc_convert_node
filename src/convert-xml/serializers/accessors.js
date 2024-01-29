@@ -73,6 +73,7 @@ const internal = (el, res) => {
     res["_id"] = el._id;
     res["GlobalId"] = el.id;
     res["parent_id"] = el.parent._id;
+    res["originalName"] = el.attributes.Name;
 }
 
 const typeTitle = (el) => el.ifcType;
