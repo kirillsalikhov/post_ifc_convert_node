@@ -9,7 +9,7 @@ const writeJson = async (json, outputFileName) => {
     );
 }
 
-async function makeGltfMaterialsDoubleSided(inputGltfFilePath, outputGltfFilePath) {
+async function adjustMaterials(inputGltfFilePath, outputGltfFilePath) {
     //todo: read-write stream (don't care about most of the file, only need to add a key to materials)
     const gltf = JSON.parse(fs.readFileSync(inputGltfFilePath, 'utf-8'));
 
@@ -23,5 +23,5 @@ async function makeGltfMaterialsDoubleSided(inputGltfFilePath, outputGltfFilePat
 }
 
 module.exports = {
-    makeGltfMaterialsDoubleSided
+    adjustMaterials
 };

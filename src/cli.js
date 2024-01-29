@@ -3,7 +3,7 @@
 const { program } = require('commander');
 const {convertXml} = require("./convert-xml");
 const {renameGltfNodes} = require("./rename-gltf-nodes");
-const {makeGltfMaterialsDoubleSided} = require("./make-gltf-materials-double-sided");
+const {adjustMaterials} = require("./adjust-materials");
 
 program
     .description('post ifc transforms');
@@ -18,7 +18,7 @@ program
     });
 
 program
-    .command('rename-gltf-nodes')
+    .command('rename-gltf-nodes', 'Associates nodes to objects.json via _id instead of id')
     .requiredOption('-io, --input-objects <path_to_file>', 'path to objects.json file')
     .requiredOption('-ig, --input-gltf <path_to_file>', 'path to gltf file')
     .requiredOption('-o, --output-gltf <path_to_file>', 'path to output gltf file')
@@ -28,12 +28,12 @@ program
     });
 
 program
-    .command('make-gltf-materials-double-sided')
+    .command('adjust-materials', 'Makes materials in gltf double sided')
     .requiredOption('-i, --input-gltf <path_to_file>', 'path to gltf file')
     .requiredOption('-o, --output-gltf <path_to_file>', 'path to output folder')
     .action(async (options) => {
         const { inputGltf, outputGltf} = options;
-        await makeGltfMaterialsDoubleSided(inputGltf, outputGltf)
+        await adjustMaterials(inputGltf, outputGltf)
     });
 
 
