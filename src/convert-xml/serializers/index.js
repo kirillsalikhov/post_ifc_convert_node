@@ -19,10 +19,10 @@ const {
 const _serializers = {
     node: [combineModifiers([
         attrs,
-        internal,
         type,
         categoryId,
         revitFamilyAttrs,
+        internal,
         nodeChildren,
         dataChildren
     ]), typeTitle],
