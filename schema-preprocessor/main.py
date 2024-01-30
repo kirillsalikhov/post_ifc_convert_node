@@ -16,22 +16,6 @@ from ifcopenshell import util
 # внутри pset, HasPropertyTemplates, если пройтись по нему то будет primaryUnit, primaryType
 # в PrimaryType, можно вытащить через declaration_by_name declared_type это будет boolean, real и пр.
 
-def serialize_psets():
-    schemaName = "IFC2X3"
-    pset_qto = util.pset.PsetQto(schemaName)
-    # schema = ifcopenshell.ifcopenshell_wrapper.schema_by_name(schemaName)
-    # for entity in schema.entities():
-    #     get
-    #     pp(r)
-    pset_qto = util.pset.PsetQto(schemaName)
-    psets = pset_qto.get_applicable()
-    for pset in psets[:1]:
-        print(pset.Name)
-        pp(pset.get_info(recursive=True))
-
-def _is_type(declaration, name):
-    return type(declaration).__name__ == name
-
 
 # TODO cache somewhere
 def unit_types(schema):
@@ -46,14 +30,21 @@ def unit_types(schema):
 # and can produce LogicalUnit for example 
 # then we check that UnitName is inside possible unit_types
 def get_unit_type(type_declaration):
+    if (type_declaration is None):
+        return None
+
     measure_unit_type = util.unit.get_measure_unit_type(type_declaration.name())
     if (measure_unit_type in unit_types(type_declaration.schema())):
         return measure_unit_type
     else:
         return None
 
-    
-def serializee_entity_defs(schema, out_path):
+
+def _is_type(declaration, name):
+    return type(declaration).__name__ == name
+
+
+def serialize_entity_defs(schema, out_path):
     data = {}
     for entity in schema.entities():
         data[entity.name()] = entity_attr_defs(entity)
@@ -82,13 +73,102 @@ def entity_attr_defs(entity):
                 attr_d["unit"] = get_unit_type(declared_type)
     return entity_d
 
-# serialize_psets()
+
+def serialize_psets(schema, out_path):
+    data = {}
+    
+    psets = util.pset.PsetQto(schema.name()).get_applicable()
+
+    for pset in psets:
+        data[pset.Name] = pset_def(pset, schema)
+
+    with open(out_path, 'w', encoding='utf-8') as f:
+        json.dump(data, f, ensure_ascii=False, indent=4)
+        
+
+def pset_def(pset, shema):
+    def _unit_type(unit):
+        if (unit is None):
+            return None
+        if (not unit.is_a("IfcNamedUnit")):
+            return None
+        return unit.UnitType
+
+    def _type_str(type_name):
+        # strip because there was ' IfcPowerMeasure' with leading space
+        declaration = schema.declaration_by_name(type_name.strip())
+        return str(declaration)
+
+    def _serialize_prop(prop):
+        return {
+            "name": prop.Name,
+            "type": _type_str(prop.PrimaryMeasureType),
+            "unit": _unit_type(prop.PrimaryUnit)
+        }
+
+    pset_d = {}
+    for prop in pset.HasPropertyTemplates:
+        if (prop.TemplateType == "P_COMPLEX"):
+            prop_d = {
+                "name": prop.Name,
+                "props": {}
+            }
+            for sub_prop in prop.HasPropertyTemplates:
+                prop_d["props"][sub_prop.Name] = _serialize_prop(sub_prop)
+        else:
+            prop_d = _serialize_prop(prop)
+
+        pset_d[prop.Name] = prop_d
+
+    return pset_d
 
 
 schema = ifcopenshell.ifcopenshell_wrapper.schema_by_name("IFC2X3")
-entity = schema.declaration_by_name("IfcMaterialLayer")
+serialize_psets(schema, '../tmp/ifc2x3-psets.json')
+# serialize_entity_defs(schema, '../tmp/ifc2x3-entities.json')
+
+exit()
+
+# get styles for materials
+model = ifcopenshell.open('../samples/big.ifc')
+#el = model.by_guid("2rNkWe9Bn5fR0InBCJ3Rwp")
+#materials = util.element.get_materials(el)
+#pp(materials)
+#pp(el.get_info())
+#pp(util.element.get_styles(el))
+
+# get materials for element
+mm = util.element.get_materials(model.by_type("IfcPlate")[0])
+
+styles = []
+materials = model.by_type("IfcMaterial")
+
+# for i in model.get_inverse(materials[0]):
+#     pp(i.get_info())
+
+
+
+
+# get styles
+for material in materials[:1]:
+    pp(material)
+    
+    for material_definition_representation in material.HasRepresentation or []:
+        for representation in material_definition_representation.Representations:
+            for item in representation.Items:
+                pp(item)
+                for s in item.Styles:
+                    for ss in s.Styles:
+                        if(ss.is_a("IfcSurfaceStyle")):
+                            # TODO level deeper in Styles
+                            styles.append(ss.get_info(recursive=True))
+
+pp(styles)
+
+#schema = ifcopenshell.ifcopenshell_wrapper.schema_by_name("IFC2X3")
+#entity = schema.declaration_by_name("IfcMaterialLayer")
 # pp(entity_attr_types(entity))
-serializee_entity_defs(schema, '../tmp/ifc2x3-entities.json')
+# serialize_entity_defs(schema, '../tmp/ifc2x3-entities.json')
 # g = schema.declaration_by_name("IfcLogical")
 
 exit()
