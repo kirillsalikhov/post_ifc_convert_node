@@ -22,7 +22,7 @@ def unit_types(schema):
 
 
 # util.unit.get_measure_unit_type just replaces some words in type name and produce UnitName
-# and can produce LogicalUnit for example 
+# and can produce LogicalUnit for example
 # then we check that UnitName is inside possible unit_types
 def get_unit_type(type_declaration):
     if (type_declaration is None):
@@ -43,10 +43,10 @@ def serialize_entity_defs(schema, out_path):
     data = {}
     for entity in schema.entities():
         data[entity.name()] = entity_attr_defs(entity)
-    
+
     with open(out_path, 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=4)
-    
+
 
 def entity_attr_defs(entity):
     entity_d = {}
@@ -54,14 +54,14 @@ def entity_attr_defs(entity):
     for a in entity.all_attributes():
         attr_name = a.name()
         attr_type = a.type_of_attribute()
-        
+
         attr_d = {
             "name": attr_name,
             "type": str(attr_type),
             "unit": None
         }
         entity_d[attr_name] = attr_d
-        
+
         if (_is_type(attr_type, "named_type")):
             declared_type = attr_type.declared_type()
             if (_is_type(declared_type, "type_declaration")):
@@ -71,7 +71,7 @@ def entity_attr_defs(entity):
 
 def serialize_psets(schema, out_path):
     data = {}
-    
+
     psets = util.pset.PsetQto(schema.name()).get_applicable()
 
     for pset in psets:
@@ -79,7 +79,7 @@ def serialize_psets(schema, out_path):
 
     with open(out_path, 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=4)
-        
+
 
 def pset_def(pset, shema):
     def _unit_type(unit):
@@ -119,5 +119,5 @@ def pset_def(pset, shema):
 
 
 schema = ifcopenshell.ifcopenshell_wrapper.schema_by_name("IFC2X3")
-serialize_psets(schema, '../tmp/ifc2x3-psets.json')
-serialize_entity_defs(schema, '../tmp/ifc2x3-entities.json')
+serialize_psets(schema, '../tmp/IFC2X3-psets.json')
+serialize_entity_defs(schema, '../tmp/IFC2X3-entities.json')
