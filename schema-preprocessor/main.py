@@ -117,7 +117,9 @@ def pset_def(pset, shema):
 
     return pset_d
 
+GEN_PATH = "../src/convert-xml/schema/gen"
 
-schema = ifcopenshell.ifcopenshell_wrapper.schema_by_name("IFC2X3")
-serialize_psets(schema, '../tmp/IFC2X3-psets.json')
-serialize_entity_defs(schema, '../tmp/IFC2X3-entities.json')
+schema_name = "IFC2X3"
+schema = ifcopenshell.ifcopenshell_wrapper.schema_by_name(schema_name)
+serialize_psets(schema, f"{GEN_PATH}/{schema_name}/psets.json")
+serialize_entity_defs(schema, f"{GEN_PATH}/{schema_name}/entities.json")

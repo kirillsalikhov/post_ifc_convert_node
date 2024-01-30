@@ -17,7 +17,7 @@ class Schema {
 
     async _load(fileName) {
         return await fs.readJson(
-            path.resolve(__dirname, `../../../tmp/${this.schemaName.toUpperCase()}-${fileName}`)
+            path.resolve(__dirname, `gen/${this.schemaName.toUpperCase()}/${fileName}`)
         );
     }
 }
