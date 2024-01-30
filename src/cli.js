@@ -18,7 +18,8 @@ program
     });
 
 program
-    .command('rename-gltf-nodes', 'Associates nodes to objects.json via _id instead of id')
+    .command('rename-gltf-nodes')
+    .description('Associates nodes to objects.json via _id instead of id')
     .requiredOption('-io, --input-objects <path_to_file>', 'path to objects.json file')
     .requiredOption('-ig, --input-gltf <path_to_file>', 'path to gltf file')
     .requiredOption('-o, --output-gltf <path_to_file>', 'path to output gltf file')
@@ -28,7 +29,8 @@ program
     });
 
 program
-    .command('adjust-materials', 'Makes materials in gltf double sided')
+    .command('adjust-materials')
+    .description('Makes materials in gltf double sided')
     .requiredOption('-i, --input-gltf <path_to_file>', 'path to gltf file')
     .requiredOption('-o, --output-gltf <path_to_file>', 'path to output folder')
     .action(async (options) => {
