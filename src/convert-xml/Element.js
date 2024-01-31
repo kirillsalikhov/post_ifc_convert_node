@@ -53,6 +53,13 @@ class Element {
         return this.parser.schema.getAttrsDef(this.ifcType, attrName);
     }
 
+    getPsetDef(propName) {
+        if (this.ifcType !== "IfcPropertySet") {
+            console.warn(`Method getPsetDef was called not on Pset, element ${this.id}`)
+        }
+        return this.parser.schema.getPsetDef(this.attributes.Name, propName);
+    }
+
     // used for key in parent json
     get groupingName() {
         return this._groupName(this);

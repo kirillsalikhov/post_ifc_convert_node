@@ -7,6 +7,17 @@ const _formatAttr = (def, value) => {
     return value;
 }
 
+const _formatProp = (def, value) => {
+    if (typeof value === 'object' && value !== null) {
+        console.warn(`Complex type is formatted as def ${value}`);
+    }
+    if (def) {
+        return {value, ...def};
+    }
+
+    return value;
+}
+
 const attrs = (el, res) => {
     for(const [key, value] of Object.entries(el.attributes)) {
         const attrDef = el.getAttrDefs(key);
@@ -30,6 +41,17 @@ const dataChildren = (el, res) => {
             console.warn(`Serialize: Element (${childEl.id})overrides already existing prop in ${el.id}`)
         }
         res[childEl.groupingName] = childEl.toJson();
+    }
+}
+
+const dataChildrenPset = (el, res) => {
+    for (let child of el.dataChildren) {
+        let childEl = child.ref ? el.parser.getByRef(child.ref) : child;
+        if (res[childEl.groupingName]) {
+            console.warn(`Serialize: Element (${childEl.id})overrides already existing prop in ${el.id}`)
+        }
+        const propDef = el.getPsetDef(childEl.groupingName);
+        res[childEl.groupingName] = _formatProp(propDef, childEl.toJson());
     }
 }
 
@@ -105,10 +127,20 @@ const singleAttr = (attrName) => {
     return (el) => { return el.attributes[attrName] }
 }
 
+// should not be used for Pset
+const singleAttrWithDef = (attrName) => {
+    return (el) => {
+        const attrDef = el.getAttrDefs(attrName)
+        const value = el.attributes[attrName];
+        return _formatAttr(attrDef, value);
+    }
+}
+
 module.exports = {
     attrs,
     nodeChildren,
     dataChildren,
+    dataChildrenPset,
     dataChildrenArr,
     type,
     categoryId,
@@ -118,5 +150,6 @@ module.exports = {
     customTitle,
     nameTitle,
     combineModifiers,
-    singleAttr
+    singleAttr,
+    singleAttrWithDef
 }
