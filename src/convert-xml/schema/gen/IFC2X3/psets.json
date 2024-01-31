@@ -1,5 +1,5 @@
 {
-    "Pset_SpaceProgramCommon": {
+    "PSET_SPACEPROGRAMCOMMON": {
         "Location": {
             "name": "Location",
             "type": "<type IfcLabel: <string>>",
@@ -46,7 +46,7 @@
             "unit": null
         }
     },
-    "Pset_ActuatorTypeCommon": {
+    "PSET_ACTUATORTYPECOMMON": {
         "FailPosition": {
             "name": "FailPosition",
             "type": "<type IfcLabel: <string>>",
@@ -58,7 +58,7 @@
             "unit": null
         }
     },
-    "Pset_ActuatorTypeElectricActuator": {
+    "PSET_ACTUATORTYPEELECTRICACTUATOR": {
         "ActuatorInputPower": {
             "name": "ActuatorInputPower",
             "type": "<type IfcPowerMeasure: <real>>",
@@ -70,7 +70,7 @@
             "unit": null
         }
     },
-    "Pset_ActuatorTypeHydraulicActuator": {
+    "PSET_ACTUATORTYPEHYDRAULICACTUATOR": {
         "InputPressure": {
             "name": "InputPressure",
             "type": "<type IfcPressureMeasure: <real>>",
@@ -82,7 +82,7 @@
             "unit": null
         }
     },
-    "Pset_ActuatorTypeLinearActuation": {
+    "PSET_ACTUATORTYPELINEARACTUATION": {
         "Force": {
             "name": "Force",
             "type": "<type IfcForceMeasure: <real>>",
@@ -94,7 +94,7 @@
             "unit": "LENGTHUNIT"
         }
     },
-    "Pset_ActuatorTypePneumaticActuator": {
+    "PSET_ACTUATORTYPEPNEUMATICACTUATOR": {
         "InputPressure": {
             "name": "InputPressure",
             "type": "<type IfcPressureMeasure: <real>>",
@@ -106,7 +106,7 @@
             "unit": null
         }
     },
-    "Pset_ActuatorTypeRotationalActuation": {
+    "PSET_ACTUATORTYPEROTATIONALACTUATION": {
         "Torque": {
             "name": "Torque",
             "type": "<type IfcTorqueMeasure: <real>>",
@@ -118,7 +118,7 @@
             "unit": "PLANEANGLEUNIT"
         }
     },
-    "Pset_AnalogInput": {
+    "PSET_ANALOGINPUT": {
         "HighLimit": {
             "name": "HighLimit",
             "type": "<type IfcReal: <real>>",
@@ -155,7 +155,7 @@
             "unit": null
         }
     },
-    "Pset_AnalogOutput": {
+    "PSET_ANALOGOUTPUT": {
         "HighLimit": {
             "name": "HighLimit",
             "type": "<type IfcReal: <real>>",
@@ -192,7 +192,7 @@
             "unit": null
         }
     },
-    "Pset_BinaryInput": {
+    "PSET_BINARYINPUT": {
         "Polarity": {
             "name": "Polarity",
             "type": "<type IfcLabel: <string>>",
@@ -234,7 +234,7 @@
             "unit": null
         }
     },
-    "Pset_BinaryOutput": {
+    "PSET_BINARYOUTPUT": {
         "Polarity": {
             "name": "Polarity",
             "type": "<type IfcLabel: <string>>",
@@ -266,7 +266,7 @@
             "unit": null
         }
     },
-    "Pset_ControllerTypeCommon": {
+    "PSET_CONTROLLERTYPECOMMON": {
         "ControlType": {
             "name": "ControlType",
             "type": "<type IfcLabel: <string>>",
@@ -288,7 +288,7 @@
             "unit": null
         }
     },
-    "Pset_ControllerTypeProportional": {
+    "PSET_CONTROLLERTYPEPROPORTIONAL": {
         "ControlType": {
             "name": "ControlType",
             "type": "<type IfcLabel: <string>>",
@@ -315,7 +315,7 @@
             "unit": null
         }
     },
-    "Pset_ControllerTypeTwoPosition": {
+    "PSET_CONTROLLERTYPETWOPOSITION": {
         "ControlType": {
             "name": "ControlType",
             "type": "<type IfcLabel: <string>>",
@@ -327,7 +327,7 @@
             "unit": null
         }
     },
-    "Pset_FlowInstrumentTypePressureGauge": {
+    "PSET_FLOWINSTRUMENTTYPEPRESSUREGAUGE": {
         "PressureGaugeType": {
             "name": "PressureGaugeType",
             "type": "<type IfcLabel: <string>>",
@@ -339,7 +339,7 @@
             "unit": "LENGTHUNIT"
         }
     },
-    "Pset_FlowInstrumentTypeThermometer": {
+    "PSET_FLOWINSTRUMENTTYPETHERMOMETER": {
         "ThermometerType": {
             "name": "ThermometerType",
             "type": "<type IfcLabel: <string>>",
@@ -351,7 +351,7 @@
             "unit": "LENGTHUNIT"
         }
     },
-    "Pset_MultiStateInput": {
+    "PSET_MULTISTATEINPUT": {
         "NumberOfStates": {
             "name": "NumberOfStates",
             "type": "<type IfcInteger: <integer>>",
@@ -378,7 +378,7 @@
             "unit": null
         }
     },
-    "Pset_MultiStateOutput": {
+    "PSET_MULTISTATEOUTPUT": {
         "NumberOfStates": {
             "name": "NumberOfStates",
             "type": "<type IfcInteger: <integer>>",
@@ -405,7 +405,7 @@
             "unit": null
         }
     },
-    "Pset_SensorTypeCO2Sensor": {
+    "PSET_SENSORTYPECO2SENSOR": {
         "CoverageArea": {
             "name": "CoverageArea",
             "type": "<type IfcAreaMeasure: <real>>",
@@ -432,7 +432,7 @@
             "unit": "TIMEUNIT"
         }
     },
-    "Pset_SensorTypeFireSensor": {
+    "PSET_SENSORTYPEFIRESENSOR": {
         "FireSensorSetPoint": {
             "name": "FireSensorSetPoint",
             "type": "<type IfcThermodynamicTemperatureMeasure: <real>>",
@@ -449,7 +449,7 @@
             "unit": "TIMEUNIT"
         }
     },
-    "Pset_SensorTypeGasSensor": {
+    "PSET_SENSORTYPEGASSENSOR": {
         "GasDetected": {
             "name": "GasDetected",
             "type": "<type IfcLabel: <string>>",
@@ -476,7 +476,7 @@
             "unit": "TIMEUNIT"
         }
     },
-    "Pset_SensorTypeHeatSensor": {
+    "PSET_SENSORTYPEHEATSENSOR": {
         "CoverageArea": {
             "name": "CoverageArea",
             "type": "<type IfcAreaMeasure: <real>>",
@@ -503,7 +503,7 @@
             "unit": "TIMEUNIT"
         }
     },
-    "Pset_SensorTypeHumiditySensor": {
+    "PSET_SENSORTYPEHUMIDITYSENSOR": {
         "HumiditySetPoint": {
             "name": "HumiditySetPoint",
             "type": "<type IfcPositiveRatioMeasure: <type IfcRatioMeasure: <real>>>",
@@ -525,7 +525,7 @@
             "unit": "TIMEUNIT"
         }
     },
-    "Pset_SensorTypeLightSensor": {
+    "PSET_SENSORTYPELIGHTSENSOR": {
         "LightSensorSetPoint": {
             "name": "LightSensorSetPoint",
             "type": "<type IfcIlluminanceMeasure: <real>>",
@@ -547,7 +547,7 @@
             "unit": "TIMEUNIT"
         }
     },
-    "Pset_SensorTypeMovementSensor": {
+    "PSET_SENSORTYPEMOVEMENTSENSOR": {
         "MovementSensingType": {
             "name": "MovementSensingType",
             "type": "<type IfcLabel: <string>>",
@@ -559,7 +559,7 @@
             "unit": "TIMEUNIT"
         }
     },
-    "Pset_SensorTypePressureSensor": {
+    "PSET_SENSORTYPEPRESSURESENSOR": {
         "PressureSensorSetPoint": {
             "name": "PressureSensorSetPoint",
             "type": "<type IfcPressureMeasure: <real>>",
@@ -586,7 +586,7 @@
             "unit": null
         }
     },
-    "Pset_SensorTypeSmokeSensor": {
+    "PSET_SENSORTYPESMOKESENSOR": {
         "CoverageArea": {
             "name": "CoverageArea",
             "type": "<type IfcAreaMeasure: <real>>",
@@ -618,7 +618,7 @@
             "unit": null
         }
     },
-    "Pset_SensorTypeSoundSensor": {
+    "PSET_SENSORTYPESOUNDSENSOR": {
         "SoundSensorSetPoint": {
             "name": "SoundSensorSetPoint",
             "type": "<type IfcSoundPressureMeasure: <real>>",
@@ -640,7 +640,7 @@
             "unit": "TIMEUNIT"
         }
     },
-    "Pset_SensorTypeTemperatureSensor": {
+    "PSET_SENSORTYPETEMPERATURESENSOR": {
         "TemperatureSensorType": {
             "name": "TemperatureSensorType",
             "type": "<type IfcLabel: <string>>",
@@ -667,7 +667,7 @@
             "unit": "TIMEUNIT"
         }
     },
-    "Pset_CableCarrierSegmentTypeCableLadderSegment": {
+    "PSET_CABLECARRIERSEGMENTTYPECABLELADDERSEGMENT": {
         "NominalLength": {
             "name": "NominalLength",
             "type": "<type IfcPositiveLengthMeasure: <type IfcLengthMeasure: <real>>>",
@@ -689,7 +689,7 @@
             "unit": null
         }
     },
-    "Pset_CableCarrierSegmentTypeCableTraySegment": {
+    "PSET_CABLECARRIERSEGMENTTYPECABLETRAYSEGMENT": {
         "NominalLength": {
             "name": "NominalLength",
             "type": "<type IfcPositiveLengthMeasure: <type IfcLengthMeasure: <real>>>",
@@ -711,7 +711,7 @@
             "unit": null
         }
     },
-    "Pset_CableCarrierSegmentTypeCableTrunkingSegment": {
+    "PSET_CABLECARRIERSEGMENTTYPECABLETRUNKINGSEGMENT": {
         "NominalLength": {
             "name": "NominalLength",
             "type": "<type IfcPositiveLengthMeasure: <type IfcLengthMeasure: <real>>>",
@@ -733,7 +733,7 @@
             "unit": null
         }
     },
-    "Pset_CableCarrierSegmentTypeConduitSegment": {
+    "PSET_CABLECARRIERSEGMENTTYPECONDUITSEGMENT": {
         "NominalLength": {
             "name": "NominalLength",
             "type": "<type IfcPositiveLengthMeasure: <type IfcLengthMeasure: <real>>>",
@@ -760,7 +760,7 @@
             "unit": null
         }
     },
-    "Pset_CableSegmentTypeCableSegment": {
+    "PSET_CABLESEGMENTTYPECABLESEGMENT": {
         "CrossSectionalArea": {
             "name": "CrossSectionalArea",
             "type": "<type IfcAreaMeasure: <real>>",
@@ -802,7 +802,7 @@
             "unit": null
         }
     },
-    "Pset_CableSegmentTypeConductorSegment": {
+    "PSET_CABLESEGMENTTYPECONDUCTORSEGMENT": {
         "CrossSectionalArea": {
             "name": "CrossSectionalArea",
             "type": "<type IfcAreaMeasure: <real>>",
@@ -849,7 +849,7 @@
             "unit": null
         }
     },
-    "Pset_ElectricalCircuit": {
+    "PSET_ELECTRICALCIRCUIT": {
         "Diversity": {
             "name": "Diversity",
             "type": "<type IfcPositiveRatioMeasure: <type IfcRatioMeasure: <real>>>",
@@ -871,7 +871,7 @@
             "unit": "ELECTRICRESISTANCEUNIT"
         }
     },
-    "Pset_ElectricalDeviceCommon": {
+    "PSET_ELECTRICALDEVICECOMMON": {
         "NominalCurrent": {
             "name": "NominalCurrent",
             "type": "<type IfcElectricCurrentMeasure: <real>>",
@@ -928,7 +928,7 @@
             "unit": null
         }
     },
-    "Pset_ElectricDistributionPointCommon": {
+    "PSET_ELECTRICDISTRIBUTIONPOINTCOMMON": {
         "IsMain": {
             "name": "IsMain",
             "type": "<type IfcBoolean: <boolean>>",
@@ -955,7 +955,7 @@
             "unit": null
         }
     },
-    "Pset_ElectricGeneratorTypeCommon": {
+    "PSET_ELECTRICGENERATORTYPECOMMON": {
         "ElectricGeneratorEfficiency": {
             "name": "ElectricGeneratorEfficiency",
             "type": "<type IfcPositiveRatioMeasure: <type IfcRatioMeasure: <real>>>",
@@ -972,28 +972,28 @@
             "unit": "POWERUNIT"
         }
     },
-    "Pset_ElectricHeaterTypeElectricalCableHeater": {
+    "PSET_ELECTRICHEATERTYPEELECTRICALCABLEHEATER": {
         "HeatOutputPerUnitLength": {
             "name": "HeatOutputPerUnitLength",
             "type": "<type IfcPowerMeasure: <real>>",
             "unit": "POWERUNIT"
         }
     },
-    "Pset_ElectricHeaterTypeElectricalMatHeater": {
+    "PSET_ELECTRICHEATERTYPEELECTRICALMATHEATER": {
         "HeatOutputPerUnitArea": {
             "name": "HeatOutputPerUnitArea",
             "type": "<type IfcPowerMeasure: <real>>",
             "unit": "POWERUNIT"
         }
     },
-    "Pset_ElectricHeaterTypeElectricalPointHeater": {
+    "PSET_ELECTRICHEATERTYPEELECTRICALPOINTHEATER": {
         "HeatOutput": {
             "name": "HeatOutput",
             "type": "<type IfcPowerMeasure: <real>>",
             "unit": "POWERUNIT"
         }
     },
-    "Pset_ElectricMotorTypeCommon": {
+    "PSET_ELECTRICMOTORTYPECOMMON": {
         "MotorEnclosureType": {
             "name": "MotorEnclosureType",
             "type": "<type IfcLabel: <string>>",
@@ -1035,7 +1035,7 @@
             "unit": "POWERUNIT"
         }
     },
-    "Pset_LampTypeCommon": {
+    "PSET_LAMPTYPECOMMON": {
         "ContributedLuminousFlux": {
             "name": "ContributedLuminousFlux",
             "type": "<type IfcLuminousFluxMeasure: <real>>",
@@ -1082,7 +1082,7 @@
             "unit": null
         }
     },
-    "Pset_LightFixtureTypeCommon": {
+    "PSET_LIGHTFIXTURETYPECOMMON": {
         "NumberOfSources": {
             "name": "NumberOfSources",
             "type": "<type IfcInteger: <integer>>",
@@ -1119,7 +1119,7 @@
             "unit": null
         }
     },
-    "Pset_LightFixtureTypeExitSign": {
+    "PSET_LIGHTFIXTURETYPEEXITSIGN": {
         "MinimumTextHeight": {
             "name": "MinimumTextHeight",
             "type": "<type IfcPositiveLengthMeasure: <type IfcLengthMeasure: <real>>>",
@@ -1146,7 +1146,7 @@
             "unit": null
         }
     },
-    "Pset_LightFixtureTypeThermal": {
+    "PSET_LIGHTFIXTURETYPETHERMAL": {
         "MaximumPlenumSensibleLoad": {
             "name": "MaximumPlenumSensibleLoad",
             "type": "<type IfcPowerMeasure: <real>>",
@@ -1163,21 +1163,21 @@
             "unit": null
         }
     },
-    "Pset_OutletTypeCommon": {
+    "PSET_OUTLETTYPECOMMON": {
         "IsPluggableOutlet": {
             "name": "IsPluggableOutlet",
             "type": "<type IfcLogical: <logical>>",
             "unit": null
         }
     },
-    "Pset_ProtectiveDeviceTypeCircuitBreaker": {
+    "PSET_PROTECTIVEDEVICETYPECIRCUITBREAKER": {
         "CircuitBreakerType": {
             "name": "CircuitBreakerType",
             "type": "<type IfcLabel: <string>>",
             "unit": null
         }
     },
-    "Pset_ProtectiveDeviceTypeCommon": {
+    "PSET_PROTECTIVEDEVICETYPECOMMON": {
         "RatedShortCircuitCurrent": {
             "name": "RatedShortCircuitCurrent",
             "type": "<type IfcElectricCurrentMeasure: <real>>",
@@ -1219,7 +1219,7 @@
             "unit": null
         }
     },
-    "Pset_ProtectiveDeviceTypeEarthFailureDevice": {
+    "PSET_PROTECTIVEDEVICETYPEEARTHFAILUREDEVICE": {
         "EarthFailureDeviceType": {
             "name": "EarthFailureDeviceType",
             "type": "<type IfcLabel: <string>>",
@@ -1231,35 +1231,35 @@
             "unit": "ELECTRICCURRENTUNIT"
         }
     },
-    "Pset_ProtectiveDeviceTypeFuseDisconnector": {
+    "PSET_PROTECTIVEDEVICETYPEFUSEDISCONNECTOR": {
         "FuseDisconnectorType": {
             "name": "FuseDisconnectorType",
             "type": "<type IfcLabel: <string>>",
             "unit": null
         }
     },
-    "Pset_ProtectiveDeviceTypeResidualCurrentCircuitBreaker": {
+    "PSET_PROTECTIVEDEVICETYPERESIDUALCURRENTCIRCUITBREAKER": {
         "Sensitivity": {
             "name": "Sensitivity",
             "type": "<type IfcElectricCurrentMeasure: <real>>",
             "unit": "ELECTRICCURRENTUNIT"
         }
     },
-    "Pset_ProtectiveDeviceTypeResidualCurrentSwitch": {
+    "PSET_PROTECTIVEDEVICETYPERESIDUALCURRENTSWITCH": {
         "Sensitivity": {
             "name": "Sensitivity",
             "type": "<type IfcElectricCurrentMeasure: <real>>",
             "unit": "ELECTRICCURRENTUNIT"
         }
     },
-    "Pset_ProtectiveDeviceTypeVaristor": {
+    "PSET_PROTECTIVEDEVICETYPEVARISTOR": {
         "VaristorType": {
             "name": "VaristorType",
             "type": "<type IfcLabel: <string>>",
             "unit": null
         }
     },
-    "Pset_SwitchingDeviceTypeCommon": {
+    "PSET_SWITCHINGDEVICETYPECOMMON": {
         "NumberOfGangs": {
             "name": "NumberOfGangs",
             "type": "<type IfcInteger: <integer>>",
@@ -1276,28 +1276,28 @@
             "unit": null
         }
     },
-    "Pset_SwitchingDeviceTypeContactor": {
+    "PSET_SWITCHINGDEVICETYPECONTACTOR": {
         "ContactorType": {
             "name": "ContactorType",
             "type": "<type IfcLabel: <string>>",
             "unit": null
         }
     },
-    "Pset_SwitchingDeviceTypeEmergencyStop": {
+    "PSET_SWITCHINGDEVICETYPEEMERGENCYSTOP": {
         "SwitchOperation": {
             "name": "SwitchOperation",
             "type": "<type IfcLabel: <string>>",
             "unit": null
         }
     },
-    "Pset_SwitchingDeviceTypeStarter": {
+    "PSET_SWITCHINGDEVICETYPESTARTER": {
         "StarterType": {
             "name": "StarterType",
             "type": "<type IfcLabel: <string>>",
             "unit": null
         }
     },
-    "Pset_SwitchingDeviceTypeSwitchDisconnector": {
+    "PSET_SWITCHINGDEVICETYPESWITCHDISCONNECTOR": {
         "SwitchDisconnectorType": {
             "name": "SwitchDisconnectorType",
             "type": "<type IfcLabel: <string>>",
@@ -1314,7 +1314,7 @@
             "unit": null
         }
     },
-    "Pset_SwitchingDeviceTypeToggleSwitch": {
+    "PSET_SWITCHINGDEVICETYPETOGGLESWITCH": {
         "ToggleSwitchType": {
             "name": "ToggleSwitchType",
             "type": "<type IfcLabel: <string>>",
@@ -1341,7 +1341,7 @@
             "unit": null
         }
     },
-    "Pset_TransformerTypeCommon": {
+    "PSET_TRANSFORMERTYPECOMMON": {
         "PrimaryVoltage": {
             "name": "PrimaryVoltage",
             "type": "<type IfcElectricVoltageMeasure: <real>>",
@@ -1393,7 +1393,7 @@
             "unit": null
         }
     },
-    "Pset_ActionRequest": {
+    "PSET_ACTIONREQUEST": {
         "RequestSourceType": {
             "name": "RequestSourceType",
             "type": "<type IfcLabel: <string>>",
@@ -1425,7 +1425,7 @@
             "unit": null
         }
     },
-    "Pset_PackingInstructions": {
+    "PSET_PACKINGINSTRUCTIONS": {
         "PackingCareType": {
             "name": "PackingCareType",
             "type": "<type IfcLabel: <string>>",
@@ -1447,7 +1447,7 @@
             "unit": null
         }
     },
-    "Pset_Permit": {
+    "PSET_PERMIT": {
         "PermitType": {
             "name": "PermitType",
             "type": "<type IfcLabel: <string>>",
@@ -1484,7 +1484,7 @@
             "unit": null
         }
     },
-    "Pset_AirTerminalBoxPHistory": {
+    "PSET_AIRTERMINALBOXPHISTORY": {
         "DamperPosition": {
             "name": "DamperPosition",
             "type": "<entity IfcTimeSeries>",
@@ -1506,7 +1506,7 @@
             "unit": null
         }
     },
-    "Pset_AirTerminalBoxTypeCommon": {
+    "PSET_AIRTERMINALBOXTYPECOMMON": {
         "AirflowRateRange": {
             "name": "AirflowRateRange",
             "type": "<type IfcVolumetricFlowRateMeasure: <real>>",
@@ -1583,7 +1583,7 @@
             "unit": "MASSUNIT"
         }
     },
-    "Pset_AirTerminalPHistory": {
+    "PSET_AIRTERMINALPHISTORY": {
         "AirFlowRate": {
             "name": "AirFlowRate",
             "type": "<entity IfcTimeSeries>",
@@ -1620,7 +1620,7 @@
             "unit": null
         }
     },
-    "Pset_AirTerminalTypeCommon": {
+    "PSET_AIRTERMINALTYPECOMMON": {
         "Shape": {
             "name": "Shape",
             "type": "<type IfcLabel: <string>>",
@@ -1732,21 +1732,21 @@
             "unit": null
         }
     },
-    "Pset_AirTerminalTypeRectangular": {
+    "PSET_AIRTERMINALTYPERECTANGULAR": {
         "FaceType": {
             "name": "FaceType",
             "type": "<type IfcLabel: <string>>",
             "unit": null
         }
     },
-    "Pset_AirTerminalTypeRound": {
+    "PSET_AIRTERMINALTYPEROUND": {
         "FaceType": {
             "name": "FaceType",
             "type": "<type IfcLabel: <string>>",
             "unit": null
         }
     },
-    "Pset_AirTerminalTypeSlot": {
+    "PSET_AIRTERMINALTYPESLOT": {
         "SlotWidth": {
             "name": "SlotWidth",
             "type": "<type IfcPositiveLengthMeasure: <type IfcLengthMeasure: <real>>>",
@@ -1763,14 +1763,14 @@
             "unit": null
         }
     },
-    "Pset_AirTerminalTypeSquare": {
+    "PSET_AIRTERMINALTYPESQUARE": {
         "FaceType": {
             "name": "FaceType",
             "type": "<type IfcLabel: <string>>",
             "unit": null
         }
     },
-    "Pset_AirToAirHeatRecoveryPHist": {
+    "PSET_AIRTOAIRHEATRECOVERYPHIST": {
         "SensibleEffectiveness": {
             "name": "SensibleEffectiveness",
             "type": "<entity IfcTimeSeries>",
@@ -1827,7 +1827,7 @@
             "unit": null
         }
     },
-    "Pset_AirToAirHeatRecoveryTypeCommon": {
+    "PSET_AIRTOAIRHEATRECOVERYTYPECOMMON": {
         "HeatTransferTypeEnum": {
             "name": "HeatTransferTypeEnum",
             "type": "<type IfcLabel: <string>>",
@@ -1864,7 +1864,7 @@
             "unit": "MASSUNIT"
         }
     },
-    "Pset_BoilerPHistory": {
+    "PSET_BOILERPHISTORY": {
         "EnergySourceConsumption": {
             "name": "EnergySourceConsumption",
             "type": "<entity IfcTimeSeries>",
@@ -1911,7 +1911,7 @@
             "unit": null
         }
     },
-    "Pset_BoilerTypeCommon": {
+    "PSET_BOILERTYPECOMMON": {
         "PressureRating": {
             "name": "PressureRating",
             "type": "<type IfcPressureMeasure: <real>>",
@@ -1983,14 +1983,14 @@
             "unit": "POWERUNIT"
         }
     },
-    "Pset_BoilerTypeSteam": {
+    "PSET_BOILERTYPESTEAM": {
         "MaximumOutletPressure": {
             "name": "MaximumOutletPressure",
             "type": "<type IfcPressureMeasure: <real>>",
             "unit": "PRESSUREUNIT"
         }
     },
-    "Pset_ChillerPHistory": {
+    "PSET_CHILLERPHISTORY": {
         "Capacity": {
             "name": "Capacity",
             "type": "<entity IfcTimeSeries>",
@@ -2022,7 +2022,7 @@
             "unit": null
         }
     },
-    "Pset_ChillerTypeCommon": {
+    "PSET_CHILLERTYPECOMMON": {
         "NominalCapacity": {
             "name": "NominalCapacity",
             "type": "<type IfcPowerMeasure: <real>>",
@@ -2054,7 +2054,7 @@
             "unit": "POWERUNIT"
         }
     },
-    "Pset_CoilPHistory": {
+    "PSET_COILPHISTORY": {
         "AtmosphericPressure": {
             "name": "AtmosphericPressure",
             "type": "<entity IfcTimeSeries>",
@@ -2076,7 +2076,7 @@
             "unit": null
         }
     },
-    "Pset_CoilTypeCommon": {
+    "PSET_COILTYPECOMMON": {
         "OperationalTemperatureRange": {
             "name": "OperationalTemperatureRange",
             "type": "<type IfcThermodynamicTemperatureMeasure: <real>>",
@@ -2103,7 +2103,7 @@
             "unit": null
         }
     },
-    "Pset_CoilTypeHydronic": {
+    "PSET_COILTYPEHYDRONIC": {
         "FluidPressureRange": {
             "name": "FluidPressureRange",
             "type": "<type IfcPressureMeasure: <real>>",
@@ -2175,7 +2175,7 @@
             "unit": null
         }
     },
-    "Pset_CompressorPHistory": {
+    "PSET_COMPRESSORPHISTORY": {
         "CompressorCapacity": {
             "name": "CompressorCapacity",
             "type": "<entity IfcTimeSeries>",
@@ -2247,7 +2247,7 @@
             "unit": null
         }
     },
-    "Pset_CompressorTypeCommon": {
+    "PSET_COMPRESSORTYPECOMMON": {
         "PowerSource": {
             "name": "PowerSource",
             "type": "<type IfcLabel: <string>>",
@@ -2299,7 +2299,7 @@
             "unit": null
         }
     },
-    "Pset_CondenserPHistory": {
+    "PSET_CONDENSERPHISTORY": {
         "HeatRejectionRate": {
             "name": "HeatRejectionRate",
             "type": "<entity IfcTimeSeries>",
@@ -2356,7 +2356,7 @@
             "unit": null
         }
     },
-    "Pset_CondenserTypeCommon": {
+    "PSET_CONDENSERTYPECOMMON": {
         "RefrigerantClass": {
             "name": "RefrigerantClass",
             "type": "<type IfcLabel: <string>>",
@@ -2398,7 +2398,7 @@
             "unit": null
         }
     },
-    "Pset_CooledBeamPHistory": {
+    "PSET_COOLEDBEAMPHISTORY": {
         "TotalCoolingCapacity": {
             "name": "TotalCoolingCapacity",
             "type": "<entity IfcTimeSeries>",
@@ -2465,7 +2465,7 @@
             "unit": null
         }
     },
-    "Pset_CooledBeamPHistoryActive": {
+    "PSET_COOLEDBEAMPHISTORYACTIVE": {
         "AirFlowRate": {
             "name": "AirFlowRate",
             "type": "<entity IfcTimeSeries>",
@@ -2482,7 +2482,7 @@
             "unit": null
         }
     },
-    "Pset_CooledBeamTypeActive": {
+    "PSET_COOLEDBEAMTYPEACTIVE": {
         "AirFlowConfiguration": {
             "name": "AirFlowConfiguration",
             "type": "<type IfcLabel: <string>>",
@@ -2504,7 +2504,7 @@
             "unit": "LENGTHUNIT"
         }
     },
-    "Pset_CooledBeamTypeCommon": {
+    "PSET_COOLEDBEAMTYPECOMMON": {
         "IsFreeHanging": {
             "name": "IsFreeHanging",
             "type": "<type IfcBoolean: <boolean>>",
@@ -2616,7 +2616,7 @@
             "unit": "LENGTHUNIT"
         }
     },
-    "Pset_CoolingTowerPHistory": {
+    "PSET_COOLINGTOWERPHISTORY": {
         "Capacity": {
             "name": "Capacity",
             "type": "<entity IfcTimeSeries>",
@@ -2643,7 +2643,7 @@
             "unit": null
         }
     },
-    "Pset_CoolingTowerTypeCommon": {
+    "PSET_COOLINGTOWERTYPECOMMON": {
         "NominalCapacity": {
             "name": "NominalCapacity",
             "type": "<type IfcPowerMeasure: <real>>",
@@ -2725,7 +2725,7 @@
             "unit": "THERMODYNAMICTEMPERATUREUNIT"
         }
     },
-    "Pset_DamperPHistory": {
+    "PSET_DAMPERPHISTORY": {
         "AirFlowRate": {
             "name": "AirFlowRate",
             "type": "<entity IfcTimeSeries>",
@@ -2757,7 +2757,7 @@
             "unit": null
         }
     },
-    "Pset_DamperTypeCommon": {
+    "PSET_DAMPERTYPECOMMON": {
         "Operation": {
             "name": "Operation",
             "type": "<type IfcLabel: <string>>",
@@ -2889,7 +2889,7 @@
             "unit": "PRESSUREUNIT"
         }
     },
-    "Pset_DamperTypeControlDamper": {
+    "PSET_DAMPERTYPECONTROLDAMPER": {
         "TorqueRange": {
             "name": "TorqueRange",
             "type": "<type IfcTorqueMeasure: <real>>",
@@ -2901,7 +2901,7 @@
             "unit": null
         }
     },
-    "Pset_DamperTypeFireDamper": {
+    "PSET_DAMPERTYPEFIREDAMPER": {
         "ActuationType": {
             "name": "ActuationType",
             "type": "<type IfcLabel: <string>>",
@@ -2923,28 +2923,28 @@
             "unit": "THERMODYNAMICTEMPERATUREUNIT"
         }
     },
-    "Pset_DamperTypeFireSmokeDamper": {
+    "PSET_DAMPERTYPEFIRESMOKEDAMPER": {
         "ControlType": {
             "name": "ControlType",
             "type": "<type IfcLabel: <string>>",
             "unit": null
         }
     },
-    "Pset_DamperTypeSmokeDamper": {
+    "PSET_DAMPERTYPESMOKEDAMPER": {
         "ControlType": {
             "name": "ControlType",
             "type": "<type IfcLabel: <string>>",
             "unit": null
         }
     },
-    "Pset_DuctConnection": {
+    "PSET_DUCTCONNECTION": {
         "ConnectionType": {
             "name": "ConnectionType",
             "type": "<type IfcText: <string>>",
             "unit": null
         }
     },
-    "Pset_DuctDesignCriteria": {
+    "PSET_DUCTDESIGNCRITERIA": {
         "DesignName": {
             "name": "DesignName",
             "type": "<type IfcText: <string>>",
@@ -3001,7 +3001,7 @@
             "unit": "LENGTHUNIT"
         }
     },
-    "Pset_DuctFittingPHistory": {
+    "PSET_DUCTFITTINGPHISTORY": {
         "LossCoefficient": {
             "name": "LossCoefficient",
             "type": "<entity IfcTimeSeries>",
@@ -3018,7 +3018,7 @@
             "unit": null
         }
     },
-    "Pset_DuctFittingTypeCommon": {
+    "PSET_DUCTFITTINGTYPECOMMON": {
         "SubType": {
             "name": "SubType",
             "type": "<type IfcText: <string>>",
@@ -3070,7 +3070,7 @@
             "unit": null
         }
     },
-    "Pset_DuctSegmentPHistory": {
+    "PSET_DUCTSEGMENTPHISTORY": {
         "LossCoefficient": {
             "name": "LossCoefficient",
             "type": "<entity IfcTimeSeries>",
@@ -3092,7 +3092,7 @@
             "unit": null
         }
     },
-    "Pset_DuctSegmentTypeCommon": {
+    "PSET_DUCTSEGMENTTYPECOMMON": {
         "Shape": {
             "name": "Shape",
             "type": "<type IfcLabel: <string>>",
@@ -3164,7 +3164,7 @@
             "unit": "LENGTHUNIT"
         }
     },
-    "Pset_DuctSilencerPHistory": {
+    "PSET_DUCTSILENCERPHISTORY": {
         "AirFlowRate": {
             "name": "AirFlowRate",
             "type": "<entity IfcTimeSeries>",
@@ -3176,7 +3176,7 @@
             "unit": null
         }
     },
-    "Pset_DuctSilencerTypeCommon": {
+    "PSET_DUCTSILENCERTYPECOMMON": {
         "Shape": {
             "name": "Shape",
             "type": "<type IfcLabel: <string>>",
@@ -3218,7 +3218,7 @@
             "unit": null
         }
     },
-    "Pset_EnergyConsumptionPHistoryElectricity": {
+    "PSET_ENERGYCONSUMPTIONPHISTORYELECTRICITY": {
         "Voltage": {
             "name": "Voltage",
             "type": "<entity IfcTimeSeries>",
@@ -3250,7 +3250,7 @@
             "unit": null
         }
     },
-    "Pset_EnergyConsumptionPHistoryFuel": {
+    "PSET_ENERGYCONSUMPTIONPHISTORYFUEL": {
         "Temperature": {
             "name": "Temperature",
             "type": "<entity IfcTimeSeries>",
@@ -3267,7 +3267,7 @@
             "unit": null
         }
     },
-    "Pset_EnergyConsumptionPHistorySteam": {
+    "PSET_ENERGYCONSUMPTIONPHISTORYSTEAM": {
         "Temperature": {
             "name": "Temperature",
             "type": "<entity IfcTimeSeries>",
@@ -3289,7 +3289,7 @@
             "unit": null
         }
     },
-    "Pset_EvaporativeCoolerPHistory": {
+    "PSET_EVAPORATIVECOOLERPHISTORY": {
         "WaterSumpTemperature": {
             "name": "WaterSumpTemperature",
             "type": "<entity IfcTimeSeries>",
@@ -3331,7 +3331,7 @@
             "unit": null
         }
     },
-    "Pset_EvaporativeCoolerTypeCommon": {
+    "PSET_EVAPORATIVECOOLERTYPECOMMON": {
         "FlowArrangement": {
             "name": "FlowArrangement",
             "type": "<type IfcLabel: <string>>",
@@ -3363,7 +3363,7 @@
             "unit": null
         }
     },
-    "Pset_EvaporatorPHistory": {
+    "PSET_EVAPORATORPHISTORY": {
         "HeatRejectionRate": {
             "name": "HeatRejectionRate",
             "type": "<entity IfcTimeSeries>",
@@ -3420,7 +3420,7 @@
             "unit": null
         }
     },
-    "Pset_EvaporatorTypeCommon": {
+    "PSET_EVAPORATORTYPECOMMON": {
         "EvaporatorMediumType": {
             "name": "EvaporatorMediumType",
             "type": "<type IfcLabel: <string>>",
@@ -3472,7 +3472,7 @@
             "unit": null
         }
     },
-    "Pset_FanPHistory": {
+    "PSET_FANPHISTORY": {
         "FanRotationSpeed": {
             "name": "FanRotationSpeed",
             "type": "<entity IfcTimeSeries>",
@@ -3529,7 +3529,7 @@
             "unit": null
         }
     },
-    "Pset_FanTypeCommon": {
+    "PSET_FANTYPECOMMON": {
         "MotorDriveType": {
             "name": "MotorDriveType",
             "type": "<type IfcLabel: <string>>",
@@ -3591,7 +3591,7 @@
             "unit": "TIMEUNIT"
         }
     },
-    "Pset_FanTypeSmokeControl": {
+    "PSET_FANTYPESMOKECONTROL": {
         "OperationalCriteria": {
             "name": "OperationalCriteria",
             "type": "<type IfcTimeMeasure: <real>>",
@@ -3608,7 +3608,7 @@
             "unit": null
         }
     },
-    "Pset_FilterPHistory": {
+    "PSET_FILTERPHISTORY": {
         "CountedEfficiency": {
             "name": "CountedEfficiency",
             "type": "<entity IfcTimeSeries>",
@@ -3625,7 +3625,7 @@
             "unit": null
         }
     },
-    "Pset_FilterTypeAirParticleFilter": {
+    "PSET_FILTERTYPEAIRPARTICLEFILTER": {
         "AirParticleFilterType": {
             "name": "AirParticleFilterType",
             "type": "<type IfcLabel: <string>>",
@@ -3687,7 +3687,7 @@
             "unit": null
         }
     },
-    "Pset_FilterTypeCommon": {
+    "PSET_FILTERTYPECOMMON": {
         "MediaMaterial": {
             "name": "MediaMaterial",
             "type": "<entity IfcMaterial>",
@@ -3749,7 +3749,7 @@
             "unit": null
         }
     },
-    "Pset_FlowMeterTypeCommon": {
+    "PSET_FLOWMETERTYPECOMMON": {
         "ReadOutType": {
             "name": "ReadOutType",
             "type": "<type IfcLabel: <string>>",
@@ -3766,14 +3766,14 @@
             "unit": null
         }
     },
-    "Pset_FlowMeterTypeEnergyMeter": {
+    "PSET_FLOWMETERTYPEENERGYMETER": {
         "ConnectionSize": {
             "name": "ConnectionSize",
             "type": "<type IfcPositiveLengthMeasure: <type IfcLengthMeasure: <real>>>",
             "unit": "LENGTHUNIT"
         }
     },
-    "Pset_FlowMeterTypeGasMeter": {
+    "PSET_FLOWMETERTYPEGASMETER": {
         "GasType": {
             "name": "GasType",
             "type": "<type IfcLabel: <string>>",
@@ -3795,7 +3795,7 @@
             "unit": "PRESSUREUNIT"
         }
     },
-    "Pset_FlowMeterTypeOilMeter": {
+    "PSET_FLOWMETERTYPEOILMETER": {
         "ConnectionSize": {
             "name": "ConnectionSize",
             "type": "<type IfcPositiveLengthMeasure: <type IfcLengthMeasure: <real>>>",
@@ -3807,7 +3807,7 @@
             "unit": null
         }
     },
-    "Pset_FlowMeterTypeWaterMeter": {
+    "PSET_FLOWMETERTYPEWATERMETER": {
         "Type": {
             "name": "Type",
             "type": "<type IfcLabel: <string>>",
@@ -3834,21 +3834,21 @@
             "unit": null
         }
     },
-    "Pset_GasTerminalPHistory": {
+    "PSET_GASTERMINALPHISTORY": {
         "GasFlowRate": {
             "name": "GasFlowRate",
             "type": "<entity IfcTimeSeries>",
             "unit": null
         }
     },
-    "Pset_GasTerminalTypeCommon": {
+    "PSET_GASTERMINALTYPECOMMON": {
         "GasFlowRateRange": {
             "name": "GasFlowRateRange",
             "type": "<type IfcVolumetricFlowRateMeasure: <real>>",
             "unit": null
         }
     },
-    "Pset_GasTerminalTypeGasAppliance": {
+    "PSET_GASTERMINALTYPEGASAPPLIANCE": {
         "GasApplianceType": {
             "name": "GasApplianceType",
             "type": "<type IfcLabel: <string>>",
@@ -3860,14 +3860,14 @@
             "unit": null
         }
     },
-    "Pset_GasTerminalTypeGasBurner": {
+    "PSET_GASTERMINALTYPEGASBURNER": {
         "GasBurnerType": {
             "name": "GasBurnerType",
             "type": "<type IfcLabel: <string>>",
             "unit": null
         }
     },
-    "Pset_HeatExchangerTypeCommon": {
+    "PSET_HEATEXCHANGERTYPECOMMON": {
         "Arrangement": {
             "name": "Arrangement",
             "type": "<type IfcLabel: <string>>",
@@ -3879,14 +3879,14 @@
             "unit": null
         }
     },
-    "Pset_HeatExchangerTypePlate": {
+    "PSET_HEATEXCHANGERTYPEPLATE": {
         "NumberOfPlates": {
             "name": "NumberOfPlates",
             "type": "<type IfcInteger: <integer>>",
             "unit": null
         }
     },
-    "Pset_HumidifierPHistory": {
+    "PSET_HUMIDIFIERPHISTORY": {
         "AtmosphericPressure": {
             "name": "AtmosphericPressure",
             "type": "<entity IfcTimeSeries>",
@@ -3908,7 +3908,7 @@
             "unit": null
         }
     },
-    "Pset_HumidifierTypeCommon": {
+    "PSET_HUMIDIFIERTYPECOMMON": {
         "Application": {
             "name": "Application",
             "type": "<type IfcLabel: <string>>",
@@ -3940,14 +3940,14 @@
             "unit": null
         }
     },
-    "Pset_PipeConnection": {
+    "PSET_PIPECONNECTION": {
         "ConnectionType": {
             "name": "ConnectionType",
             "type": "<type IfcLabel: <string>>",
             "unit": null
         }
     },
-    "Pset_PipeConnectionFlanged": {
+    "PSET_PIPECONNECTIONFLANGED": {
         "FlangeTable": {
             "name": "FlangeTable",
             "type": "<type IfcLabel: <string>>",
@@ -3994,7 +3994,7 @@
             "unit": "LENGTHUNIT"
         }
     },
-    "Pset_PipeFittingPHistory": {
+    "PSET_PIPEFITTINGPHISTORY": {
         "LossCoefficient": {
             "name": "LossCoefficient",
             "type": "<entity IfcTimeSeries>",
@@ -4006,7 +4006,7 @@
             "unit": null
         }
     },
-    "Pset_PipeFittingTypeCommon": {
+    "PSET_PIPEFITTINGTYPECOMMON": {
         "SubType": {
             "name": "SubType",
             "type": "<type IfcLabel: <string>>",
@@ -4063,7 +4063,7 @@
             "unit": null
         }
     },
-    "Pset_PipeSegmentPHistory": {
+    "PSET_PIPESEGMENTPHISTORY": {
         "LeakageCurve": {
             "name": "LeakageCurve",
             "type": "<entity IfcTimeSeries>",
@@ -4075,7 +4075,7 @@
             "unit": null
         }
     },
-    "Pset_PipeSegmentTypeCommon": {
+    "PSET_PIPESEGMENTTYPECOMMON": {
         "Material": {
             "name": "Material",
             "type": "<entity IfcMaterial>",
@@ -4122,7 +4122,7 @@
             "unit": null
         }
     },
-    "Pset_PipeSegmentTypeGutter": {
+    "PSET_PIPESEGMENTTYPEGUTTER": {
         "Slope": {
             "name": "Slope",
             "type": "<type IfcPlaneAngleMeasure: <real>>",
@@ -4134,7 +4134,7 @@
             "unit": null
         }
     },
-    "Pset_ProjectionElementShadingDevicePHistory": {
+    "PSET_PROJECTIONELEMENTSHADINGDEVICEPHISTORY": {
         "TiltAngle": {
             "name": "TiltAngle",
             "type": "<entity IfcTimeSeriesValue>",
@@ -4146,7 +4146,7 @@
             "unit": null
         }
     },
-    "Pset_PumpPHistory": {
+    "PSET_PUMPPHISTORY": {
         "MechanicalEfficiency": {
             "name": "MechanicalEfficiency",
             "type": "<entity IfcTimeSeries>",
@@ -4178,7 +4178,7 @@
             "unit": null
         }
     },
-    "Pset_PumpTypeCommon": {
+    "PSET_PUMPTYPECOMMON": {
         "FlowRateRange": {
             "name": "FlowRateRange",
             "type": "<type IfcMassFlowRateMeasure: <real>>",
@@ -4225,7 +4225,7 @@
             "unit": null
         }
     },
-    "Pset_SpaceHeaterPHistoryCommon": {
+    "PSET_SPACEHEATERPHISTORYCOMMON": {
         "FractionRadiantHeatTransfer": {
             "name": "FractionRadiantHeatTransfer",
             "type": "<type IfcReal: <real>>",
@@ -4287,7 +4287,7 @@
             "unit": "POWERUNIT"
         }
     },
-    "Pset_SpaceHeaterTypeCommon": {
+    "PSET_SPACEHEATERTYPECOMMON": {
         "TemperatureClassification": {
             "name": "TemperatureClassification",
             "type": "<type IfcLabel: <string>>",
@@ -4324,7 +4324,7 @@
             "unit": null
         }
     },
-    "Pset_SpaceHeaterTypeHydronic": {
+    "PSET_SPACEHEATERTYPEHYDRONIC": {
         "TubingLength": {
             "name": "TubingLength",
             "type": "<type IfcLengthMeasure: <real>>",
@@ -4336,7 +4336,7 @@
             "unit": "MASSUNIT"
         }
     },
-    "Pset_SpaceThermalPHistory": {
+    "PSET_SPACETHERMALPHISTORY": {
         "CoolingAirFlowRate": {
             "name": "CoolingAirFlowRate",
             "type": "<entity IfcTimeSeries>",
@@ -4368,7 +4368,7 @@
             "unit": null
         }
     },
-    "Pset_TankTypeCommon": {
+    "PSET_TANKTYPECOMMON": {
         "Type": {
             "name": "Type",
             "type": "<type IfcLabel: <string>>",
@@ -4420,7 +4420,7 @@
             "unit": "LENGTHUNIT"
         }
     },
-    "Pset_TankTypeExpansion": {
+    "PSET_TANKTYPEEXPANSION": {
         "ChargePressure": {
             "name": "ChargePressure",
             "type": "<type IfcPressureMeasure: <real>>",
@@ -4437,7 +4437,7 @@
             "unit": "PRESSUREUNIT"
         }
     },
-    "Pset_TankTypePreformed": {
+    "PSET_TANKTYPEPREFORMED": {
         "PatternType": {
             "name": "PatternType",
             "type": "<type IfcLabel: <string>>",
@@ -4459,7 +4459,7 @@
             "unit": "LENGTHUNIT"
         }
     },
-    "Pset_TankTypePressureVessel": {
+    "PSET_TANKTYPEPRESSUREVESSEL": {
         "ChargePressure": {
             "name": "ChargePressure",
             "type": "<type IfcPressureMeasure: <real>>",
@@ -4476,7 +4476,7 @@
             "unit": "PRESSUREUNIT"
         }
     },
-    "Pset_TankTypeSectional": {
+    "PSET_TANKTYPESECTIONAL": {
         "NumberOfSections": {
             "name": "NumberOfSections",
             "type": "<type IfcInteger: <integer>>",
@@ -4493,7 +4493,7 @@
             "unit": "LENGTHUNIT"
         }
     },
-    "Pset_TubeBundleTypeCommon": {
+    "PSET_TUBEBUNDLETYPECOMMON": {
         "NumberOfRows": {
             "name": "NumberOfRows",
             "type": "<type IfcInteger: <integer>>",
@@ -4570,7 +4570,7 @@
             "unit": null
         }
     },
-    "Pset_TubeBundleTypeFinned": {
+    "PSET_TUBEBUNDLETYPEFINNED": {
         "Spacing": {
             "name": "Spacing",
             "type": "<type IfcPositiveLengthMeasure: <type IfcLengthMeasure: <real>>>",
@@ -4617,7 +4617,7 @@
             "unit": null
         }
     },
-    "Pset_UnitaryEquipmentTypeAirConditioningUnit": {
+    "PSET_UNITARYEQUIPMENTTYPEAIRCONDITIONINGUNIT": {
         "SensibleCoolingCapacity": {
             "name": "SensibleCoolingCapacity",
             "type": "<type IfcPowerMeasure: <real>>",
@@ -4664,7 +4664,7 @@
             "unit": null
         }
     },
-    "Pset_UnitaryEquipmentTypeAirHandler": {
+    "PSET_UNITARYEQUIPMENTTYPEAIRHANDLER": {
         "AirHandlerConstruction": {
             "name": "AirHandlerConstruction",
             "type": "<type IfcLabel: <string>>",
@@ -4681,7 +4681,7 @@
             "unit": null
         }
     },
-    "Pset_ValvePHistory": {
+    "PSET_VALVEPHISTORY": {
         "PercentageOpen": {
             "name": "PercentageOpen",
             "type": "<entity IfcTimeSeries>",
@@ -4698,14 +4698,14 @@
             "unit": null
         }
     },
-    "Pset_ValveTypeAirRelease": {
+    "PSET_VALVETYPEAIRRELEASE": {
         "IsAutomatic": {
             "name": "IsAutomatic",
             "type": "<type IfcBoolean: <boolean>>",
             "unit": null
         }
     },
-    "Pset_ValveTypeCommon": {
+    "PSET_VALVETYPECOMMON": {
         "ValvePattern": {
             "name": "ValvePattern",
             "type": "<type IfcLabel: <string>>",
@@ -4757,14 +4757,14 @@
             "unit": "PRESSUREUNIT"
         }
     },
-    "Pset_ValveTypeDrawOffCock": {
+    "PSET_VALVETYPEDRAWOFFCOCK": {
         "HasHoseUnion": {
             "name": "HasHoseUnion",
             "type": "<type IfcBoolean: <boolean>>",
             "unit": null
         }
     },
-    "Pset_ValveTypeFaucet": {
+    "PSET_VALVETYPEFAUCET": {
         "FaucetType": {
             "name": "FaucetType",
             "type": "<type IfcLabel: <string>>",
@@ -4791,7 +4791,7 @@
             "unit": null
         }
     },
-    "Pset_ValveTypeFlushing": {
+    "PSET_VALVETYPEFLUSHING": {
         "FlushingRate": {
             "name": "FlushingRate",
             "type": "<type IfcVolumetricFlowRateMeasure: <real>>",
@@ -4808,14 +4808,14 @@
             "unit": null
         }
     },
-    "Pset_ValveTypeGasTap": {
+    "PSET_VALVETYPEGASTAP": {
         "HasHoseUnion": {
             "name": "HasHoseUnion",
             "type": "<type IfcBoolean: <boolean>>",
             "unit": null
         }
     },
-    "Pset_ValveTypeIsolating": {
+    "PSET_VALVETYPEISOLATING": {
         "IsNormallyOpen": {
             "name": "IsNormallyOpen",
             "type": "<type IfcBoolean: <boolean>>",
@@ -4827,7 +4827,7 @@
             "unit": null
         }
     },
-    "Pset_ValveTypeMixing": {
+    "PSET_VALVETYPEMIXING": {
         "MixerControl": {
             "name": "MixerControl",
             "type": "<type IfcLabel: <string>>",
@@ -4839,7 +4839,7 @@
             "unit": "LENGTHUNIT"
         }
     },
-    "Pset_ValveTypePressureReducing": {
+    "PSET_VALVETYPEPRESSUREREDUCING": {
         "UpstreamPressure": {
             "name": "UpstreamPressure",
             "type": "<type IfcPressureMeasure: <real>>",
@@ -4851,14 +4851,14 @@
             "unit": "PRESSUREUNIT"
         }
     },
-    "Pset_ValveTypePressureRelief": {
+    "PSET_VALVETYPEPRESSURERELIEF": {
         "ReliefPressure": {
             "name": "ReliefPressure",
             "type": "<type IfcPressureMeasure: <real>>",
             "unit": "PRESSUREUNIT"
         }
     },
-    "Pset_VibrationIsolatorTypeCommon": {
+    "PSET_VIBRATIONISOLATORTYPECOMMON": {
         "VibrationTransmissibility": {
             "name": "VibrationTransmissibility",
             "type": "<type IfcPositiveRatioMeasure: <type IfcRatioMeasure: <real>>>",
@@ -4890,7 +4890,7 @@
             "unit": "MASSUNIT"
         }
     },
-    "Pset_ActorCommon": {
+    "PSET_ACTORCOMMON": {
         "NumberOfActors": {
             "name": "NumberOfActors",
             "type": "<type IfcCountMeasure: <number>>",
@@ -4907,7 +4907,7 @@
             "unit": null
         }
     },
-    "Pset_ProductRequirements": {
+    "PSET_PRODUCTREQUIREMENTS": {
         "Name": {
             "name": "Name",
             "type": "<type IfcLabel: <string>>",
@@ -4959,7 +4959,7 @@
             "unit": null
         }
     },
-    "Pset_ProjectCommon": {
+    "PSET_PROJECTCOMMON": {
         "ConstructionMode": {
             "name": "ConstructionMode",
             "type": "<type IfcLabel: <string>>",
@@ -4976,21 +4976,21 @@
             "unit": "AREAUNIT"
         }
     },
-    "Pset_DesignPoint": {
+    "PSET_DESIGNPOINT": {
         "IsDesignPoint": {
             "name": "IsDesignPoint",
             "type": "<type IfcBoolean: <boolean>>",
             "unit": null
         }
     },
-    "Pset_DrainageCatchment": {
+    "PSET_DRAINAGECATCHMENT": {
         "AreaDrained": {
             "name": "AreaDrained",
             "type": "<type IfcAreaMeasure: <real>>",
             "unit": "AREAUNIT"
         }
     },
-    "Pset_DrainageCulvert": {
+    "PSET_DRAINAGECULVERT": {
         "InternalWidth": {
             "name": "InternalWidth",
             "type": "<type IfcLengthMeasure: <real>>",
@@ -5002,21 +5002,21 @@
             "unit": "LENGTHUNIT"
         }
     },
-    "Pset_DrainageOutfall": {
+    "PSET_DRAINAGEOUTFALL": {
         "InvertLevel": {
             "name": "InvertLevel",
             "type": "<type IfcLengthMeasure: <real>>",
             "unit": "LENGTHUNIT"
         }
     },
-    "Pset_DrainageReserve": {
+    "PSET_DRAINAGERESERVE": {
         "Width": {
             "name": "Width",
             "type": "<type IfcLengthMeasure: <real>>",
             "unit": "LENGTHUNIT"
         }
     },
-    "Pset_FireSuppressionTerminalTypeBreechingInlet": {
+    "PSET_FIRESUPPRESSIONTERMINALTYPEBREECHINGINLET": {
         "BreechingInletType": {
             "name": "BreechingInletType",
             "type": "<type IfcLabel: <string>>",
@@ -5048,7 +5048,7 @@
             "unit": null
         }
     },
-    "Pset_FireSuppressionTerminalTypeFireHydrant": {
+    "PSET_FIRESUPPRESSIONTERMINALTYPEFIREHYDRANT": {
         "FireHydrantType": {
             "name": "FireHydrantType",
             "type": "<type IfcLabel: <string>>",
@@ -5100,7 +5100,7 @@
             "unit": null
         }
     },
-    "Pset_FireSuppressionTerminalTypeHoseReel": {
+    "PSET_FIRESUPPRESSIONTERMINALTYPEHOSEREEL": {
         "HoseReelType": {
             "name": "HoseReelType",
             "type": "<type IfcLabel: <string>>",
@@ -5142,7 +5142,7 @@
             "unit": null
         }
     },
-    "Pset_FireSuppressionTerminalTypeSprinkler": {
+    "PSET_FIRESUPPRESSIONTERMINALTYPESPRINKLER": {
         "SprinklerType": {
             "name": "SprinklerType",
             "type": "<type IfcLabel: <string>>",
@@ -5214,7 +5214,7 @@
             "unit": null
         }
     },
-    "Pset_SanitaryTerminalTypeBath": {
+    "PSET_SANITARYTERMINALTYPEBATH": {
         "BathType": {
             "name": "BathType",
             "type": "<type IfcLabel: <string>>",
@@ -5261,7 +5261,7 @@
             "unit": null
         }
     },
-    "Pset_SanitaryTerminalTypeBidet": {
+    "PSET_SANITARYTERMINALTYPEBIDET": {
         "BidetMounting": {
             "name": "BidetMounting",
             "type": "<type IfcLabel: <string>>",
@@ -5303,7 +5303,7 @@
             "unit": "LENGTHUNIT"
         }
     },
-    "Pset_SanitaryTerminalTypeCistern": {
+    "PSET_SANITARYTERMINALTYPECISTERN": {
         "CisternHeight": {
             "name": "CisternHeight",
             "type": "<type IfcLabel: <string>>",
@@ -5345,7 +5345,7 @@
             "unit": null
         }
     },
-    "Pset_SanitaryTerminalTypeSanitaryFountain": {
+    "PSET_SANITARYTERMINALTYPESANITARYFOUNTAIN": {
         "FountainType": {
             "name": "FountainType",
             "type": "<type IfcLabel: <string>>",
@@ -5387,7 +5387,7 @@
             "unit": "LENGTHUNIT"
         }
     },
-    "Pset_SanitaryTerminalTypeShower": {
+    "PSET_SANITARYTERMINALTYPESHOWER": {
         "ShowerType": {
             "name": "ShowerType",
             "type": "<type IfcLabel: <string>>",
@@ -5439,7 +5439,7 @@
             "unit": "LENGTHUNIT"
         }
     },
-    "Pset_SanitaryTerminalTypeSink": {
+    "PSET_SANITARYTERMINALTYPESINK": {
         "SinkType": {
             "name": "SinkType",
             "type": "<type IfcLabel: <string>>",
@@ -5481,7 +5481,7 @@
             "unit": "LENGTHUNIT"
         }
     },
-    "Pset_SanitaryTerminalTypeToiletPan": {
+    "PSET_SANITARYTERMINALTYPETOILETPAN": {
         "ToiletType": {
             "name": "ToiletType",
             "type": "<type IfcLabel: <string>>",
@@ -5528,7 +5528,7 @@
             "unit": "LENGTHUNIT"
         }
     },
-    "Pset_SanitaryTerminalTypeUrinal": {
+    "PSET_SANITARYTERMINALTYPEURINAL": {
         "UrinalType": {
             "name": "UrinalType",
             "type": "<type IfcLabel: <string>>",
@@ -5565,7 +5565,7 @@
             "unit": "LENGTHUNIT"
         }
     },
-    "Pset_SanitaryTerminalTypeWashHandBasin": {
+    "PSET_SANITARYTERMINALTYPEWASHHANDBASIN": {
         "WashHandBasinType": {
             "name": "WashHandBasinType",
             "type": "<type IfcLabel: <string>>",
@@ -5607,7 +5607,7 @@
             "unit": "LENGTHUNIT"
         }
     },
-    "Pset_SanitaryTerminalTypeWCSeat": {
+    "PSET_SANITARYTERMINALTYPEWCSEAT": {
         "SeatType": {
             "name": "SeatType",
             "type": "<type IfcLabel: <string>>",
@@ -5629,7 +5629,7 @@
             "unit": null
         }
     },
-    "Pset_WasteTerminalTypeFloorTrap": {
+    "PSET_WASTETERMINALTYPEFLOORTRAP": {
         "NominalBodyLength": {
             "name": "NominalBodyLength",
             "type": "<type IfcPositiveLengthMeasure: <type IfcLengthMeasure: <real>>>",
@@ -5701,7 +5701,7 @@
             "unit": null
         }
     },
-    "Pset_WasteTerminalTypeFloorWaste": {
+    "PSET_WASTETERMINALTYPEFLOORWASTE": {
         "NominalBodyLength": {
             "name": "NominalBodyLength",
             "type": "<type IfcPositiveLengthMeasure: <type IfcLengthMeasure: <real>>>",
@@ -5743,7 +5743,7 @@
             "unit": null
         }
     },
-    "Pset_WasteTerminalTypeGreaseInterceptor": {
+    "PSET_WASTETERMINALTYPEGREASEINTERCEPTOR": {
         "NominalBodyMaterial": {
             "name": "NominalBodyMaterial",
             "type": "<entity IfcMaterial>",
@@ -5805,7 +5805,7 @@
             "unit": null
         }
     },
-    "Pset_WasteTerminalTypeGullySump": {
+    "PSET_WASTETERMINALTYPEGULLYSUMP": {
         "NominalSumpLength": {
             "name": "NominalSumpLength",
             "type": "<type IfcPositiveLengthMeasure: <type IfcLengthMeasure: <real>>>",
@@ -5867,7 +5867,7 @@
             "unit": null
         }
     },
-    "Pset_WasteTerminalTypeGullyTrap": {
+    "PSET_WASTETERMINALTYPEGULLYTRAP": {
         "NominalBodyLength": {
             "name": "NominalBodyLength",
             "type": "<type IfcPositiveLengthMeasure: <type IfcLengthMeasure: <real>>>",
@@ -5934,7 +5934,7 @@
             "unit": null
         }
     },
-    "Pset_WasteTerminalTypeOilInterceptor": {
+    "PSET_WASTETERMINALTYPEOILINTERCEPTOR": {
         "BodyMaterial": {
             "name": "BodyMaterial",
             "type": "<entity IfcMaterial>",
@@ -5981,7 +5981,7 @@
             "unit": null
         }
     },
-    "Pset_WasteTerminalTypePetrolInterceptor": {
+    "PSET_WASTETERMINALTYPEPETROLINTERCEPTOR": {
         "BodyMaterial": {
             "name": "BodyMaterial",
             "type": "<entity IfcMaterial>",
@@ -6033,7 +6033,7 @@
             "unit": "LENGTHUNIT"
         }
     },
-    "Pset_WasteTerminalTypeRoofDrain": {
+    "PSET_WASTETERMINALTYPEROOFDRAIN": {
         "NominalBodyLength": {
             "name": "NominalBodyLength",
             "type": "<type IfcPositiveLengthMeasure: <type IfcLengthMeasure: <real>>>",
@@ -6075,7 +6075,7 @@
             "unit": null
         }
     },
-    "Pset_WasteTerminalTypeWasteDisposalUnit": {
+    "PSET_WASTETERMINALTYPEWASTEDISPOSALUNIT": {
         "DrainConnectionSize": {
             "name": "DrainConnectionSize",
             "type": "<type IfcPositiveLengthMeasure: <type IfcLengthMeasure: <real>>>",
@@ -6092,7 +6092,7 @@
             "unit": "LENGTHUNIT"
         }
     },
-    "Pset_WasteTerminalTypeWasteTrap": {
+    "PSET_WASTETERMINALTYPEWASTETRAP": {
         "WasteTrapType": {
             "name": "WasteTrapType",
             "type": "<type IfcLabel: <string>>",
@@ -6109,7 +6109,7 @@
             "unit": "LENGTHUNIT"
         }
     },
-    "Pset_BuildingCommon": {
+    "PSET_BUILDINGCOMMON": {
         "BuildingID": {
             "name": "BuildingID",
             "type": "<type IfcIdentifier: <string>>",
@@ -6166,14 +6166,14 @@
             "unit": null
         }
     },
-    "Pset_BuildingElementProxyCommon": {
+    "PSET_BUILDINGELEMENTPROXYCOMMON": {
         "Reference": {
             "name": "Reference",
             "type": "<type IfcIdentifier: <string>>",
             "unit": null
         }
     },
-    "Pset_BuildingStoreyCommon": {
+    "PSET_BUILDINGSTOREYCOMMON": {
         "EntranceLevel": {
             "name": "EntranceLevel",
             "type": "<type IfcBoolean: <boolean>>",
@@ -6205,7 +6205,7 @@
             "unit": "AREAUNIT"
         }
     },
-    "Pset_BuildingUse": {
+    "PSET_BUILDINGUSE": {
         "MarketCategory": {
             "name": "MarketCategory",
             "type": "<type IfcLabel: <string>>",
@@ -6267,7 +6267,7 @@
             "unit": null
         }
     },
-    "Pset_BuildingUseAdjacent": {
+    "PSET_BUILDINGUSEADJACENT": {
         "MarketCategory": {
             "name": "MarketCategory",
             "type": "<type IfcLabel: <string>>",
@@ -6289,7 +6289,7 @@
             "unit": null
         }
     },
-    "Pset_BuildingWaterStorage": {
+    "PSET_BUILDINGWATERSTORAGE": {
         "WaterStorageRatePerPerson": {
             "name": "WaterStorageRatePerPerson",
             "type": "<type IfcVolumeMeasure: <real>>",
@@ -6316,7 +6316,7 @@
             "unit": "VOLUMEUNIT"
         }
     },
-    "Pset_CoveringCeiling": {
+    "PSET_COVERINGCEILING": {
         "FragilityRating": {
             "name": "FragilityRating",
             "type": "<type IfcLabel: <string>>",
@@ -6338,7 +6338,7 @@
             "unit": "LENGTHUNIT"
         }
     },
-    "Pset_CoveringCommon": {
+    "PSET_COVERINGCOMMON": {
         "Reference": {
             "name": "Reference",
             "type": "<type IfcIdentifier: <string>>",
@@ -6390,7 +6390,7 @@
             "unit": null
         }
     },
-    "Pset_CoveringFlooring": {
+    "PSET_COVERINGFLOORING": {
         "HasNonSkidSurface": {
             "name": "HasNonSkidSurface",
             "type": "<type IfcBoolean: <boolean>>",
@@ -6402,7 +6402,7 @@
             "unit": null
         }
     },
-    "Pset_Draughting": {
+    "PSET_DRAUGHTING": {
         "LayerName": {
             "name": "LayerName",
             "type": "<type IfcIdentifier: <string>>",
@@ -6429,7 +6429,7 @@
             }
         }
     },
-    "Pset_ElementShading": {
+    "PSET_ELEMENTSHADING": {
         "ShadingDeviceType": {
             "name": "ShadingDeviceType",
             "type": "<type IfcLabel: <string>>",
@@ -6476,7 +6476,7 @@
             "unit": null
         }
     },
-    "Pset_OpeningElementCommon": {
+    "PSET_OPENINGELEMENTCOMMON": {
         "Reference": {
             "name": "Reference",
             "type": "<type IfcIdentifier: <string>>",
@@ -6503,7 +6503,7 @@
             "unit": null
         }
     },
-    "Pset_QuantityTakeOff": {
+    "PSET_QUANTITYTAKEOFF": {
         "Reference": {
             "name": "Reference",
             "type": "<type IfcIdentifier: <string>>",
@@ -6530,7 +6530,7 @@
             "unit": null
         }
     },
-    "Pset_SiteCommon": {
+    "PSET_SITECOMMON": {
         "BuildableArea": {
             "name": "BuildableArea",
             "type": "<type IfcAreaMeasure: <real>>",
@@ -6547,7 +6547,7 @@
             "unit": "LENGTHUNIT"
         }
     },
-    "Pset_SpaceCommon": {
+    "PSET_SPACECOMMON": {
         "Reference": {
             "name": "Reference",
             "type": "<type IfcIdentifier: <string>>",
@@ -6609,7 +6609,7 @@
             "unit": null
         }
     },
-    "Pset_SpaceFireSafetyRequirements": {
+    "PSET_SPACEFIRESAFETYREQUIREMENTS": {
         "MainFireUse": {
             "name": "MainFireUse",
             "type": "<type IfcLabel: <string>>",
@@ -6656,7 +6656,7 @@
             "unit": null
         }
     },
-    "Pset_SpaceLightingRequirements": {
+    "PSET_SPACELIGHTINGREQUIREMENTS": {
         "ArtificialLighting": {
             "name": "ArtificialLighting",
             "type": "<type IfcBoolean: <boolean>>",
@@ -6668,7 +6668,7 @@
             "unit": "ILLUMINANCEUNIT"
         }
     },
-    "Pset_SpaceOccupancyRequirements": {
+    "PSET_SPACEOCCUPANCYREQUIREMENTS": {
         "OccupancyType": {
             "name": "OccupancyType",
             "type": "<type IfcLabel: <string>>",
@@ -6705,7 +6705,7 @@
             "unit": null
         }
     },
-    "Pset_SpaceParking": {
+    "PSET_SPACEPARKING": {
         "HandicapAccessible": {
             "name": "HandicapAccessible",
             "type": "<type IfcBoolean: <boolean>>",
@@ -6722,14 +6722,14 @@
             "unit": null
         }
     },
-    "Pset_SpaceParkingAisle": {
+    "PSET_SPACEPARKINGAISLE": {
         "IsOneWay": {
             "name": "IsOneWay",
             "type": "<type IfcBoolean: <boolean>>",
             "unit": null
         }
     },
-    "Pset_SpaceThermalRequirements": {
+    "PSET_SPACETHERMALREQUIREMENTS": {
         "SpaceTemperatureMax": {
             "name": "SpaceTemperatureMax",
             "type": "<type IfcThermodynamicTemperatureMeasure: <real>>",
@@ -6806,7 +6806,7 @@
             "unit": null
         }
     },
-    "Pset_TransportElementCommon": {
+    "PSET_TRANSPORTELEMENTCOMMON": {
         "Reference": {
             "name": "Reference",
             "type": "<type IfcIdentifier: <string>>",
@@ -6818,7 +6818,7 @@
             "unit": null
         }
     },
-    "Pset_TransportElementElevator": {
+    "PSET_TRANSPORTELEMENTELEVATOR": {
         "ClearWidth": {
             "name": "ClearWidth",
             "type": "<type IfcPositiveLengthMeasure: <type IfcLengthMeasure: <real>>>",
@@ -6835,7 +6835,7 @@
             "unit": "LENGTHUNIT"
         }
     },
-    "Pset_ZoneCommon": {
+    "PSET_ZONECOMMON": {
         "Reference": {
             "name": "Reference",
             "type": "<type IfcIdentifier: <string>>",
@@ -6867,7 +6867,7 @@
             "unit": null
         }
     },
-    "Pset_BeamCommon": {
+    "PSET_BEAMCOMMON": {
         "Reference": {
             "name": "Reference",
             "type": "<type IfcIdentifier: <string>>",
@@ -6899,7 +6899,7 @@
             "unit": null
         }
     },
-    "Pset_ColumnCommon": {
+    "PSET_COLUMNCOMMON": {
         "Reference": {
             "name": "Reference",
             "type": "<type IfcIdentifier: <string>>",
@@ -6926,7 +6926,7 @@
             "unit": null
         }
     },
-    "Pset_CurtainWallCommon": {
+    "PSET_CURTAINWALLCOMMON": {
         "Reference": {
             "name": "Reference",
             "type": "<type IfcIdentifier: <string>>",
@@ -6963,7 +6963,7 @@
             "unit": null
         }
     },
-    "Pset_DoorCommon": {
+    "PSET_DOORCOMMON": {
         "Reference": {
             "name": "Reference",
             "type": "<type IfcIdentifier: <string>>",
@@ -7025,7 +7025,7 @@
             "unit": null
         }
     },
-    "Pset_DoorWindowGlazingType": {
+    "PSET_DOORWINDOWGLAZINGTYPE": {
         "GlassLayers": {
             "name": "GlassLayers",
             "type": "<type IfcCountMeasure: <number>>",
@@ -7107,7 +7107,7 @@
             "unit": null
         }
     },
-    "Pset_DoorWindowShadingType": {
+    "PSET_DOORWINDOWSHADINGTYPE": {
         "ExternalShadingCoefficient": {
             "name": "ExternalShadingCoefficient",
             "type": "<type IfcPositiveRatioMeasure: <type IfcRatioMeasure: <real>>>",
@@ -7124,7 +7124,7 @@
             "unit": null
         }
     },
-    "Pset_MemberCommon": {
+    "PSET_MEMBERCOMMON": {
         "Reference": {
             "name": "Reference",
             "type": "<type IfcIdentifier: <string>>",
@@ -7156,7 +7156,7 @@
             "unit": null
         }
     },
-    "Pset_PlateCommon": {
+    "PSET_PLATECOMMON": {
         "Reference": {
             "name": "Reference",
             "type": "<type IfcIdentifier: <string>>",
@@ -7188,7 +7188,7 @@
             "unit": null
         }
     },
-    "Pset_RailingCommon": {
+    "PSET_RAILINGCOMMON": {
         "Reference": {
             "name": "Reference",
             "type": "<type IfcIdentifier: <string>>",
@@ -7210,7 +7210,7 @@
             "unit": null
         }
     },
-    "Pset_RampCommon": {
+    "PSET_RAMPCOMMON": {
         "Reference": {
             "name": "Reference",
             "type": "<type IfcIdentifier: <string>>",
@@ -7252,7 +7252,7 @@
             "unit": null
         }
     },
-    "Pset_RampFlightCommon": {
+    "PSET_RAMPFLIGHTCOMMON": {
         "Reference": {
             "name": "Reference",
             "type": "<type IfcIdentifier: <string>>",
@@ -7269,7 +7269,7 @@
             "unit": "PLANEANGLEUNIT"
         }
     },
-    "Pset_RoofCommon": {
+    "PSET_ROOFCOMMON": {
         "Reference": {
             "name": "Reference",
             "type": "<type IfcIdentifier: <string>>",
@@ -7296,7 +7296,7 @@
             "unit": "AREAUNIT"
         }
     },
-    "Pset_SlabCommon": {
+    "PSET_SLABCOMMON": {
         "Reference": {
             "name": "Reference",
             "type": "<type IfcIdentifier: <string>>",
@@ -7348,7 +7348,7 @@
             "unit": "PLANEANGLEUNIT"
         }
     },
-    "Pset_StairCommon": {
+    "PSET_STAIRCOMMON": {
         "Reference": {
             "name": "Reference",
             "type": "<type IfcIdentifier: <string>>",
@@ -7405,7 +7405,7 @@
             "unit": null
         }
     },
-    "Pset_StairFlightCommon": {
+    "PSET_STAIRFLIGHTCOMMON": {
         "Reference": {
             "name": "Reference",
             "type": "<type IfcIdentifier: <string>>",
@@ -7462,7 +7462,7 @@
             "unit": "LENGTHUNIT"
         }
     },
-    "Pset_WallCommon": {
+    "PSET_WALLCOMMON": {
         "Reference": {
             "name": "Reference",
             "type": "<type IfcIdentifier: <string>>",
@@ -7514,7 +7514,7 @@
             "unit": null
         }
     },
-    "Pset_WindowCommon": {
+    "PSET_WINDOWCOMMON": {
         "Reference": {
             "name": "Reference",
             "type": "<type IfcIdentifier: <string>>",
@@ -7561,7 +7561,7 @@
             "unit": null
         }
     },
-    "Pset_AirSideSystemInformation": {
+    "PSET_AIRSIDESYSTEMINFORMATION": {
         "Name": {
             "name": "Name",
             "type": "<type IfcLabel: <string>>",
@@ -7653,7 +7653,7 @@
             "unit": "POWERUNIT"
         }
     },
-    "Pset_DistributionChamberElementTypeFormedDuct": {
+    "PSET_DISTRIBUTIONCHAMBERELEMENTTYPEFORMEDDUCT": {
         "ClearWidth": {
             "name": "ClearWidth",
             "type": "<type IfcPositiveLengthMeasure: <type IfcLengthMeasure: <real>>>",
@@ -7700,7 +7700,7 @@
             "unit": null
         }
     },
-    "Pset_DistributionChamberElementTypeInspectionChamber": {
+    "PSET_DISTRIBUTIONCHAMBERELEMENTTYPEINSPECTIONCHAMBER": {
         "ChamberLengthOrRadius": {
             "name": "ChamberLengthOrRadius",
             "type": "<type IfcPositiveLengthMeasure: <type IfcLengthMeasure: <real>>>",
@@ -7767,7 +7767,7 @@
             "unit": null
         }
     },
-    "Pset_DistributionChamberElementTypeInspectionPit": {
+    "PSET_DISTRIBUTIONCHAMBERELEMENTTYPEINSPECTIONPIT": {
         "Length": {
             "name": "Length",
             "type": "<type IfcPositiveLengthMeasure: <type IfcLengthMeasure: <real>>>",
@@ -7784,7 +7784,7 @@
             "unit": "LENGTHUNIT"
         }
     },
-    "Pset_DistributionChamberElementTypeManhole": {
+    "PSET_DISTRIBUTIONCHAMBERELEMENTTYPEMANHOLE": {
         "InvertLevel": {
             "name": "InvertLevel",
             "type": "<type IfcLengthMeasure: <real>>",
@@ -7851,7 +7851,7 @@
             "unit": null
         }
     },
-    "Pset_DistributionChamberElementTypeMeterChamber": {
+    "PSET_DISTRIBUTIONCHAMBERELEMENTTYPEMETERCHAMBER": {
         "ChamberLengthOrRadius": {
             "name": "ChamberLengthOrRadius",
             "type": "<type IfcPositiveLengthMeasure: <type IfcLengthMeasure: <real>>>",
@@ -7888,7 +7888,7 @@
             "unit": null
         }
     },
-    "Pset_DistributionChamberElementTypeSump": {
+    "PSET_DISTRIBUTIONCHAMBERELEMENTTYPESUMP": {
         "Length": {
             "name": "Length",
             "type": "<type IfcPositiveLengthMeasure: <type IfcLengthMeasure: <real>>>",
@@ -7905,7 +7905,7 @@
             "unit": "LENGTHUNIT"
         }
     },
-    "Pset_DistributionChamberElementTypeTrench": {
+    "PSET_DISTRIBUTIONCHAMBERELEMENTTYPETRENCH": {
         "Width": {
             "name": "Width",
             "type": "<type IfcPositiveLengthMeasure: <type IfcLengthMeasure: <real>>>",
@@ -7922,7 +7922,7 @@
             "unit": "LENGTHUNIT"
         }
     },
-    "Pset_DistributionChamberElementTypeValveChamber": {
+    "PSET_DISTRIBUTIONCHAMBERELEMENTTYPEVALVECHAMBER": {
         "ChamberLengthOrRadius": {
             "name": "ChamberLengthOrRadius",
             "type": "<type IfcPositiveLengthMeasure: <type IfcLengthMeasure: <real>>>",
@@ -7959,14 +7959,14 @@
             "unit": null
         }
     },
-    "Pset_DistributionFlowElementCommon": {
+    "PSET_DISTRIBUTIONFLOWELEMENTCOMMON": {
         "Reference": {
             "name": "Reference",
             "type": "<type IfcIdentifier: <string>>",
             "unit": null
         }
     },
-    "Pset_DistributionPortDuct": {
+    "PSET_DISTRIBUTIONPORTDUCT": {
         "PortNumber": {
             "name": "PortNumber",
             "type": "<type IfcInteger: <integer>>",
@@ -7978,7 +7978,7 @@
             "unit": null
         }
     },
-    "Pset_DistributionPortPipe": {
+    "PSET_DISTRIBUTIONPORTPIPE": {
         "PortNumber": {
             "name": "PortNumber",
             "type": "<type IfcInteger: <integer>>",
@@ -7990,28 +7990,28 @@
             "unit": null
         }
     },
-    "Pset_EnergyConversionDeviceCoil": {
+    "PSET_ENERGYCONVERSIONDEVICECOIL": {
         "HasSoundAttentuation": {
             "name": "HasSoundAttentuation",
             "type": "<type IfcBoolean: <boolean>>",
             "unit": null
         }
     },
-    "Pset_EnergyConversionDeviceSpaceHeaterPanel": {
+    "PSET_ENERGYCONVERSIONDEVICESPACEHEATERPANEL": {
         "NumberOfPanels": {
             "name": "NumberOfPanels",
             "type": "<type IfcInteger: <integer>>",
             "unit": null
         }
     },
-    "Pset_EnergyConversionDeviceSpaceHeaterSectional": {
+    "PSET_ENERGYCONVERSIONDEVICESPACEHEATERSECTIONAL": {
         "NumberOfSections": {
             "name": "NumberOfSections",
             "type": "<type IfcInteger: <integer>>",
             "unit": null
         }
     },
-    "Pset_FireRatingProperties": {
+    "PSET_FIRERATINGPROPERTIES": {
         "FireResistanceRating": {
             "name": "FireResistanceRating",
             "type": "<type IfcLabel: <string>>",
@@ -8028,21 +8028,21 @@
             "unit": null
         }
     },
-    "Pset_FlowControllerDamper": {
+    "PSET_FLOWCONTROLLERDAMPER": {
         "SizingMethod": {
             "name": "SizingMethod",
             "type": "<type IfcLabel: <string>>",
             "unit": null
         }
     },
-    "Pset_FlowControllerFlowMeter": {
+    "PSET_FLOWCONTROLLERFLOWMETER": {
         "Purpose": {
             "name": "Purpose",
             "type": "<type IfcLabel: <string>>",
             "unit": null
         }
     },
-    "Pset_FlowFittingDuctFitting": {
+    "PSET_FLOWFITTINGDUCTFITTING": {
         "AbsoluteRoughnessFactor": {
             "name": "AbsoluteRoughnessFactor",
             "type": "<type IfcPositiveLengthMeasure: <type IfcLengthMeasure: <real>>>",
@@ -8059,7 +8059,7 @@
             "unit": null
         }
     },
-    "Pset_FlowFittingPipeFitting": {
+    "PSET_FLOWFITTINGPIPEFITTING": {
         "InteriorRoughnessCoefficient": {
             "name": "InteriorRoughnessCoefficient",
             "type": "<type IfcPositiveLengthMeasure: <type IfcLengthMeasure: <real>>>",
@@ -8071,14 +8071,14 @@
             "unit": null
         }
     },
-    "Pset_FlowMovingDeviceCompressor": {
+    "PSET_FLOWMOVINGDEVICECOMPRESSOR": {
         "ImpellerDiameter": {
             "name": "ImpellerDiameter",
             "type": "<type IfcPositiveLengthMeasure: <type IfcLengthMeasure: <real>>>",
             "unit": "LENGTHUNIT"
         }
     },
-    "Pset_FlowMovingDeviceFan": {
+    "PSET_FLOWMOVINGDEVICEFAN": {
         "DischargeType": {
             "name": "DischargeType",
             "type": "<type IfcLabel: <string>>",
@@ -8115,7 +8115,7 @@
             "unit": "LENGTHUNIT"
         }
     },
-    "Pset_FlowMovingDeviceFanCentrifugal": {
+    "PSET_FLOWMOVINGDEVICEFANCENTRIFUGAL": {
         "DischargePosition": {
             "name": "DischargePosition",
             "type": "<type IfcLabel: <string>>",
@@ -8132,7 +8132,7 @@
             "unit": null
         }
     },
-    "Pset_FlowMovingDevicePump": {
+    "PSET_FLOWMOVINGDEVICEPUMP": {
         "ImpellerDiameter": {
             "name": "ImpellerDiameter",
             "type": "<type IfcPositiveLengthMeasure: <type IfcLengthMeasure: <real>>>",
@@ -8149,7 +8149,7 @@
             "unit": null
         }
     },
-    "Pset_FlowSegmentDuctSegment": {
+    "PSET_FLOWSEGMENTDUCTSEGMENT": {
         "MaterialThickness": {
             "name": "MaterialThickness",
             "type": "<type IfcPositiveLengthMeasure: <type IfcLengthMeasure: <real>>>",
@@ -8176,7 +8176,7 @@
             "unit": null
         }
     },
-    "Pset_FlowSegmentPipeSegment": {
+    "PSET_FLOWSEGMENTPIPESEGMENT": {
         "InteriorRoughnessCoefficient": {
             "name": "InteriorRoughnessCoefficient",
             "type": "<type IfcPositiveLengthMeasure: <type IfcLengthMeasure: <real>>>",
@@ -8203,7 +8203,7 @@
             "unit": "LENGTHUNIT"
         }
     },
-    "Pset_FlowStorageDeviceTank": {
+    "PSET_FLOWSTORAGEDEVICETANK": {
         "TankComposition": {
             "name": "TankComposition",
             "type": "<type IfcLabel: <string>>",
@@ -8220,7 +8220,7 @@
             "unit": null
         }
     },
-    "Pset_FlowTerminalAirTerminal": {
+    "PSET_FLOWTERMINALAIRTERMINAL": {
         "AirflowType": {
             "name": "AirflowType",
             "type": "<type IfcLabel: <string>>",
@@ -8232,7 +8232,7 @@
             "unit": null
         }
     },
-    "Pset_OutsideDesignCriteria": {
+    "PSET_OUTSIDEDESIGNCRITERIA": {
         "HeatingDryBulb": {
             "name": "HeatingDryBulb",
             "type": "<type IfcThermodynamicTemperatureMeasure: <real>>",
@@ -8289,7 +8289,7 @@
             "unit": null
         }
     },
-    "Pset_SpaceThermalDesign": {
+    "PSET_SPACETHERMALDESIGN": {
         "CoolingDesignAirflow": {
             "name": "CoolingDesignAirflow",
             "type": "<type IfcVolumetricFlowRateMeasure: <real>>",
@@ -8356,7 +8356,7 @@
             "unit": null
         }
     },
-    "Pset_ThermalLoadAggregate": {
+    "PSET_THERMALLOADAGGREGATE": {
         "TotalCoolingLoad": {
             "name": "TotalCoolingLoad",
             "type": "<type IfcPowerMeasure: <real>>",
@@ -8393,7 +8393,7 @@
             "unit": null
         }
     },
-    "Pset_ThermalLoadDesignCriteria": {
+    "PSET_THERMALLOADDESIGNCRITERIA": {
         "OccupancyDiversity": {
             "name": "OccupancyDiversity",
             "type": "<type IfcPositiveRatioMeasure: <type IfcRatioMeasure: <real>>>",
@@ -8425,7 +8425,7 @@
             "unit": null
         }
     },
-    "Pset_UtilityConsumption": {
+    "PSET_UTILITYCONSUMPTION": {
         "Heat": {
             "name": "Heat",
             "type": "<entity IfcTimeSeries>",
@@ -8452,7 +8452,7 @@
             "unit": null
         }
     },
-    "Pset_DiscreteAccessoryAnchorBolt": {
+    "PSET_DISCRETEACCESSORYANCHORBOLT": {
         "AnchorBoltLength": {
             "name": "AnchorBoltLength",
             "type": "<type IfcPositiveLengthMeasure: <type IfcLengthMeasure: <real>>>",
@@ -8474,7 +8474,7 @@
             "unit": "LENGTHUNIT"
         }
     },
-    "Pset_DiscreteAccessoryColumnShoe": {
+    "PSET_DISCRETEACCESSORYCOLUMNSHOE": {
         "ColumnShoeBasePlateThickness": {
             "name": "ColumnShoeBasePlateThickness",
             "type": "<type IfcPositiveLengthMeasure: <type IfcLengthMeasure: <real>>>",
@@ -8506,7 +8506,7 @@
             "unit": "LENGTHUNIT"
         }
     },
-    "Pset_DiscreteAccessoryCornerFixingPlate": {
+    "PSET_DISCRETEACCESSORYCORNERFIXINGPLATE": {
         "CornerFixingPlateLength": {
             "name": "CornerFixingPlateLength",
             "type": "<type IfcPositiveLengthMeasure: <type IfcLengthMeasure: <real>>>",
@@ -8528,7 +8528,7 @@
             "unit": "LENGTHUNIT"
         }
     },
-    "Pset_DiscreteAccessoryDiagonalTrussConnector": {
+    "PSET_DISCRETEACCESSORYDIAGONALTRUSSCONNECTOR": {
         "DiagonalTrussHeight": {
             "name": "DiagonalTrussHeight",
             "type": "<type IfcPositiveLengthMeasure: <type IfcLengthMeasure: <real>>>",
@@ -8560,7 +8560,7 @@
             "unit": "LENGTHUNIT"
         }
     },
-    "Pset_DiscreteAccessoryEdgeFixingPlate": {
+    "PSET_DISCRETEACCESSORYEDGEFIXINGPLATE": {
         "EdgeFixingPlateLength": {
             "name": "EdgeFixingPlateLength",
             "type": "<type IfcPositiveLengthMeasure: <type IfcLengthMeasure: <real>>>",
@@ -8582,7 +8582,7 @@
             "unit": "LENGTHUNIT"
         }
     },
-    "Pset_DiscreteAccessoryFixingSocket": {
+    "PSET_DISCRETEACCESSORYFIXINGSOCKET": {
         "FixingSocketTypeReference": {
             "name": "FixingSocketTypeReference",
             "type": "<entity IfcExternalReference>",
@@ -8604,7 +8604,7 @@
             "unit": "LENGTHUNIT"
         }
     },
-    "Pset_DiscreteAccessoryLadderTrussConnector": {
+    "PSET_DISCRETEACCESSORYLADDERTRUSSCONNECTOR": {
         "LadderTrussHeight": {
             "name": "LadderTrussHeight",
             "type": "<type IfcPositiveLengthMeasure: <type IfcLengthMeasure: <real>>>",
@@ -8636,7 +8636,7 @@
             "unit": "LENGTHUNIT"
         }
     },
-    "Pset_DiscreteAccessoryStandardFixingPlate": {
+    "PSET_DISCRETEACCESSORYSTANDARDFIXINGPLATE": {
         "StandardFixingPlateWidth": {
             "name": "StandardFixingPlateWidth",
             "type": "<type IfcPositiveLengthMeasure: <type IfcLengthMeasure: <real>>>",
@@ -8653,7 +8653,7 @@
             "unit": "LENGTHUNIT"
         }
     },
-    "Pset_DiscreteAccessoryWireLoop": {
+    "PSET_DISCRETEACCESSORYWIRELOOP": {
         "WireLoopBasePlateThickness": {
             "name": "WireLoopBasePlateThickness",
             "type": "<type IfcPositiveLengthMeasure: <type IfcLengthMeasure: <real>>>",
@@ -8685,7 +8685,7 @@
             "unit": "LENGTHUNIT"
         }
     },
-    "Pset_Asset": {
+    "PSET_ASSET": {
         "AssetAccountingType": {
             "name": "AssetAccountingType",
             "type": "<type IfcLabel: <string>>",
@@ -8702,7 +8702,7 @@
             "unit": null
         }
     },
-    "Pset_FurnitureTypeChair": {
+    "PSET_FURNITURETYPECHAIR": {
         "SeatingHeight": {
             "name": "SeatingHeight",
             "type": "<type IfcPositiveLengthMeasure: <type IfcLengthMeasure: <real>>>",
@@ -8719,7 +8719,7 @@
             "unit": "LENGTHUNIT"
         }
     },
-    "Pset_FurnitureTypeCommon": {
+    "PSET_FURNITURETYPECOMMON": {
         "Description": {
             "name": "Description",
             "type": "<type IfcText: <string>>",
@@ -8751,21 +8751,21 @@
             "unit": null
         }
     },
-    "Pset_FurnitureTypeDesk": {
+    "PSET_FURNITURETYPEDESK": {
         "WorksurfaceArea": {
             "name": "WorksurfaceArea",
             "type": "<type IfcAreaMeasure: <real>>",
             "unit": "AREAUNIT"
         }
     },
-    "Pset_FurnitureTypeFileCabinet": {
+    "PSET_FURNITURETYPEFILECABINET": {
         "WithLock": {
             "name": "WithLock",
             "type": "<type IfcBoolean: <boolean>>",
             "unit": null
         }
     },
-    "Pset_FurnitureTypeTable": {
+    "PSET_FURNITURETYPETABLE": {
         "WorksurfaceArea": {
             "name": "WorksurfaceArea",
             "type": "<type IfcAreaMeasure: <real>>",
@@ -8777,7 +8777,7 @@
             "unit": null
         }
     },
-    "Pset_ManufacturerOccurrence": {
+    "PSET_MANUFACTUREROCCURRENCE": {
         "AcquisitionDate": {
             "name": "AcquisitionDate",
             "type": "<entity IfcCalendarDate>",
@@ -8799,7 +8799,7 @@
             "unit": null
         }
     },
-    "Pset_ManufacturerTypeInformation": {
+    "PSET_MANUFACTURERTYPEINFORMATION": {
         "ArticleNumber": {
             "name": "ArticleNumber",
             "type": "<type IfcIdentifier: <string>>",
@@ -8826,7 +8826,7 @@
             "unit": null
         }
     },
-    "Pset_PropertyAgreement": {
+    "PSET_PROPERTYAGREEMENT": {
         "AgreementType": {
             "name": "AgreementType",
             "type": "<type IfcLabel: <string>>",
@@ -8888,14 +8888,14 @@
             "unit": null
         }
     },
-    "Pset_Reliability": {
+    "PSET_RELIABILITY": {
         "MeanTimeBetweenFailure": {
             "name": "MeanTimeBetweenFailure",
             "type": "<type IfcTimeMeasure: <real>>",
             "unit": "TIMEUNIT"
         }
     },
-    "Pset_Risk": {
+    "PSET_RISK": {
         "RiskType": {
             "name": "RiskType",
             "type": "<type IfcLabel: <string>>",
@@ -8952,7 +8952,7 @@
             "unit": null
         }
     },
-    "Pset_SystemFurnitureElementTypeCommon": {
+    "PSET_SYSTEMFURNITUREELEMENTTYPECOMMON": {
         "IsUsed": {
             "name": "IsUsed",
             "type": "<type IfcBoolean: <boolean>>",
@@ -8979,7 +8979,7 @@
             "unit": null
         }
     },
-    "Pset_SystemFurnitureElementTypePanel": {
+    "PSET_SYSTEMFURNITUREELEMENTTYPEPANEL": {
         "HasOpening": {
             "name": "HasOpening",
             "type": "<type IfcBoolean: <boolean>>",
@@ -8996,7 +8996,7 @@
             "unit": "LENGTHUNIT"
         }
     },
-    "Pset_SystemFurnitureElementTypeWorkSurface": {
+    "PSET_SYSTEMFURNITUREELEMENTTYPEWORKSURFACE": {
         "UsePurpose": {
             "name": "UsePurpose",
             "type": "<type IfcLabel: <string>>",
@@ -9023,7 +9023,7 @@
             "unit": null
         }
     },
-    "Pset_Warranty": {
+    "PSET_WARRANTY": {
         "WarrantyIdentifier": {
             "name": "WarrantyIdentifier",
             "type": "<type IfcIdentifier: <string>>",
@@ -9065,7 +9065,7 @@
             "unit": null
         }
     },
-    "Pset_ProjectOrderChangeOrder": {
+    "PSET_PROJECTORDERCHANGEORDER": {
         "ChangeDescription": {
             "name": "ChangeDescription",
             "type": "<type IfcText: <string>>",
@@ -9082,7 +9082,7 @@
             "unit": null
         }
     },
-    "Pset_ProjectOrderMaintenanceWorkOrder": {
+    "PSET_PROJECTORDERMAINTENANCEWORKORDER": {
         "ProductDescription": {
             "name": "ProductDescription",
             "type": "<type IfcText: <string>>",
@@ -9134,7 +9134,7 @@
             "unit": "TIMEUNIT"
         }
     },
-    "Pset_ProjectOrderMoveOrder": {
+    "PSET_PROJECTORDERMOVEORDER": {
         "MoveDescription": {
             "name": "MoveDescription",
             "type": "<type IfcText: <string>>",
@@ -9146,7 +9146,7 @@
             "unit": null
         }
     },
-    "Pset_ProjectOrderPurchaseOrder": {
+    "PSET_PROJECTORDERPURCHASEORDER": {
         "IsFOB": {
             "name": "IsFOB",
             "type": "<type IfcBoolean: <boolean>>",
@@ -9158,7 +9158,7 @@
             "unit": null
         }
     },
-    "Pset_ProjectOrderWorkOrder": {
+    "PSET_PROJECTORDERWORKORDER": {
         "ProductDescription": {
             "name": "ProductDescription",
             "type": "<type IfcText: <string>>",
@@ -9190,7 +9190,7 @@
             "unit": null
         }
     },
-    "Pset_ConcreteElementGeneral": {
+    "PSET_CONCRETEELEMENTGENERAL": {
         "StructuralClass": {
             "name": "StructuralClass",
             "type": "<type IfcLabel: <string>>",
@@ -9242,7 +9242,7 @@
             "unit": "LENGTHUNIT"
         }
     },
-    "Pset_ConcreteElementQuantityGeneral": {
+    "PSET_CONCRETEELEMENTQUANTITYGENERAL": {
         "TotalConcreteQuantity": {
             "name": "TotalConcreteQuantity",
             "type": "<type IfcVolumeMeasure: <real>>",
@@ -9324,7 +9324,7 @@
             }
         }
     },
-    "Pset_ConcreteElementSurfaceFinishQuantityGeneral": {
+    "PSET_CONCRETEELEMENTSURFACEFINISHQUANTITYGENERAL": {
         "FormSurface": {
             "name": "FormSurface",
             "props": {
@@ -9371,7 +9371,7 @@
             "unit": null
         }
     },
-    "Pset_PrecastConcreteElementGeneral": {
+    "PSET_PRECASTCONCRETEELEMENTGENERAL": {
         "TypeDesignator": {
             "name": "TypeDesignator",
             "type": "<type IfcLabel: <string>>",
@@ -9463,7 +9463,7 @@
             "unit": null
         }
     },
-    "Pset_ReinforcementBarCountOfIndependentFooting": {
+    "PSET_REINFORCEMENTBARCOUNTOFINDEPENDENTFOOTING": {
         "Description": {
             "name": "Description",
             "type": "<type IfcText: <string>>",
@@ -9495,7 +9495,7 @@
             "unit": null
         }
     },
-    "Pset_ReinforcementBarPitchOfBeam": {
+    "PSET_REINFORCEMENTBARPITCHOFBEAM": {
         "Description": {
             "name": "Description",
             "type": "<type IfcText: <string>>",
@@ -9517,7 +9517,7 @@
             "unit": "LENGTHUNIT"
         }
     },
-    "Pset_ReinforcementBarPitchOfColumn": {
+    "PSET_REINFORCEMENTBARPITCHOFCOLUMN": {
         "Description": {
             "name": "Description",
             "type": "<type IfcText: <string>>",
@@ -9559,7 +9559,7 @@
             "unit": null
         }
     },
-    "Pset_ReinforcementBarPitchOfContinuousFooting": {
+    "PSET_REINFORCEMENTBARPITCHOFCONTINUOUSFOOTING": {
         "Description": {
             "name": "Description",
             "type": "<type IfcText: <string>>",
@@ -9581,7 +9581,7 @@
             "unit": "LENGTHUNIT"
         }
     },
-    "Pset_ReinforcementBarPitchOfSlab": {
+    "PSET_REINFORCEMENTBARPITCHOFSLAB": {
         "Description": {
             "name": "Description",
             "type": "<type IfcText: <string>>",
@@ -9653,7 +9653,7 @@
             "unit": "LENGTHUNIT"
         }
     },
-    "Pset_ReinforcementBarPitchOfWall": {
+    "PSET_REINFORCEMENTBARPITCHOFWALL": {
         "Description": {
             "name": "Description",
             "type": "<type IfcText: <string>>",
@@ -9685,7 +9685,7 @@
             "unit": "LENGTHUNIT"
         }
     },
-    "Pset_ReinforcingBarBendingsBECCommon": {
+    "PSET_REINFORCINGBARBENDINGSBECCOMMON": {
         "BECBarShapeCode": {
             "name": "BECBarShapeCode",
             "type": "<type IfcLabel: <string>>",
@@ -9792,7 +9792,7 @@
             "unit": "LENGTHUNIT"
         }
     },
-    "Pset_ReinforcingBarBendingsBS8666Common": {
+    "PSET_REINFORCINGBARBENDINGSBS8666COMMON": {
         "BS8666ShapeCode": {
             "name": "BS8666ShapeCode",
             "type": "<type IfcLabel: <string>>",
@@ -9829,7 +9829,7 @@
             "unit": "LENGTHUNIT"
         }
     },
-    "Pset_ReinforcingBarBendingsDIN135610Common": {
+    "PSET_REINFORCINGBARBENDINGSDIN135610COMMON": {
         "DIN135610ShapeCode": {
             "name": "DIN135610ShapeCode",
             "type": "<type IfcLabel: <string>>",
@@ -9866,7 +9866,7 @@
             "unit": "LENGTHUNIT"
         }
     },
-    "Pset_ReinforcingBarBendingsISOCD3766Common": {
+    "PSET_REINFORCINGBARBENDINGSISOCD3766COMMON": {
         "ISOCD3766ShapeCode": {
             "name": "ISOCD3766ShapeCode",
             "type": "<type IfcLabel: <string>>",

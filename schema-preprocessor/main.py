@@ -74,7 +74,7 @@ def serialize_psets(schema, out_path):
     psets = util.pset.PsetQto(schema.name()).get_applicable()
 
     for pset in psets:
-        data[pset.Name] = pset_def(pset, schema)
+        data[pset.Name.upper()] = pset_def(pset, schema)
 
     with open(out_path, 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=4)
