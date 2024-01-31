@@ -1,7 +1,17 @@
 const {getCategory} = require("./dicts");
 
+const _formatAttr = (def, value) => {
+    if (def) {
+        return {value, ...def};
+    }
+    return value;
+}
+
 const attrs = (el, res) => {
-    Object.assign(res, el.attributes);
+    for(const [key, value] of Object.entries(el.attributes)) {
+        const attrDef = el.getAttrDefs(key);
+        res[key] = _formatAttr(attrDef, value);
+    }
 }
 
 const nodeChildren = (el, res) => {

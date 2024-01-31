@@ -49,6 +49,10 @@ class Element {
         this._id = _id;
     }
 
+    getAttrDefs(attrName) {
+        return this.parser.schema.getAttrsDef(this.ifcType, attrName);
+    }
+
     // used for key in parent json
     get groupingName() {
         return this._groupName(this);
