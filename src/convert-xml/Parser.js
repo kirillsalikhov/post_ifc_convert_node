@@ -35,7 +35,7 @@ class Parser {
     }
     // Called after parse, because at this time we know schemaName
     async initSchema() {
-        this.schema = new Schema(this.getSchemaName());
+        this.schema = new Schema(this.getSchemaName(), this.getUnits());
         await this.schema.init();
     }
 
@@ -74,7 +74,7 @@ class Parser {
         return this
             .root
             .children[0] // ifc
-            .children.find((x) => x.tagName === "decomposition");
+            .children.find(tagName("decomposition"));
     }
 
     getSchemaName() {
@@ -85,6 +85,14 @@ class Parser {
             .children.find(tagName("file_schema"))
             .children.find(tagName("schema_identifiers"))
             .text
+    }
+
+    getUnits() {
+        return this
+            .root
+            .children[0]
+            .children.find(tagName("units"))
+            .children
     }
 
 }

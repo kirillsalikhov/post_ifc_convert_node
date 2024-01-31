@@ -1,5 +1,6 @@
 const fs = require('fs-extra');
 const path = require('path');
+const {createUnitIds} = require("./unit");
 
 // TODO probably move somewhere
 // Attrs that are not in entities.json but is ok not to have types for them
@@ -10,8 +11,9 @@ class Schema {
     entityAttrsIdx = null;
     psetsIdx = null;
 
-    constructor(name) {
+    constructor(name, unitEls) {
         this.name = name
+        this.unitIdx = createUnitIds(unitEls);
     }
 
     async init() {
@@ -39,13 +41,19 @@ class Schema {
 
         if (!attr) {
             if (IGNORE_ATTRS.has(attrName)) {
+                // that's ok that we ignore some fields like id
                 return null;
             }
             if (this._ifcOpenShellAttrsMods(ifcType, attrName)) {
-                return this._ifcOpenShellAttrsMods(ifcType, attrName);
+                attr = this._ifcOpenShellAttrsMods(ifcType, attrName);
             }
+        }
 
-            console.warn(`No ${attrName} for ifcType: ${ifcType}`)
+        if (attr) {
+            const unit = this.unitIdx[attr.unit] || null;
+            attr = {...attr, unit};
+        } else {
+            console.warn(`No ${attrName} for ifcType: ${ifcType}`);
         }
         return attr;
     }
