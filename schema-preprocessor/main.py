@@ -93,9 +93,13 @@ def pset_def(pset, shema):
         declaration = schema.declaration_by_name(type_name.strip())
         return str(declaration)
 
+    # it's needed because there are mismatches in prop names in xml
+    def _propKey(prop):
+        return prop.Name.upper()
+
     def _serialize_prop(prop):
         return {
-            "name": prop.Name,
+            "name": _propKey(prop),
             "type": _type_str(prop.PrimaryMeasureType),
             "unit": _unit_type(prop.PrimaryUnit)
         }
@@ -104,15 +108,15 @@ def pset_def(pset, shema):
     for prop in pset.HasPropertyTemplates:
         if (prop.TemplateType == "P_COMPLEX"):
             prop_d = {
-                "name": prop.Name,
+                "name": _propKey(prop),
                 "props": {}
             }
             for sub_prop in prop.HasPropertyTemplates:
-                prop_d["props"][sub_prop.Name] = _serialize_prop(sub_prop)
+                prop_d["props"][_propKey(sub_prop)] = _serialize_prop(sub_prop)
         else:
             prop_d = _serialize_prop(prop)
 
-        pset_d[prop.Name] = prop_d
+        pset_d[_propKey(prop)] = prop_d
 
     return pset_d
 
