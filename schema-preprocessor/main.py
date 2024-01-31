@@ -99,7 +99,6 @@ def pset_def(pset, shema):
 
     def _serialize_prop(prop):
         return {
-            "name": _propKey(prop),
             "type": _type_str(prop.PrimaryMeasureType),
             "unit": _unit_type(prop.PrimaryUnit)
         }
@@ -108,7 +107,6 @@ def pset_def(pset, shema):
     for prop in pset.HasPropertyTemplates:
         if (prop.TemplateType == "P_COMPLEX"):
             prop_d = {
-                "name": _propKey(prop),
                 "props": {}
             }
             for sub_prop in prop.HasPropertyTemplates:
