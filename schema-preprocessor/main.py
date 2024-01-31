@@ -76,6 +76,10 @@ def serialize_psets(schema, out_path):
     for pset in psets:
         data[pset.Name.upper()] = pset_def(pset, schema)
 
+    if (schema.name() == "IFC2X3"):
+        for extra_pset in extra_ifc2x3_psets(schema):
+            data[extra_pset.get_name()] = extra_pset.as_json()
+
     with open(out_path, 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=4)
 
@@ -117,6 +121,40 @@ def pset_def(pset, shema):
         pset_d[_propKey(prop)] = prop_d
 
     return pset_d
+
+
+class ExtraPset():
+    def __init__(self, name, schema):
+        self.schema = schema
+        self.name = name
+        self.props_defs = {}
+
+    def add_prop(self, name, prop_type_name):
+        prop_type = self.schema.declaration_by_name(prop_type_name)
+        self.props_defs[name.upper()] = {
+            "type": str(prop_type),
+            "unit": get_unit_type(prop_type)
+        }
+        return self
+
+    def get_name(self):
+        return self.name.upper()
+
+    def as_json(self):
+        return self.props_defs
+
+
+def extra_ifc2x3_psets(schema):
+    # https://standards.buildingsmart.org/documents/Implementation/IFC_Implementation_Agreements/CV-2x3-157.html
+    Pset_ProvisionForVoid = ExtraPset("Pset_ProvisionForVoid", schema) \
+        .add_prop("Width", "IfcLengthMeasure") \
+        .add_prop("Height", "IfcLengthMeasure") \
+        .add_prop("Diameter", "IfcLengthMeasure") \
+        .add_prop("Depth", "IfcLengthMeasure") \
+        .add_prop("Shape", "IfcLabel") \
+        .add_prop("System", "IfcLabel") \
+
+    return [Pset_ProvisionForVoid]
 
 GEN_PATH = "../src/convert-xml/schema/gen"
 

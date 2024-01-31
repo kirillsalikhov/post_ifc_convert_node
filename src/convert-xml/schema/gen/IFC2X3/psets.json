@@ -8056,5 +8056,31 @@
             "type": "<type IfcPlaneAngleMeasure: <real>>",
             "unit": "PLANEANGLEUNIT"
         }
+    },
+    "PSET_PROVISIONFORVOID": {
+        "WIDTH": {
+            "type": "<type IfcLengthMeasure: <real>>",
+            "unit": "LENGTHUNIT"
+        },
+        "HEIGHT": {
+            "type": "<type IfcLengthMeasure: <real>>",
+            "unit": "LENGTHUNIT"
+        },
+        "DIAMETER": {
+            "type": "<type IfcLengthMeasure: <real>>",
+            "unit": "LENGTHUNIT"
+        },
+        "DEPTH": {
+            "type": "<type IfcLengthMeasure: <real>>",
+            "unit": "LENGTHUNIT"
+        },
+        "SHAPE": {
+            "type": "<type IfcLabel: <string>>",
+            "unit": null
+        },
+        "SYSTEM": {
+            "type": "<type IfcLabel: <string>>",
+            "unit": null
+        }
     }
 }
