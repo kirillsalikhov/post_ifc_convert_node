@@ -56,7 +56,6 @@ def entity_attr_defs(entity):
         attr_type = a.type_of_attribute()
 
         attr_d = {
-            "name": attr_name,
             "type": str(attr_type),
             "unit": None
         }
