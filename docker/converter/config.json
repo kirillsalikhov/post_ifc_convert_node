@@ -1,0 +1,30 @@
+{
+  "name": "post_ifc_convert_node",
+  "input": [
+    {
+      "name": "xml",
+      "type": "file"
+    },
+    {
+      "name": "glb",
+      "type": "file"
+    },
+    {
+      "name": "doubleSided",
+      "type": "boolean",
+      "default": "false"
+    }
+  ],
+  "output": [
+    {
+      "name": "output",
+      "type": "folder"
+    },
+    {
+      "name": "objects",
+      "type": "file",
+      "regexp": "/objects\\.json/",
+      "ext": "json"
+    }
+  ]
+}
