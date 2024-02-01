@@ -5,11 +5,13 @@ const {
     type,
     nodeChildren,
     dataChildren,
+    dataChildrenArr,
+    dataChildrenPset,
     typeTitle,
     nameTitle,
     customTitle,
-    dataChildrenArr,
     singleAttr,
+    singleAttrWithDef,
     categoryId,
     revitFamilyAttrs
 } = require("./accessors");
@@ -28,12 +30,12 @@ const _serializers = {
     ]), typeTitle],
 
     "IfcPropertySingleValue": [singleAttr("NominalValue"), nameTitle],
-    "IfcQuantityLength": [singleAttr("LengthValue"), nameTitle],
-    "IfcQuantityVolume": [singleAttr("VolumeValue"), nameTitle],
-    "IfcQuantityArea": [singleAttr("AreaValue"), nameTitle],
+    "IfcQuantityLength": [singleAttrWithDef("LengthValue"), nameTitle],
+    "IfcQuantityVolume": [singleAttrWithDef("VolumeValue"), nameTitle],
+    "IfcQuantityArea": [singleAttrWithDef("AreaValue"), nameTitle],
 
     "IfcPropertySet": [combineModifiers([
-        dataChildren
+        dataChildrenPset
     ]), nameTitle],
     "IfcElementQuantity": [combineModifiers([
         dataChildren

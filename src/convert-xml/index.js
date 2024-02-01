@@ -10,6 +10,7 @@ const {Parser} = require("./Parser");
 async function convertXml(inputXml, output) {
     const parser = new Parser(inputXml);
     await parser.readXML();
+    await parser.initSchema()
 
     // TODO revisit this, when change gltf structure (flat, rename name=>_id)
     // setting internal _id,

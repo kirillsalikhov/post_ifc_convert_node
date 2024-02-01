@@ -2,8 +2,13 @@ const fs = require("fs");
 const sax = require("sax");
 const StreamPromises = require("stream/promises");
 const {Element} = require("./Element");
+const {Schema} = require("./schema");
+
+const tagName = (name) => el => el.tagName === name;
 
 class Parser {
+    schema = null;
+
     constructor(inputPath) {
         this.inputPath = inputPath;
     }
@@ -27,6 +32,11 @@ class Parser {
         await StreamPromises.pipeline(
             fs.createReadStream(this.inputPath),
             saxStream);
+    }
+    // Called after parse, because at this time we know schemaName
+    async initSchema() {
+        this.schema = new Schema(this.getSchemaName(), this.getUnits());
+        await this.schema.init();
     }
 
     newCurrentElement({name, attributes}) {
@@ -64,7 +74,25 @@ class Parser {
         return this
             .root
             .children[0] // ifc
-            .children.find((x) => x.tagName === "decomposition");
+            .children.find(tagName("decomposition"));
+    }
+
+    getSchemaName() {
+        return this
+            .root
+            .children[0]
+            .children.find(tagName("header"))
+            .children.find(tagName("file_schema"))
+            .children.find(tagName("schema_identifiers"))
+            .text
+    }
+
+    getUnits() {
+        return this
+            .root
+            .children[0]
+            .children.find(tagName("units"))
+            .children
     }
 
 }
