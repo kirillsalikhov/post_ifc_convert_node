@@ -21,6 +21,5 @@ module.exports = ({ xml, glb, doubleSided, output}) => {
         commandLines.push(`mv ${output}/${file} ${intermediate}/${file}`);
     }
     commandLines.push(`rm -rf ${intermediate}`);
-
     return commandLines.join(' && ');
 };
