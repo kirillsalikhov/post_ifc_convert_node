@@ -11,6 +11,17 @@ import ifcopenshell.util.unit
 import ifcopenshell.util.element
 from ifcopenshell import util
 
+from utils import erp_short_type
+
+# TODO move somehere
+# debug func
+uniq_pp_cache = {}
+def uniq_pp(o_1, o_2):
+    if o_1 not in uniq_pp_cache:
+        uniq_pp_cache[o_1] = o_2
+        print("---")        
+        pp(o_1)
+        pp(o_2)
 
 # TODO cache somewhere
 def unit_types(schema):
@@ -56,8 +67,8 @@ def entity_attr_defs(entity):
         attr_type = a.type_of_attribute()
 
         attr_d = {
-            "type": str(attr_type),
-            "unit": None
+            **erp_short_type(attr_type), # this is merge
+            "unit": None            
         }
         entity_d[attr_name] = attr_d
 
@@ -84,7 +95,12 @@ def serialize_psets(schema, out_path):
         json.dump(data, f, ensure_ascii=False, indent=4)
 
 
-def pset_def(pset, shema):
+def _prop_type_str(type_name, schema):
+    # strip because there was ' IfcPowerMeasure' with leading space
+    declaration = schema.declaration_by_name(type_name.strip())
+    return str(declaration)
+
+def pset_def(pset, schema):
     def _unit_type(unit):
         if (unit is None):
             return None
@@ -92,19 +108,14 @@ def pset_def(pset, shema):
             return None
         return unit.UnitType
 
-    def _type_str(type_name):
-        # strip because there was ' IfcPowerMeasure' with leading space
-        declaration = schema.declaration_by_name(type_name.strip())
-        return str(declaration)
-
     # it's needed because there are mismatches in prop names in xml
     def _propKey(prop):
         return prop.Name.upper()
 
-    def _serialize_prop(prop):
+    def _serialize_prop(prop):       
         return {
-            "type": _type_str(prop.PrimaryMeasureType),
-            "unit": _unit_type(prop.PrimaryUnit)
+             **erp_short_type(_prop_type_str(prop.PrimaryMeasureType,  schema)), # merge
+            "unit": _unit_type(prop.PrimaryUnit)           
         }
 
     pset_d = {}
@@ -131,8 +142,9 @@ class ExtraPset():
 
     def add_prop(self, name, prop_type_name):
         prop_type = self.schema.declaration_by_name(prop_type_name)
+        
         self.props_defs[name.upper()] = {
-            "type": str(prop_type),
+            **erp_short_type(str(prop_type)),
             "unit": get_unit_type(prop_type)
         }
         return self
