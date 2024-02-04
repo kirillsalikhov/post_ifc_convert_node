@@ -1,6 +1,6 @@
 const {
     combineModifiers,
-    attrs   ,
+    attrs,
     type,
     categoryId,
     revitFamilyAttrs,
