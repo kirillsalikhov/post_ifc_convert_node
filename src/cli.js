@@ -10,9 +10,15 @@ program
 
 
 const { defaultSerializersConfigName, serializersConfigsMap } = require('./convert-xml/serializers/configs');
+
+const availableSerializerNames = Object.keys(serializersConfigsMap).map(x => JSON.stringify(x)).join(', ');
 program
     .command('convert-xml')
-    .option('-s, --serializer <serializer_name>', `serializer used to create objects.json, available serializers are ${Object.keys(serializersConfigsMap).map(x => JSON.stringify(x)).join(', ')}`, defaultSerializersConfigName)
+    .option(
+        '-s, --serializer <serializer_name>',
+        `serializer used to create objects.json, available serializers are ${availableSerializerNames}`,
+        defaultSerializersConfigName
+    )
     .requiredOption('-i, --input-xml <path_to_file>', 'path to xml file')
     .requiredOption('-o, --output <path_to_folder>', 'path to output folder')
     .action(async (options) => {
