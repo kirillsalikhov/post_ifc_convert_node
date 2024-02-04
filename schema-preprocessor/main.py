@@ -7,11 +7,11 @@ sys.path.append(os.path.join(os.path.dirname(__file__), "ifcopenshell"))
 
 import ifcopenshell
 import ifcopenshell.util.pset
-import ifcopenshell.util.unit
 import ifcopenshell.util.element
 from ifcopenshell import util
 
 from utils import erp_short_type
+from units import get_unit_type
 
 # TODO move somehere
 # debug func
@@ -22,29 +22,6 @@ def uniq_pp(o_1, o_2):
         print("---")        
         pp(o_1)
         pp(o_2)
-
-# TODO cache somewhere
-def unit_types(schema):
-    # ??? may be add IfcConversionBasedUnit or other units ?
-    si_unit = schema.declaration_by_name("IfcSIUnit")
-    #UnitType: LenghtUnit, AreaUnit...
-    unit_type = si_unit.attribute_by_index(1).type_of_attribute().declared_type()
-    return unit_type.enumeration_items()
-
-
-# util.unit.get_measure_unit_type just replaces some words in type name and produce UnitName
-# and can produce LogicalUnit for example
-# then we check that UnitName is inside possible unit_types
-def get_unit_type(type_declaration):
-    if (type_declaration is None):
-        return None
-
-    measure_unit_type = util.unit.get_measure_unit_type(type_declaration.name())
-    if (measure_unit_type in unit_types(type_declaration.schema())):
-        return measure_unit_type
-    else:
-        return None
-
 
 def _is_type(declaration, name):
     return type(declaration).__name__ == name
