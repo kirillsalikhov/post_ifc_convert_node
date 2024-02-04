@@ -81,7 +81,12 @@ const dataChildrenArr = (groupingName) => {
 }
 
 const filterDataForIV = (el, res) => {
-    const filterDataForIVRecursive = (current, depth) => {
+    // when Industrial Viewer sees an array, it simply does array.join(', ')
+    // it only makes sense, for arrays of primitives.
+    // Otherwise, arbitrarily nested structures work fine.
+    // So this function only removes arrays whose elements aren't primitives.
+    // Coincidentally it also keeps "children" intact. So no need to handle that explicitly.
+    const filterDataForIVRecursive = (current) => {
         if (Array.isArray(current)) {
             return current.every(element => typeof element !== 'object')
                 ? current
@@ -91,7 +96,7 @@ const filterDataForIV = (el, res) => {
             const filteredCurrent = {};
             for (const prop in current) {
                 if (Object.hasOwn(current, prop)) {
-                    filteredCurrent[prop] = filterDataForIVRecursive(current[prop], depth + 1);
+                    filteredCurrent[prop] = filterDataForIVRecursive(current[prop]);
                 }
             }
             return filteredCurrent;
@@ -99,7 +104,7 @@ const filterDataForIV = (el, res) => {
         return current;
     }
 
-    const newRes = filterDataForIVRecursive(res, 0);
+    const newRes = filterDataForIVRecursive(res);
 
     for (const prop in res) {
         if (Object.hasOwn(res, prop)) {
