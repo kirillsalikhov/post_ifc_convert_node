@@ -8,13 +8,16 @@ const {adjustMaterials} = require("./adjust-materials");
 program
     .description('post ifc transforms');
 
+
+const { defaultSerializersConfigName, serializersConfigsMap } = require('./convert-xml/serializers/configs');
 program
     .command('convert-xml')
+    .option('-s, --serializer <serializer_name>', `serializer used to create objects.json, available serializers are ${Object.keys(serializersConfigsMap).map(x => JSON.stringify(x)).join(', ')}`, defaultSerializersConfigName)
     .requiredOption('-i, --input-xml <path_to_file>', 'path to xml file')
     .requiredOption('-o, --output <path_to_folder>', 'path to output folder')
     .action(async (options) => {
-        const { inputXml, output} = options;
-        await convertXml(inputXml, output);
+        const { inputXml, output, serializer} = options;
+        await convertXml(inputXml, output, serializer);
     });
 
 program

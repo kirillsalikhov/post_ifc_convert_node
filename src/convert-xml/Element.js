@@ -10,13 +10,13 @@ class Element {
         this.parent = null;
         this.children = [];
 
-        const [serializer, serializerTitle] = getSerializer(this);
+        const [serializer, serializerTitle] = getSerializer(this, parser.serializersConfig);
         this._serializer = serializer;
         this._groupName = serializerTitle;
     }
 
     isNode() {
-        // TODO may be check it in gltf ?
+        //note: if this will ever use any info from gltf, remember, that gltf only includes nodes with geometry
         return !!this.attributes["ObjectPlacement"]
             || this.tagName === "IfcProject";
     }

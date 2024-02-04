@@ -18,11 +18,15 @@ const _formatProp = (def, value) => {
     return value;
 }
 
-const attrs = (el, res) => {
+const attrsWithDef = (el, res) => {
     for(const [key, value] of Object.entries(el.attributes)) {
         const attrDef = el.getAttrDefs(key);
         res[key] = _formatAttr(attrDef, value);
     }
+}
+
+const attrs = (el, res) => {
+    Object.assign(res, el.attributes);
 }
 
 const nodeChildren = (el, res) => {
@@ -44,7 +48,7 @@ const dataChildren = (el, res) => {
     }
 }
 
-const dataChildrenPset = (el, res) => {
+const dataChildrenPsetWithDef = (el, res) => {
     for (let child of el.dataChildren) {
         let childEl = child.ref ? el.parser.getByRef(child.ref) : child;
         if (res[childEl.groupingName]) {
@@ -52,6 +56,17 @@ const dataChildrenPset = (el, res) => {
         }
         const propDef = el.getPsetDef(childEl.groupingName);
         res[childEl.groupingName] = _formatProp(propDef, childEl.toJson());
+    }
+}
+
+const dataChildrenPset = (el, res) => {
+    //note: fully duplicates dataChildren. May want to simplify.
+    for (let child of el.dataChildren) {
+        let childEl = child.ref ? el.parser.getByRef(child.ref) : child;
+        if (res[childEl.groupingName]) {
+            console.warn(`Serialize: Element (${childEl.id})overrides already existing prop in ${el.id}`)
+        }
+        res[childEl.groupingName] = childEl.toJson();
     }
 }
 
@@ -63,6 +78,36 @@ const dataChildrenArr = (groupingName) => {
             res[groupingName].push(childEl.toJson());
         }
     }
+}
+
+const filterDataForIV = (el, res) => {
+    const filterDataForIVRecursive = (current, depth) => {
+        if (Array.isArray(current)) {
+            return current.every(element => typeof element !== 'object')
+                ? current
+                : undefined;
+        }
+        if (typeof current === 'object') {
+            const filteredCurrent = {};
+            for (const prop in current) {
+                if (Object.hasOwn(current, prop)) {
+                    filteredCurrent[prop] = filterDataForIVRecursive(current[prop], depth + 1);
+                }
+            }
+            return filteredCurrent;
+        }
+        return current;
+    }
+
+    const newRes = filterDataForIVRecursive(res, 0);
+
+    for (const prop in res) {
+        if (Object.hasOwn(res, prop)) {
+            res[prop] = undefined;
+        }
+    }
+
+    Object.assign(res, newRes);
 }
 
 const type = (el, res) => {
@@ -138,10 +183,13 @@ const singleAttrWithDef = (attrName) => {
 
 module.exports = {
     attrs,
+    attrsWithDef,
     nodeChildren,
     dataChildren,
+    dataChildrenPsetWithDef,
     dataChildrenPset,
     dataChildrenArr,
+    filterDataForIV,
     type,
     categoryId,
     revitFamilyAttrs,

@@ -5,16 +5,20 @@ const StreamPromises = require("stream/promises");
 const fsExtra = require('fs-extra');
 const { JsonStreamStringify } = require('json-stream-stringify');
 
+const { defaultSerializersConfigName, serializersConfigsMap} = require('./serializers/configs');
+
 const {Parser} = require("./Parser");
 
-async function convertXml(inputXml, output) {
-    const parser = new Parser(inputXml);
+async function convertXml(inputXml, output, serializerName = defaultSerializersConfigName) {
+    const serializersConfig = serializersConfigsMap[serializerName];
+    if (serializersConfig === undefined) {
+        throw new Error(`unknown serializer name "${serializerName}"`);
+    }
+
+    const parser = new Parser(inputXml, serializersConfig);
     await parser.readXML();
     await parser.initSchema()
 
-    // TODO revisit this, when change gltf structure (flat, rename name=>_id)
-    // setting internal _id,
-    // this should be done with gltf probably
     setInternalIds(parser);
 
     const json = serializeJson(parser)

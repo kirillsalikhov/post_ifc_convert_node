@@ -9,8 +9,9 @@ const tagName = (name) => el => el.tagName === name;
 class Parser {
     schema = null;
 
-    constructor(inputPath) {
+    constructor(inputPath, serializersConfig) {
         this.inputPath = inputPath;
+        this.serializersConfig = serializersConfig;
     }
 
     async readXML() {
