@@ -1,10 +1,10 @@
-import json
-
 import ifcopenshell.util.pset
 from ifcopenshell import util
 
+from utils import write_json
 from units import get_unit_type
-from utils import erp_short_type
+from type_helpers import erp_short_type
+
 
 def serialize_psets(schema, out_path):
     data = {}
@@ -18,9 +18,7 @@ def serialize_psets(schema, out_path):
         for extra_pset in extra_ifc2x3_psets(schema):
             data[extra_pset.get_name()] = extra_pset.as_json()
 
-    with open(out_path, 'w', encoding='utf-8') as f:
-        json.dump(data, f, ensure_ascii=False, indent=4)
-
+    write_json(data, out_path)
 
 def _prop_type_str(type_name, schema):
     # strip because there was ' IfcPowerMeasure' with leading space
@@ -61,6 +59,19 @@ def pset_def(pset, schema):
     return pset_d
 
 
+def extra_ifc2x3_psets(schema):
+    # https://standards.buildingsmart.org/documents/Implementation/IFC_Implementation_Agreements/CV-2x3-157.html
+    Pset_ProvisionForVoid = ExtraPset("Pset_ProvisionForVoid", schema) \
+        .add_prop("Width", "IfcLengthMeasure") \
+        .add_prop("Height", "IfcLengthMeasure") \
+        .add_prop("Diameter", "IfcLengthMeasure") \
+        .add_prop("Depth", "IfcLengthMeasure") \
+        .add_prop("Shape", "IfcLabel") \
+        .add_prop("System", "IfcLabel") \
+
+    return [Pset_ProvisionForVoid]
+
+
 class ExtraPset():
     def __init__(self, name, schema):
         self.schema = schema
@@ -83,14 +94,3 @@ class ExtraPset():
         return self.props_defs
 
 
-def extra_ifc2x3_psets(schema):
-    # https://standards.buildingsmart.org/documents/Implementation/IFC_Implementation_Agreements/CV-2x3-157.html
-    Pset_ProvisionForVoid = ExtraPset("Pset_ProvisionForVoid", schema) \
-        .add_prop("Width", "IfcLengthMeasure") \
-        .add_prop("Height", "IfcLengthMeasure") \
-        .add_prop("Diameter", "IfcLengthMeasure") \
-        .add_prop("Depth", "IfcLengthMeasure") \
-        .add_prop("Shape", "IfcLabel") \
-        .add_prop("System", "IfcLabel") \
-
-    return [Pset_ProvisionForVoid]

@@ -1,16 +1,14 @@
-import json
-
+from utils import write_json
 from units import get_unit_type
-from utils import erp_short_type
+from type_helpers import erp_short_type
+
 
 def serialize_entity_defs(schema, out_path):
     data = {}
     for entity in schema.entities():
         data[entity.name()] = entity_attr_defs(entity)
     
-    # TODO move out
-    with open(out_path, 'w', encoding='utf-8') as f:
-        json.dump(data, f, ensure_ascii=False, indent=4)
+    write_json(data, out_path)
 
 
 def entity_attr_defs(entity):
