@@ -9,6 +9,7 @@ const {
     dataChildren,
     typeTitle,
     singleAttr,
+    propTrue,
     nameTitle,
     singleAttrWithDef,
     dataChildrenPsetWithDef,
@@ -28,6 +29,8 @@ const erpSerializersConfig = {
     ]), typeTitle],
 
     "IfcPropertySingleValue": [singleAttr("NominalValue"), nameTitle],
+    "IfcPropertyEnumeratedValue": [propTrue, nameTitle],
+
     "IfcQuantityLength": [singleAttrWithDef("LengthValue"), nameTitle],
     "IfcQuantityVolume": [singleAttrWithDef("VolumeValue"), nameTitle],
     "IfcQuantityArea": [singleAttrWithDef("AreaValue"), nameTitle],

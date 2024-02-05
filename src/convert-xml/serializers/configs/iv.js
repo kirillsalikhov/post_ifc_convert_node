@@ -9,6 +9,7 @@ const {
     dataChildren,
     typeTitle,
     singleAttr,
+    propTrue,
     nameTitle,
     dataChildrenPset,
     dataChildrenArr,
@@ -29,6 +30,8 @@ const ivSerializersConfig = {
     ]), typeTitle],
 
     "IfcPropertySingleValue": [singleAttr("NominalValue"), nameTitle],
+    "IfcPropertyEnumeratedValue": [propTrue, nameTitle],
+
     "IfcQuantityLength": [singleAttr("LengthValue"), nameTitle],
     "IfcQuantityVolume": [singleAttr("VolumeValue"), nameTitle],
     "IfcQuantityArea": [singleAttr("AreaValue"), nameTitle],

@@ -177,6 +177,10 @@ const singleAttr = (attrName) => {
     return (el) => { return el.attributes[attrName] }
 }
 
+// used for IfcPropertyEnumeratedValue
+// will produce IfcPropertyEnumeratedValue.Name => true
+const propTrue = (el) => { return true }
+
 // should not be used for Pset
 const singleAttrWithDef = (attrName) => {
     return (el) => {
@@ -204,5 +208,6 @@ module.exports = {
     nameTitle,
     combineModifiers,
     singleAttr,
+    propTrue,
     singleAttrWithDef
 }
