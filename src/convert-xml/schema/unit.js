@@ -78,8 +78,11 @@ const prefix_symbols = {
 const createUnitIds = (unitEls) => {
     const unitIdx = {};
     for(let unitEl of unitEls) {
+        if (!unitEl.attributes.UnitType) {
+            console.log(`Unit with ifcType ${unitEl.ifcType} was skipped`);
+            continue;
+        }
         const _unitType = unitEl.attributes.UnitType.toUpperCase();
-        // get_unit_symbol(unitEl)
         unitIdx[_unitType] = get_unit_symbol(unitEl);
     }
     return unitIdx
