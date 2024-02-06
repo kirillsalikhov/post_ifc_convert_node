@@ -38,13 +38,29 @@ const nodeChildren = (el, res) => {
     }
 }
 
+//note: this is a workaround; there is currently (2024, Feb 5) no other clean way to pass metadata up in the hierarchy
+const IS_UNKNOWN_PSET = Symbol('unknown_pset');
 const dataChildren = (el, res) => {
+    const unknown_psets = [];
     for (let child of el.dataChildren) {
         let childEl = child.ref ? el.parser.getByRef(child.ref) : child;
-        if (res[childEl.groupingName]) {
-            console.warn(`Serialize: Element (${childEl.id})overrides already existing prop in ${el.id}`)
+        const newValue = childEl.toJson();
+        if (newValue[IS_UNKNOWN_PSET]) {
+            //note: custom psets can have non-unique names, so we don't warn about overrides in this case.
+            unknown_psets.push({
+                name: childEl.groupingName,
+                props: newValue
+            });
+        } else {
+            if ((childEl.groupingName in res) && res[childEl.groupingName] !== newValue) {
+                console.warn(`Serialize: Element (${childEl.id}) overrides an already existing prop in ${el.id}`);
+            }
+            res[childEl.groupingName] = newValue;
         }
-        res[childEl.groupingName] = childEl.toJson();
+    }
+
+    if (unknown_psets.length > 0) {
+        res.custom_property_sets = unknown_psets;
     }
 }
 
@@ -52,10 +68,15 @@ const dataChildrenPsetWithDef = (el, res) => {
     for (let child of el.dataChildren) {
         let childEl = child.ref ? el.parser.getByRef(child.ref) : child;
         if (res[childEl.groupingName]) {
-            console.warn(`Serialize: Element (${childEl.id})overrides already existing prop in ${el.id}`)
+            console.warn(`Serialize: Element (${childEl.id}) overrides an already existing prop in ${el.id}`)
         }
         const propDef = el.getPsetDef(childEl.groupingName);
         res[childEl.groupingName] = _formatProp(propDef, childEl.toJson());
+    }
+
+    const psetDef = el.parser.schema.getPset(el.groupingName);
+    if (!psetDef) {
+        res[IS_UNKNOWN_PSET] = true;
     }
 }
 

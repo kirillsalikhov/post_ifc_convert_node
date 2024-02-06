@@ -1,6 +1,7 @@
 const fs = require('fs-extra');
 const path = require('path');
 const {createUnitIds} = require("./unit");
+const {warnOnce} = require("../warn-once");
 
 // Attrs that are not in entities.json but is ok not to have types for them
 const IGNORE_ATTRS = new Set(["id"]);
@@ -30,13 +31,21 @@ class Schema {
         );
     }
 
-    getPsetDef(psetName, propName) {
+    getPset(psetName) {
         const _psetName = psetName.toUpperCase();
-        const _propName = propName.toUpperCase();
-
         const pset = this.psetsIdx[_psetName];
         if (!pset) {
-            console.warn(`No PsetDef for PropertySet: ${psetName}`);
+            warnOnce(`unknown_pset ${psetName}`, `No PsetDef for PropertySet: ${psetName}`);
+            return null;
+        }
+        return pset;
+    }
+
+    getPsetDef(psetName, propName) {
+        const _propName = propName.toUpperCase();
+
+        const pset = this.getPset(psetName);
+        if (!pset) {
             return null;
         }
 
@@ -50,7 +59,7 @@ class Schema {
             const unit = this.unitIdx[prop.unit] || null;
             prop = {...prop, unit};
         } else {
-            console.warn(`No ${propName} for PropertySet: ${psetName}`);
+            warnOnce(`pset_field ${psetName} ${propName}`, `No ${propName} for PropertySet: ${psetName}`);
         }
 
         return prop;
