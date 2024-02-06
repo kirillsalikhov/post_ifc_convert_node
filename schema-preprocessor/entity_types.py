@@ -31,7 +31,14 @@ def serialize_entity_ancestors(schema, out_path):
 # e.g. (IfcWallStandardCase => IfcWall ; IfcElement->IfcBuildingElement->IfcWall)
 # https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcproductextension/lexical/ifcelement.htm
 def inheritance_map(schema):
-    ifcElement = schema.declaration_by_name("IfcElement")
+    Ifc_build_element_name = "IfcBuildingElement"
+    if schema.name() == "IFC4X3":
+        # IfcBuildingElement was renamed
+        Ifc_build_element_name = "IfcBuiltElement"
+    
+    first_level_elements = [
+        schema.declaration_by_name(Ifc_build_element_name)
+    ]
     
     idx = {}
     def _traverse(el, ancestors=[]):
@@ -42,7 +49,7 @@ def inheritance_map(schema):
             _traverse(subtype, ancestors)
     
     # BuildingElement, CivilElement 
-    for first_level in ifcElement.subtypes(): 
+    for first_level in first_level_elements: 
         # IfcWall, IfcDoor ...
         for second_level in first_level.subtypes():
             _traverse(second_level)

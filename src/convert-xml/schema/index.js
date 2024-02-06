@@ -10,6 +10,8 @@ class Schema {
 
     entityAttrsIdx = null;
     psetsIdx = null;
+    entityAncestorsIdx = null;
+    entityTypeIdx = null;
 
     constructor(name, unitEls) {
         this.name = name
@@ -17,9 +19,16 @@ class Schema {
     }
 
     async init() {
-        [this.entityAttrsIdx, this.psetsIdx] = await Promise.all([
+        [
+            this.entityAttrsIdx,
+            this.psetsIdx,
+            this.entityAncestorsIdx,
+            this.entityTypeIdx
+        ] = await Promise.all([
             this._load('entities.json'),
-            this._load('psets.json')
+            this._load('psets.json'),
+            this._load('entity_ancestors.json'),
+            this._load('entity_type_map.json'),
         ]);
     }
 
@@ -29,6 +38,10 @@ class Schema {
         return await fs.readJson(
             path.resolve(__dirname, `gen/${this.schemaName.toUpperCase()}/${fileName}`)
         );
+    }
+
+    getAncestor(ifcType) {
+        return this.entityAncestorsIdx[ifcType]?.at(-1);
     }
 
     getPset(psetName) {

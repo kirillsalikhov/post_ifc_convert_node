@@ -59,6 +59,11 @@ class Element {
         }
         return this.parser.schema.getPsetDef(this.attributes.Name, propName);
     }
+    // CategoryId like in smeta5d,
+    // one ancestor down from IfcBuildingElement or ifcType
+    getCategory() {
+        return this.parser.schema.getAncestor(this.ifcType) || this.ifcType;
+    }
 
     // used for key in parent json
     get groupingName() {

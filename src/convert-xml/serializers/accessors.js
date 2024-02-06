@@ -1,5 +1,3 @@
-const {getCategory} = require("./dicts");
-
 const _formatAttr = (def, value) => {
     if (def) {
         return {value, ...def};
@@ -141,10 +139,10 @@ const type = (el, res) => {
 }
 
 // returns Ancestor in Ifc classes hierarchy from IfcBuildingElement
-// or himself is not found
+// or himself if not found
 // see getCategory for more info
 const categoryId = (el, res) => {
-    res["CategoryId"] = getCategory(el.ifcType);
+    res["CategoryId"] = el.getCategory();
 }
 
 const revitFamilyAttrs = (el, res) => {
