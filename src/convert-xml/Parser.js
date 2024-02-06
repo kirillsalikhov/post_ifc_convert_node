@@ -36,7 +36,7 @@ class Parser {
     }
     // Called after parse, because at this time we know schemaName
     async initSchema() {
-        this.schema = new Schema(this.getSchemaName(), this.getUnits());
+        this.schema = new Schema(this.getSchemaMainVersion(), this.getUnits());
         await this.schema.init();
     }
 
@@ -86,6 +86,20 @@ class Parser {
             .children.find(tagName("file_schema"))
             .children.find(tagName("schema_identifiers"))
             .text
+    }
+
+    getSchemaMainVersion() {
+        const name = this.getSchemaName().toUpperCase();
+        // IFC4X3, IFC4X3_RC2, IFC4X3_ADD1, IFC4X3_RC1 ...
+        if (name.startsWith("IFC4X3")) {
+            return "IFC4X3"
+        }
+        // IFC4, IFC4 Add2 TC1
+        if (name.startsWith("IFC4")) {
+            return "IFC4"
+        }
+
+        return name;
     }
 
     getUnits() {
