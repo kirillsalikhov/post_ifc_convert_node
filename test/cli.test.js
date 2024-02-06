@@ -1,18 +1,24 @@
 const cp = require('node:child_process');
 const path = require('node:path');
 const fs = require('node:fs');
+const xml2js = require('xml2js');
 
 const PROJECT_ROOT = path.resolve(__dirname, '..');
 
 //name: a sampleName of a subdirectory in the directory "samples"
 const spawnConvertXml = (sampleName, xmlFileName) => {
-    return cp.spawnSync('src/cli.js', [
+    const inputXmlFilePath = path.join(PROJECT_ROOT, 'samples', sampleName, xmlFileName);
+    const outputDirectoryPath = path.join(PROJECT_ROOT, 'tmp', sampleName);
+
+    const spawnResult = cp.spawnSync('src/cli.js', [
         'convert-xml',
-        '--input-xml', path.join(PROJECT_ROOT, 'samples', sampleName, xmlFileName),
-        '--output', path.join(PROJECT_ROOT, 'tmp', sampleName)
+        '--input-xml', inputXmlFilePath,
+        '--output', outputDirectoryPath
     ], {
         encoding: 'utf-8'
     });
+
+    return { spawnResult, inputXmlFilePath, outputDirectoryPath };
 };
 
 const spawnGlbToGltf = (sampleName, glbFileName, gltfFileName) => {
@@ -72,10 +78,27 @@ const spawnAdjustMaterials = (inputDir, sampleName, inputGltfFileName, outputGlt
 
 const validateSpawnResult = (spawnResult) => {
     const { error, status, stdout, stderr } = spawnResult;
-    expect(error).toBe(undefined);
-    expect(status).toBe(0);
-    expect(stdout).toBe("");
-    expect(stderr).toBe("");
+    try {
+        expect(error).toBe(undefined);
+        expect(status).toBe(0);
+        expect(stdout).toBe("");
+        expect(stderr).toBe("");
+    } catch (e) {
+        console.log(spawnResult);
+        throw e;
+    }
+};
+
+const validateAgainstSmeta5d = (smeta5dXmlJs, objects) => {
+    const objById = new Map(objects.map(o => [o.GlobalId, o]));
+
+    //note: this relies on the XML structure being very specific.
+    for (const s5dElement of smeta5dXmlJs.Document.Elements[0].Element) {
+        const {Id, CategoryId} = s5dElement.$;
+        const obj = objById.get(Id);
+        expect(obj).not.toBeUndefined();
+        expect(obj.CategoryId).toBe(CategoryId);
+    }
 };
 
 const validateNodesRenaming = (gltf, objects) => {
@@ -104,19 +127,26 @@ const validateMaterialsAdjustment = (inputGltf, outputGltf) => {
 
 describe('convert-xml', () => {
     test.each([
-        {sampleName: 'erp-sample', xml: 'origin.xml'},
-        {sampleName: 'small-ifc', xml: 'origin.xml'},
-        {sampleName: 'erp-sample-big', xml: '10116_Р_АР_published_new_2x3_view2_величины.xml'},
-    ])('doesn\'t fail', ({sampleName, xml}) => {
-        const spawnResult = spawnConvertXml(sampleName, xml);
+        {sampleName: 'erp-sample', xml: 'origin.xml', smeta5d: 'smeta5d.xml'},
+        {sampleName: 'small-ifc', xml: 'origin.xml', smeta5d: 'small-smeta5d.xml'},
+        {sampleName: 'erp-sample-big', xml: '10116_Р_АР_published_new_2x3_view2_величины.xml', smeta5d: '10116_Р_АР_published_new_2x3_view2_величины.smeta_5d.xml'},
+    ])('doesn\'t fail', async ({sampleName, xml, smeta5d}) => {
+        const { spawnResult, outputDirectoryPath} = spawnConvertXml(sampleName, xml);
         validateSpawnResult(spawnResult);
-        // todo: should also validate against smeta5d
+
+        const smeta5dXml = fs.readFileSync(path.join(PROJECT_ROOT, 'samples', sampleName, smeta5d), 'utf8');
+        const smeta5dXml2Js = await xml2js.parseStringPromise(smeta5dXml);
+        const objects = JSON.parse(fs.readFileSync(path.join(outputDirectoryPath, 'objects.json'), 'utf8'));
+        validateAgainstSmeta5d(smeta5dXml2Js, objects);
     })
 });
 
 describe('rename-gltf-nodes', () => {
-    test('produces valid result on erp-sample-big', () => {
-        const {spawnResult, inputObjectsJsonPath, outputGltfPath} = spawnRenameGltfNodes('samples', 'erp-sample-big', 'model.gltf', 'objects.json', 'model.gltf');
+    test.each([
+        {sampleName: 'erp-sample-big'},
+        {sampleName: 'circles'},
+    ])('produces valid result', ({sampleName}) => {
+        const {spawnResult, inputObjectsJsonPath, outputGltfPath} = spawnRenameGltfNodes('samples', sampleName, 'model.gltf', 'objects.json', 'model.gltf');
         validateSpawnResult(spawnResult);
 
         const gltf = JSON.parse(fs.readFileSync(outputGltfPath, 'utf8'));
@@ -126,8 +156,11 @@ describe('rename-gltf-nodes', () => {
 });
 
 describe('adjust-materials', () => {
-    test('produces valid result on erp-sample-big', () => {
-        const {spawnResult, inputGltfPath, outputGltfPath} = spawnAdjustMaterials('samples','erp-sample-big', 'model.gltf', 'model.gltf');
+    test.each([
+        {sampleName: 'erp-sample-big'},
+        {sampleName: 'circles'},
+    ])('produces valid result on erp-sample-big', ({sampleName}) => {
+        const {spawnResult, inputGltfPath, outputGltfPath} = spawnAdjustMaterials('samples', sampleName, 'model.gltf', 'model.gltf');
         validateSpawnResult(spawnResult);
 
         const inputGltf = JSON.parse(fs.readFileSync(inputGltfPath, 'utf8'));
@@ -137,9 +170,9 @@ describe('adjust-materials', () => {
 });
 
 describe('full-conversion', () => {
-    test('works for erp-sample-big', () => {
+    test('works for erp-sample-big', async () => {
         const sampleName = 'erp-sample-big';
-        const convertXmlSpawnResult = spawnConvertXml(sampleName, '10116_Р_АР_published_new_2x3_view2_величины.xml');
+        const { spawnResult: convertXmlSpawnResult, outputDirectoryPath } = spawnConvertXml(sampleName, '10116_Р_АР_published_new_2x3_view2_величины.xml');
         validateSpawnResult(convertXmlSpawnResult);
         const glbToGltfSpawnResult = spawnGlbToGltf(sampleName, '10116_Р_АР_published_new_2x3_view2_величины.glb', 'model.glb.gltf');
         //general validateSpawnResult won't work while we still use gltf-transform
@@ -158,9 +191,10 @@ describe('full-conversion', () => {
         const inputGltf = JSON.parse(fs.readFileSync(inputGltfPath, 'utf8'));
         const objects = JSON.parse(fs.readFileSync(inputObjectsJsonPath, 'utf8'));
         const outputGltf = JSON.parse(fs.readFileSync(outputGltfPath, 'utf8'));
+        const smeta5dXml = await xml2js.parseStringPromise(fs.readFileSync(path.join(PROJECT_ROOT, 'samples', sampleName, '10116_Р_АР_published_new_2x3_view2_величины.smeta_5d.xml'), 'utf8'));
 
         validateNodesRenaming(outputGltf, objects);
         validateMaterialsAdjustment(inputGltf, outputGltf);
-        // todo: should also validate against smeta5d
+        validateAgainstSmeta5d(smeta5dXml, objects);
     });
 });

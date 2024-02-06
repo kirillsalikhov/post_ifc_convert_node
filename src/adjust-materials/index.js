@@ -1,6 +1,7 @@
 const fs = require("fs");
 const StreamPromises = require("stream/promises");
 const {JsonStreamStringify} = require("json-stream-stringify");
+const path = require("path");
 
 const writeJson = async (json, outputFileName) => {
     await StreamPromises.pipeline(
@@ -19,6 +20,7 @@ async function adjustMaterials(inputGltfFilePath, outputGltfFilePath) {
         }
     }
 
+    fs.mkdirSync(path.dirname(outputGltfFilePath), { recursive: true })
     await writeJson(gltf, outputGltfFilePath);
 }
 
