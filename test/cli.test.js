@@ -78,10 +78,15 @@ const spawnAdjustMaterials = (inputDir, sampleName, inputGltfFileName, outputGlt
 
 const validateSpawnResult = (spawnResult) => {
     const { error, status, stdout, stderr } = spawnResult;
-    expect(error).toBe(undefined);
-    expect(status).toBe(0);
-    expect(stdout).toBe("");
-    expect(stderr).toBe("");
+    try {
+        expect(error).toBe(undefined);
+        expect(status).toBe(0);
+        expect(stdout).toBe("");
+        expect(stderr).toBe("");
+    } catch (e) {
+        console.log(spawnResult);
+        throw e;
+    }
 };
 
 const validateAgainstSmeta5d = (smeta5dXmlJs, objects) => {
