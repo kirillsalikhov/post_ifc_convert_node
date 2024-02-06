@@ -2,7 +2,6 @@ const {getSerializer} = require('./serializers');
 
 class Element {
     constructor(parser, tagName, attributes={}) {
-        // ???
         this.parser = parser;
 
         this.tagName = tagName;
