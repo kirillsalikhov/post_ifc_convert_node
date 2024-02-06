@@ -11,6 +11,7 @@ from ifcopenshell import util
 
 from entities_defs import serialize_entity_defs
 from psets_defs import serialize_psets
+from entity_types import serialize_entity_type_map, serialize_entity_ancestors
 
 
 GEN_PATH = "../src/convert-xml/schema/gen"
@@ -23,7 +24,12 @@ SCHEMAS = [
     "IFC4X3"
 ]
 
+def _out(file_name):
+    return f"{GEN_PATH}/{schema_name}/{file_name}"
+
 for schema_name in SCHEMAS:
     schema = ifcopenshell.ifcopenshell_wrapper.schema_by_name(schema_name)
-    serialize_psets(schema, f"{GEN_PATH}/{schema_name}/psets.json")
-    serialize_entity_defs(schema, f"{GEN_PATH}/{schema_name}/entities.json")
+    serialize_psets(schema, _out("psets.json"))
+    serialize_entity_defs(schema, _out("entities.json"))
+    serialize_entity_type_map(schema, _out("entity_type_map.json"))
+    serialize_entity_ancestors(schema, _out("entity_ancestors.json"))

@@ -1,0 +1,531 @@
+{
+    "IfcBeam": [
+        "IfcBeam"
+    ],
+    "IfcBeamStandardCase": [
+        "IfcBeamStandardCase",
+        "IfcBeam"
+    ],
+    "IfcBuildingElementProxy": [
+        "IfcBuildingElementProxy"
+    ],
+    "IfcChimney": [
+        "IfcChimney"
+    ],
+    "IfcColumn": [
+        "IfcColumn"
+    ],
+    "IfcColumnStandardCase": [
+        "IfcColumnStandardCase",
+        "IfcColumn"
+    ],
+    "IfcCovering": [
+        "IfcCovering"
+    ],
+    "IfcCurtainWall": [
+        "IfcCurtainWall"
+    ],
+    "IfcDoor": [
+        "IfcDoor"
+    ],
+    "IfcDoorStandardCase": [
+        "IfcDoorStandardCase",
+        "IfcDoor"
+    ],
+    "IfcFooting": [
+        "IfcFooting"
+    ],
+    "IfcMember": [
+        "IfcMember"
+    ],
+    "IfcMemberStandardCase": [
+        "IfcMemberStandardCase",
+        "IfcMember"
+    ],
+    "IfcPile": [
+        "IfcPile"
+    ],
+    "IfcPlate": [
+        "IfcPlate"
+    ],
+    "IfcPlateStandardCase": [
+        "IfcPlateStandardCase",
+        "IfcPlate"
+    ],
+    "IfcRailing": [
+        "IfcRailing"
+    ],
+    "IfcRamp": [
+        "IfcRamp"
+    ],
+    "IfcRampFlight": [
+        "IfcRampFlight"
+    ],
+    "IfcRoof": [
+        "IfcRoof"
+    ],
+    "IfcShadingDevice": [
+        "IfcShadingDevice"
+    ],
+    "IfcSlab": [
+        "IfcSlab"
+    ],
+    "IfcSlabElementedCase": [
+        "IfcSlabElementedCase",
+        "IfcSlab"
+    ],
+    "IfcSlabStandardCase": [
+        "IfcSlabStandardCase",
+        "IfcSlab"
+    ],
+    "IfcStair": [
+        "IfcStair"
+    ],
+    "IfcStairFlight": [
+        "IfcStairFlight"
+    ],
+    "IfcWall": [
+        "IfcWall"
+    ],
+    "IfcWallElementedCase": [
+        "IfcWallElementedCase",
+        "IfcWall"
+    ],
+    "IfcWallStandardCase": [
+        "IfcWallStandardCase",
+        "IfcWall"
+    ],
+    "IfcWindow": [
+        "IfcWindow"
+    ],
+    "IfcWindowStandardCase": [
+        "IfcWindowStandardCase",
+        "IfcWindow"
+    ],
+    "IfcDistributionControlElement": [
+        "IfcDistributionControlElement"
+    ],
+    "IfcActuator": [
+        "IfcActuator",
+        "IfcDistributionControlElement"
+    ],
+    "IfcAlarm": [
+        "IfcAlarm",
+        "IfcDistributionControlElement"
+    ],
+    "IfcController": [
+        "IfcController",
+        "IfcDistributionControlElement"
+    ],
+    "IfcFlowInstrument": [
+        "IfcFlowInstrument",
+        "IfcDistributionControlElement"
+    ],
+    "IfcProtectiveDeviceTrippingUnit": [
+        "IfcProtectiveDeviceTrippingUnit",
+        "IfcDistributionControlElement"
+    ],
+    "IfcSensor": [
+        "IfcSensor",
+        "IfcDistributionControlElement"
+    ],
+    "IfcUnitaryControlElement": [
+        "IfcUnitaryControlElement",
+        "IfcDistributionControlElement"
+    ],
+    "IfcDistributionFlowElement": [
+        "IfcDistributionFlowElement"
+    ],
+    "IfcDistributionChamberElement": [
+        "IfcDistributionChamberElement",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcEnergyConversionDevice": [
+        "IfcEnergyConversionDevice",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcAirToAirHeatRecovery": [
+        "IfcAirToAirHeatRecovery",
+        "IfcEnergyConversionDevice",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcBoiler": [
+        "IfcBoiler",
+        "IfcEnergyConversionDevice",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcBurner": [
+        "IfcBurner",
+        "IfcEnergyConversionDevice",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcChiller": [
+        "IfcChiller",
+        "IfcEnergyConversionDevice",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcCoil": [
+        "IfcCoil",
+        "IfcEnergyConversionDevice",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcCondenser": [
+        "IfcCondenser",
+        "IfcEnergyConversionDevice",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcCooledBeam": [
+        "IfcCooledBeam",
+        "IfcEnergyConversionDevice",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcCoolingTower": [
+        "IfcCoolingTower",
+        "IfcEnergyConversionDevice",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcElectricGenerator": [
+        "IfcElectricGenerator",
+        "IfcEnergyConversionDevice",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcElectricMotor": [
+        "IfcElectricMotor",
+        "IfcEnergyConversionDevice",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcEngine": [
+        "IfcEngine",
+        "IfcEnergyConversionDevice",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcEvaporativeCooler": [
+        "IfcEvaporativeCooler",
+        "IfcEnergyConversionDevice",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcEvaporator": [
+        "IfcEvaporator",
+        "IfcEnergyConversionDevice",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcHeatExchanger": [
+        "IfcHeatExchanger",
+        "IfcEnergyConversionDevice",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcHumidifier": [
+        "IfcHumidifier",
+        "IfcEnergyConversionDevice",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcMotorConnection": [
+        "IfcMotorConnection",
+        "IfcEnergyConversionDevice",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcSolarDevice": [
+        "IfcSolarDevice",
+        "IfcEnergyConversionDevice",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcTransformer": [
+        "IfcTransformer",
+        "IfcEnergyConversionDevice",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcTubeBundle": [
+        "IfcTubeBundle",
+        "IfcEnergyConversionDevice",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcUnitaryEquipment": [
+        "IfcUnitaryEquipment",
+        "IfcEnergyConversionDevice",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcFlowController": [
+        "IfcFlowController",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcAirTerminalBox": [
+        "IfcAirTerminalBox",
+        "IfcFlowController",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcDamper": [
+        "IfcDamper",
+        "IfcFlowController",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcElectricDistributionBoard": [
+        "IfcElectricDistributionBoard",
+        "IfcFlowController",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcElectricTimeControl": [
+        "IfcElectricTimeControl",
+        "IfcFlowController",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcFlowMeter": [
+        "IfcFlowMeter",
+        "IfcFlowController",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcProtectiveDevice": [
+        "IfcProtectiveDevice",
+        "IfcFlowController",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcSwitchingDevice": [
+        "IfcSwitchingDevice",
+        "IfcFlowController",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcValve": [
+        "IfcValve",
+        "IfcFlowController",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcFlowFitting": [
+        "IfcFlowFitting",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcCableCarrierFitting": [
+        "IfcCableCarrierFitting",
+        "IfcFlowFitting",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcCableFitting": [
+        "IfcCableFitting",
+        "IfcFlowFitting",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcDuctFitting": [
+        "IfcDuctFitting",
+        "IfcFlowFitting",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcJunctionBox": [
+        "IfcJunctionBox",
+        "IfcFlowFitting",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcPipeFitting": [
+        "IfcPipeFitting",
+        "IfcFlowFitting",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcFlowMovingDevice": [
+        "IfcFlowMovingDevice",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcCompressor": [
+        "IfcCompressor",
+        "IfcFlowMovingDevice",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcFan": [
+        "IfcFan",
+        "IfcFlowMovingDevice",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcPump": [
+        "IfcPump",
+        "IfcFlowMovingDevice",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcFlowSegment": [
+        "IfcFlowSegment",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcCableCarrierSegment": [
+        "IfcCableCarrierSegment",
+        "IfcFlowSegment",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcCableSegment": [
+        "IfcCableSegment",
+        "IfcFlowSegment",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcDuctSegment": [
+        "IfcDuctSegment",
+        "IfcFlowSegment",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcPipeSegment": [
+        "IfcPipeSegment",
+        "IfcFlowSegment",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcFlowStorageDevice": [
+        "IfcFlowStorageDevice",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcElectricFlowStorageDevice": [
+        "IfcElectricFlowStorageDevice",
+        "IfcFlowStorageDevice",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcTank": [
+        "IfcTank",
+        "IfcFlowStorageDevice",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcFlowTerminal": [
+        "IfcFlowTerminal",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcAirTerminal": [
+        "IfcAirTerminal",
+        "IfcFlowTerminal",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcAudioVisualAppliance": [
+        "IfcAudioVisualAppliance",
+        "IfcFlowTerminal",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcCommunicationsAppliance": [
+        "IfcCommunicationsAppliance",
+        "IfcFlowTerminal",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcElectricAppliance": [
+        "IfcElectricAppliance",
+        "IfcFlowTerminal",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcFireSuppressionTerminal": [
+        "IfcFireSuppressionTerminal",
+        "IfcFlowTerminal",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcLamp": [
+        "IfcLamp",
+        "IfcFlowTerminal",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcLightFixture": [
+        "IfcLightFixture",
+        "IfcFlowTerminal",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcMedicalDevice": [
+        "IfcMedicalDevice",
+        "IfcFlowTerminal",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcOutlet": [
+        "IfcOutlet",
+        "IfcFlowTerminal",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcSanitaryTerminal": [
+        "IfcSanitaryTerminal",
+        "IfcFlowTerminal",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcSpaceHeater": [
+        "IfcSpaceHeater",
+        "IfcFlowTerminal",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcStackTerminal": [
+        "IfcStackTerminal",
+        "IfcFlowTerminal",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcWasteTerminal": [
+        "IfcWasteTerminal",
+        "IfcFlowTerminal",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcFlowTreatmentDevice": [
+        "IfcFlowTreatmentDevice",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcDuctSilencer": [
+        "IfcDuctSilencer",
+        "IfcFlowTreatmentDevice",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcFilter": [
+        "IfcFilter",
+        "IfcFlowTreatmentDevice",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcInterceptor": [
+        "IfcInterceptor",
+        "IfcFlowTreatmentDevice",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcBuildingElementPart": [
+        "IfcBuildingElementPart"
+    ],
+    "IfcDiscreteAccessory": [
+        "IfcDiscreteAccessory"
+    ],
+    "IfcFastener": [
+        "IfcFastener"
+    ],
+    "IfcMechanicalFastener": [
+        "IfcMechanicalFastener"
+    ],
+    "IfcReinforcingElement": [
+        "IfcReinforcingElement"
+    ],
+    "IfcReinforcingBar": [
+        "IfcReinforcingBar",
+        "IfcReinforcingElement"
+    ],
+    "IfcReinforcingMesh": [
+        "IfcReinforcingMesh",
+        "IfcReinforcingElement"
+    ],
+    "IfcTendon": [
+        "IfcTendon",
+        "IfcReinforcingElement"
+    ],
+    "IfcTendonAnchor": [
+        "IfcTendonAnchor",
+        "IfcReinforcingElement"
+    ],
+    "IfcVibrationIsolator": [
+        "IfcVibrationIsolator"
+    ],
+    "IfcFeatureElementAddition": [
+        "IfcFeatureElementAddition"
+    ],
+    "IfcProjectionElement": [
+        "IfcProjectionElement",
+        "IfcFeatureElementAddition"
+    ],
+    "IfcFeatureElementSubtraction": [
+        "IfcFeatureElementSubtraction"
+    ],
+    "IfcOpeningElement": [
+        "IfcOpeningElement",
+        "IfcFeatureElementSubtraction"
+    ],
+    "IfcOpeningStandardCase": [
+        "IfcOpeningStandardCase",
+        "IfcOpeningElement",
+        "IfcFeatureElementSubtraction"
+    ],
+    "IfcVoidingFeature": [
+        "IfcVoidingFeature",
+        "IfcFeatureElementSubtraction"
+    ],
+    "IfcSurfaceFeature": [
+        "IfcSurfaceFeature"
+    ],
+    "IfcFurniture": [
+        "IfcFurniture"
+    ],
+    "IfcSystemFurnitureElement": [
+        "IfcSystemFurnitureElement"
+    ]
+}

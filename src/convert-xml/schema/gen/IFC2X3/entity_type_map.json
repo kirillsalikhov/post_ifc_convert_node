@@ -1,0 +1,409 @@
+{
+    "IfcElement": [
+        "IfcDistributionElementType",
+        "IfcFurnishingElementType",
+        "IfcTransportElementType"
+    ],
+    "IfcBuildingElement": [
+        "IfcBeamType",
+        "IfcBuildingElementProxyType",
+        "IfcColumnType",
+        "IfcCoveringType",
+        "IfcCurtainWallType",
+        "IfcMemberType",
+        "IfcPlateType",
+        "IfcRailingType",
+        "IfcRampFlightType",
+        "IfcSlabType",
+        "IfcStairFlightType",
+        "IfcWallType"
+    ],
+    "IfcBeam": [
+        "IfcBeamType"
+    ],
+    "IfcBuildingElementComponent": [
+        "IfcBeamType",
+        "IfcBuildingElementProxyType",
+        "IfcColumnType",
+        "IfcCoveringType",
+        "IfcCurtainWallType",
+        "IfcMemberType",
+        "IfcPlateType",
+        "IfcRailingType",
+        "IfcRampFlightType",
+        "IfcSlabType",
+        "IfcStairFlightType",
+        "IfcWallType"
+    ],
+    "IfcBuildingElementPart": [
+        "IfcBeamType",
+        "IfcBuildingElementProxyType",
+        "IfcColumnType",
+        "IfcCoveringType",
+        "IfcCurtainWallType",
+        "IfcMemberType",
+        "IfcPlateType",
+        "IfcRailingType",
+        "IfcRampFlightType",
+        "IfcSlabType",
+        "IfcStairFlightType",
+        "IfcWallType"
+    ],
+    "IfcReinforcingElement": [
+        "IfcBeamType",
+        "IfcBuildingElementProxyType",
+        "IfcColumnType",
+        "IfcCoveringType",
+        "IfcCurtainWallType",
+        "IfcMemberType",
+        "IfcPlateType",
+        "IfcRailingType",
+        "IfcRampFlightType",
+        "IfcSlabType",
+        "IfcStairFlightType",
+        "IfcWallType"
+    ],
+    "IfcReinforcingBar": [
+        "IfcBeamType",
+        "IfcBuildingElementProxyType",
+        "IfcColumnType",
+        "IfcCoveringType",
+        "IfcCurtainWallType",
+        "IfcMemberType",
+        "IfcPlateType",
+        "IfcRailingType",
+        "IfcRampFlightType",
+        "IfcSlabType",
+        "IfcStairFlightType",
+        "IfcWallType"
+    ],
+    "IfcReinforcingMesh": [
+        "IfcBeamType",
+        "IfcBuildingElementProxyType",
+        "IfcColumnType",
+        "IfcCoveringType",
+        "IfcCurtainWallType",
+        "IfcMemberType",
+        "IfcPlateType",
+        "IfcRailingType",
+        "IfcRampFlightType",
+        "IfcSlabType",
+        "IfcStairFlightType",
+        "IfcWallType"
+    ],
+    "IfcTendon": [
+        "IfcBeamType",
+        "IfcBuildingElementProxyType",
+        "IfcColumnType",
+        "IfcCoveringType",
+        "IfcCurtainWallType",
+        "IfcMemberType",
+        "IfcPlateType",
+        "IfcRailingType",
+        "IfcRampFlightType",
+        "IfcSlabType",
+        "IfcStairFlightType",
+        "IfcWallType"
+    ],
+    "IfcTendonAnchor": [
+        "IfcBeamType",
+        "IfcBuildingElementProxyType",
+        "IfcColumnType",
+        "IfcCoveringType",
+        "IfcCurtainWallType",
+        "IfcMemberType",
+        "IfcPlateType",
+        "IfcRailingType",
+        "IfcRampFlightType",
+        "IfcSlabType",
+        "IfcStairFlightType",
+        "IfcWallType"
+    ],
+    "IfcBuildingElementProxy": [
+        "IfcBuildingElementProxyType"
+    ],
+    "IfcColumn": [
+        "IfcColumnType"
+    ],
+    "IfcCovering": [
+        "IfcCoveringType"
+    ],
+    "IfcCurtainWall": [
+        "IfcCurtainWallType"
+    ],
+    "IfcDoor": [
+        "IfcDoorStyle"
+    ],
+    "IfcFooting": [
+        "IfcBeamType",
+        "IfcBuildingElementProxyType",
+        "IfcColumnType",
+        "IfcCoveringType",
+        "IfcCurtainWallType",
+        "IfcMemberType",
+        "IfcPlateType",
+        "IfcRailingType",
+        "IfcRampFlightType",
+        "IfcSlabType",
+        "IfcStairFlightType",
+        "IfcWallType"
+    ],
+    "IfcMember": [
+        "IfcMemberType"
+    ],
+    "IfcPile": [
+        "IfcBeamType",
+        "IfcBuildingElementProxyType",
+        "IfcColumnType",
+        "IfcCoveringType",
+        "IfcCurtainWallType",
+        "IfcMemberType",
+        "IfcPlateType",
+        "IfcRailingType",
+        "IfcRampFlightType",
+        "IfcSlabType",
+        "IfcStairFlightType",
+        "IfcWallType"
+    ],
+    "IfcPlate": [
+        "IfcPlateType"
+    ],
+    "IfcRailing": [
+        "IfcRailingType"
+    ],
+    "IfcRamp": [
+        "IfcBeamType",
+        "IfcBuildingElementProxyType",
+        "IfcColumnType",
+        "IfcCoveringType",
+        "IfcCurtainWallType",
+        "IfcMemberType",
+        "IfcPlateType",
+        "IfcRailingType",
+        "IfcRampFlightType",
+        "IfcSlabType",
+        "IfcStairFlightType",
+        "IfcWallType"
+    ],
+    "IfcRampFlight": [
+        "IfcRampFlightType"
+    ],
+    "IfcRoof": [
+        "IfcBeamType",
+        "IfcBuildingElementProxyType",
+        "IfcColumnType",
+        "IfcCoveringType",
+        "IfcCurtainWallType",
+        "IfcMemberType",
+        "IfcPlateType",
+        "IfcRailingType",
+        "IfcRampFlightType",
+        "IfcSlabType",
+        "IfcStairFlightType",
+        "IfcWallType"
+    ],
+    "IfcSlab": [
+        "IfcSlabType"
+    ],
+    "IfcStair": [
+        "IfcBeamType",
+        "IfcBuildingElementProxyType",
+        "IfcColumnType",
+        "IfcCoveringType",
+        "IfcCurtainWallType",
+        "IfcMemberType",
+        "IfcPlateType",
+        "IfcRailingType",
+        "IfcRampFlightType",
+        "IfcSlabType",
+        "IfcStairFlightType",
+        "IfcWallType"
+    ],
+    "IfcStairFlight": [
+        "IfcStairFlightType"
+    ],
+    "IfcWall": [
+        "IfcWallType"
+    ],
+    "IfcWallStandardCase": [
+        "IfcWallType"
+    ],
+    "IfcWindow": [
+        "IfcWindowStyle"
+    ],
+    "IfcDistributionElement": [
+        "IfcDistributionElementType"
+    ],
+    "IfcDistributionControlElement": [
+        "IfcActuatorType",
+        "IfcAlarmType",
+        "IfcControllerType",
+        "IfcFlowInstrumentType",
+        "IfcSensorType"
+    ],
+    "IfcDistributionFlowElement": [
+        "IfcDistributionChamberElementType"
+    ],
+    "IfcDistributionChamberElement": [
+        "IfcDistributionChamberElementType"
+    ],
+    "IfcEnergyConversionDevice": [
+        "IfcAirToAirHeatRecoveryType",
+        "IfcBoilerType",
+        "IfcChillerType",
+        "IfcCoilType",
+        "IfcCondenserType",
+        "IfcCooledBeamType",
+        "IfcCoolingTowerType",
+        "IfcElectricGeneratorType",
+        "IfcElectricMotorType",
+        "IfcEvaporativeCoolerType",
+        "IfcEvaporatorType",
+        "IfcHeatExchangerType",
+        "IfcHumidifierType",
+        "IfcMotorConnectionType",
+        "IfcSpaceHeaterType",
+        "IfcTransformerType",
+        "IfcTubeBundleType",
+        "IfcUnitaryEquipmentType"
+    ],
+    "IfcFlowController": [
+        "IfcAirTerminalBoxType",
+        "IfcDamperType",
+        "IfcElectricTimeControlType",
+        "IfcFlowMeterType",
+        "IfcProtectiveDeviceType",
+        "IfcSwitchingDeviceType",
+        "IfcValveType"
+    ],
+    "IfcElectricDistributionPoint": [
+        "IfcAirTerminalBoxType",
+        "IfcDamperType",
+        "IfcElectricTimeControlType",
+        "IfcFlowMeterType",
+        "IfcProtectiveDeviceType",
+        "IfcSwitchingDeviceType",
+        "IfcValveType"
+    ],
+    "IfcFlowFitting": [
+        "IfcCableCarrierFittingType",
+        "IfcDuctFittingType",
+        "IfcJunctionBoxType",
+        "IfcPipeFittingType"
+    ],
+    "IfcFlowMovingDevice": [
+        "IfcCompressorType",
+        "IfcFanType",
+        "IfcPumpType"
+    ],
+    "IfcFlowSegment": [
+        "IfcCableCarrierSegmentType",
+        "IfcCableSegmentType",
+        "IfcDuctSegmentType",
+        "IfcPipeSegmentType"
+    ],
+    "IfcFlowStorageDevice": [
+        "IfcElectricFlowStorageDeviceType",
+        "IfcTankType"
+    ],
+    "IfcFlowTerminal": [
+        "IfcAirTerminalType",
+        "IfcElectricApplianceType",
+        "IfcElectricHeaterType",
+        "IfcFireSuppressionTerminalType",
+        "IfcGasTerminalType",
+        "IfcLampType",
+        "IfcLightFixtureType",
+        "IfcOutletType",
+        "IfcSanitaryTerminalType",
+        "IfcStackTerminalType",
+        "IfcWasteTerminalType"
+    ],
+    "IfcFlowTreatmentDevice": [
+        "IfcDuctSilencerType",
+        "IfcFilterType"
+    ],
+    "IfcElectricalElement": [
+        "IfcDistributionElementType",
+        "IfcFurnishingElementType",
+        "IfcTransportElementType"
+    ],
+    "IfcElementAssembly": [
+        "IfcDistributionElementType",
+        "IfcFurnishingElementType",
+        "IfcTransportElementType"
+    ],
+    "IfcElementComponent": [
+        "IfcDiscreteAccessoryType",
+        "IfcFastenerType"
+    ],
+    "IfcDiscreteAccessory": [
+        "IfcDiscreteAccessoryType",
+        "IfcVibrationIsolatorType"
+    ],
+    "IfcFastener": [
+        "IfcFastenerType",
+        "IfcMechanicalFastenerType"
+    ],
+    "IfcMechanicalFastener": [
+        "IfcMechanicalFastenerType"
+    ],
+    "IfcEquipmentElement": [
+        "IfcDistributionElementType",
+        "IfcFurnishingElementType",
+        "IfcTransportElementType"
+    ],
+    "IfcFeatureElement": [
+        "IfcDistributionElementType",
+        "IfcFurnishingElementType",
+        "IfcTransportElementType"
+    ],
+    "IfcFeatureElementAddition": [
+        "IfcDistributionElementType",
+        "IfcFurnishingElementType",
+        "IfcTransportElementType"
+    ],
+    "IfcProjectionElement": [
+        "IfcDistributionElementType",
+        "IfcFurnishingElementType",
+        "IfcTransportElementType"
+    ],
+    "IfcFeatureElementSubtraction": [
+        "IfcDistributionElementType",
+        "IfcFurnishingElementType",
+        "IfcTransportElementType"
+    ],
+    "IfcEdgeFeature": [
+        "IfcDistributionElementType",
+        "IfcFurnishingElementType",
+        "IfcTransportElementType"
+    ],
+    "IfcChamferEdgeFeature": [
+        "IfcDistributionElementType",
+        "IfcFurnishingElementType",
+        "IfcTransportElementType"
+    ],
+    "IfcRoundedEdgeFeature": [
+        "IfcDistributionElementType",
+        "IfcFurnishingElementType",
+        "IfcTransportElementType"
+    ],
+    "IfcOpeningElement": [
+        "IfcDistributionElementType",
+        "IfcFurnishingElementType",
+        "IfcTransportElementType"
+    ],
+    "IfcFurnishingElement": [
+        "IfcFurnishingElementType",
+        "IfcFurnitureType",
+        "IfcSystemFurnitureElementType"
+    ],
+    "IfcTransportElement": [
+        "IfcTransportElementType"
+    ],
+    "IfcVirtualElement": [
+        "IfcDistributionElementType",
+        "IfcFurnishingElementType",
+        "IfcTransportElementType"
+    ]
+}

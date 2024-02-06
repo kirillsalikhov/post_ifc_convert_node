@@ -1,0 +1,391 @@
+{
+    "IfcElement": [],
+    "IfcBuildingElement": [],
+    "IfcBeam": [
+        "IfcBeamType"
+    ],
+    "IfcBeamStandardCase": [
+        "IfcBeamType"
+    ],
+    "IfcBuildingElementProxy": [
+        "IfcBuildingElementProxyType"
+    ],
+    "IfcChimney": [
+        "IfcChimneyType"
+    ],
+    "IfcColumn": [
+        "IfcColumnType"
+    ],
+    "IfcColumnStandardCase": [
+        "IfcColumnType"
+    ],
+    "IfcCovering": [
+        "IfcCoveringType"
+    ],
+    "IfcCurtainWall": [
+        "IfcCurtainWallType"
+    ],
+    "IfcDoor": [
+        "IfcDoorType",
+        "IfcDoorStyle"
+    ],
+    "IfcDoorStandardCase": [
+        "IfcDoorType",
+        "IfcDoorStyle"
+    ],
+    "IfcFooting": [
+        "IfcFootingType"
+    ],
+    "IfcMember": [
+        "IfcMemberType"
+    ],
+    "IfcMemberStandardCase": [
+        "IfcMemberType"
+    ],
+    "IfcPile": [
+        "IfcPileType"
+    ],
+    "IfcPlate": [
+        "IfcPlateType"
+    ],
+    "IfcPlateStandardCase": [
+        "IfcPlateType"
+    ],
+    "IfcRailing": [
+        "IfcRailingType"
+    ],
+    "IfcRamp": [
+        "IfcRampType"
+    ],
+    "IfcRampFlight": [
+        "IfcRampFlightType"
+    ],
+    "IfcRoof": [
+        "IfcRoofType"
+    ],
+    "IfcShadingDevice": [
+        "IfcShadingDeviceType"
+    ],
+    "IfcSlab": [
+        "IfcSlabType"
+    ],
+    "IfcSlabElementedCase": [
+        "IfcSlabType"
+    ],
+    "IfcSlabStandardCase": [
+        "IfcSlabType"
+    ],
+    "IfcStair": [
+        "IfcStairType"
+    ],
+    "IfcStairFlight": [
+        "IfcStairFlightType"
+    ],
+    "IfcWall": [
+        "IfcWallType"
+    ],
+    "IfcWallElementedCase": [
+        "IfcWallType"
+    ],
+    "IfcWallStandardCase": [
+        "IfcWallType"
+    ],
+    "IfcWindow": [
+        "IfcWindowType",
+        "IfcWindowStyle"
+    ],
+    "IfcWindowStandardCase": [
+        "IfcWindowType",
+        "IfcWindowStyle"
+    ],
+    "IfcCivilElement": [
+        "IfcCivilElementType"
+    ],
+    "IfcDistributionElement": [
+        "IfcDistributionElementType"
+    ],
+    "IfcDistributionControlElement": [
+        "IfcDistributionElementType"
+    ],
+    "IfcActuator": [
+        "IfcActuatorType"
+    ],
+    "IfcAlarm": [
+        "IfcAlarmType"
+    ],
+    "IfcController": [
+        "IfcControllerType"
+    ],
+    "IfcFlowInstrument": [
+        "IfcFlowInstrumentType"
+    ],
+    "IfcProtectiveDeviceTrippingUnit": [
+        "IfcProtectiveDeviceTrippingUnitType"
+    ],
+    "IfcSensor": [
+        "IfcSensorType"
+    ],
+    "IfcUnitaryControlElement": [
+        "IfcUnitaryControlElementType"
+    ],
+    "IfcDistributionFlowElement": [
+        "IfcDistributionElementType"
+    ],
+    "IfcDistributionChamberElement": [
+        "IfcDistributionChamberElementType"
+    ],
+    "IfcEnergyConversionDevice": [
+        "IfcDistributionElementType"
+    ],
+    "IfcAirToAirHeatRecovery": [
+        "IfcAirToAirHeatRecoveryType"
+    ],
+    "IfcBoiler": [
+        "IfcBoilerType"
+    ],
+    "IfcBurner": [
+        "IfcBurnerType"
+    ],
+    "IfcChiller": [
+        "IfcChillerType"
+    ],
+    "IfcCoil": [
+        "IfcCoilType"
+    ],
+    "IfcCondenser": [
+        "IfcCondenserType"
+    ],
+    "IfcCooledBeam": [
+        "IfcCooledBeamType"
+    ],
+    "IfcCoolingTower": [
+        "IfcCoolingTowerType"
+    ],
+    "IfcElectricGenerator": [
+        "IfcElectricGeneratorType"
+    ],
+    "IfcElectricMotor": [
+        "IfcElectricMotorType"
+    ],
+    "IfcEngine": [
+        "IfcEngineType"
+    ],
+    "IfcEvaporativeCooler": [
+        "IfcEvaporativeCoolerType"
+    ],
+    "IfcEvaporator": [
+        "IfcEvaporatorType"
+    ],
+    "IfcHeatExchanger": [
+        "IfcHeatExchangerType"
+    ],
+    "IfcHumidifier": [
+        "IfcHumidifierType"
+    ],
+    "IfcMotorConnection": [
+        "IfcMotorConnectionType"
+    ],
+    "IfcSolarDevice": [
+        "IfcSolarDeviceType"
+    ],
+    "IfcTransformer": [
+        "IfcTransformerType"
+    ],
+    "IfcTubeBundle": [
+        "IfcTubeBundleType"
+    ],
+    "IfcUnitaryEquipment": [
+        "IfcUnitaryEquipmentType"
+    ],
+    "IfcFlowController": [
+        "IfcDistributionElementType"
+    ],
+    "IfcAirTerminalBox": [
+        "IfcAirTerminalBoxType"
+    ],
+    "IfcDamper": [
+        "IfcDamperType"
+    ],
+    "IfcElectricDistributionBoard": [
+        "IfcElectricDistributionBoardType"
+    ],
+    "IfcElectricTimeControl": [
+        "IfcElectricTimeControlType"
+    ],
+    "IfcFlowMeter": [
+        "IfcFlowMeterType"
+    ],
+    "IfcProtectiveDevice": [
+        "IfcProtectiveDeviceType"
+    ],
+    "IfcSwitchingDevice": [
+        "IfcSwitchingDeviceType"
+    ],
+    "IfcValve": [
+        "IfcValveType"
+    ],
+    "IfcFlowFitting": [
+        "IfcDistributionElementType"
+    ],
+    "IfcCableCarrierFitting": [
+        "IfcCableCarrierFittingType"
+    ],
+    "IfcCableFitting": [
+        "IfcCableFittingType"
+    ],
+    "IfcDuctFitting": [
+        "IfcDuctFittingType"
+    ],
+    "IfcJunctionBox": [
+        "IfcJunctionBoxType"
+    ],
+    "IfcPipeFitting": [
+        "IfcPipeFittingType"
+    ],
+    "IfcFlowMovingDevice": [
+        "IfcDistributionElementType"
+    ],
+    "IfcCompressor": [
+        "IfcCompressorType"
+    ],
+    "IfcFan": [
+        "IfcFanType"
+    ],
+    "IfcPump": [
+        "IfcPumpType"
+    ],
+    "IfcFlowSegment": [
+        "IfcDistributionElementType"
+    ],
+    "IfcCableCarrierSegment": [
+        "IfcCableCarrierSegmentType"
+    ],
+    "IfcCableSegment": [
+        "IfcCableSegmentType"
+    ],
+    "IfcDuctSegment": [
+        "IfcDuctSegmentType"
+    ],
+    "IfcPipeSegment": [
+        "IfcPipeSegmentType"
+    ],
+    "IfcFlowStorageDevice": [
+        "IfcDistributionElementType"
+    ],
+    "IfcElectricFlowStorageDevice": [
+        "IfcElectricFlowStorageDeviceType"
+    ],
+    "IfcTank": [
+        "IfcTankType"
+    ],
+    "IfcFlowTerminal": [
+        "IfcDistributionElementType"
+    ],
+    "IfcAirTerminal": [
+        "IfcAirTerminalType"
+    ],
+    "IfcAudioVisualAppliance": [
+        "IfcAudioVisualApplianceType"
+    ],
+    "IfcCommunicationsAppliance": [
+        "IfcCommunicationsApplianceType"
+    ],
+    "IfcElectricAppliance": [
+        "IfcElectricApplianceType"
+    ],
+    "IfcFireSuppressionTerminal": [
+        "IfcFireSuppressionTerminalType"
+    ],
+    "IfcLamp": [
+        "IfcLampType"
+    ],
+    "IfcLightFixture": [
+        "IfcLightFixtureType"
+    ],
+    "IfcMedicalDevice": [
+        "IfcMedicalDeviceType"
+    ],
+    "IfcOutlet": [
+        "IfcOutletType"
+    ],
+    "IfcSanitaryTerminal": [
+        "IfcSanitaryTerminalType"
+    ],
+    "IfcSpaceHeater": [
+        "IfcSpaceHeaterType"
+    ],
+    "IfcStackTerminal": [
+        "IfcStackTerminalType"
+    ],
+    "IfcWasteTerminal": [
+        "IfcWasteTerminalType"
+    ],
+    "IfcFlowTreatmentDevice": [
+        "IfcDistributionElementType"
+    ],
+    "IfcDuctSilencer": [
+        "IfcDuctSilencerType"
+    ],
+    "IfcFilter": [
+        "IfcFilterType"
+    ],
+    "IfcInterceptor": [
+        "IfcInterceptorType"
+    ],
+    "IfcElementAssembly": [
+        "IfcElementAssemblyType"
+    ],
+    "IfcElementComponent": [],
+    "IfcBuildingElementPart": [
+        "IfcBuildingElementPartType"
+    ],
+    "IfcDiscreteAccessory": [
+        "IfcDiscreteAccessoryType"
+    ],
+    "IfcFastener": [
+        "IfcFastenerType"
+    ],
+    "IfcMechanicalFastener": [
+        "IfcMechanicalFastenerType"
+    ],
+    "IfcReinforcingElement": [],
+    "IfcReinforcingBar": [
+        "IfcReinforcingBarType"
+    ],
+    "IfcReinforcingMesh": [
+        "IfcReinforcingMeshType"
+    ],
+    "IfcTendon": [
+        "IfcTendonType"
+    ],
+    "IfcTendonAnchor": [
+        "IfcTendonAnchorType"
+    ],
+    "IfcVibrationIsolator": [
+        "IfcVibrationIsolatorType"
+    ],
+    "IfcFeatureElement": [],
+    "IfcFeatureElementAddition": [],
+    "IfcProjectionElement": [],
+    "IfcFeatureElementSubtraction": [],
+    "IfcOpeningElement": [],
+    "IfcOpeningStandardCase": [],
+    "IfcVoidingFeature": [],
+    "IfcSurfaceFeature": [],
+    "IfcFurnishingElement": [
+        "IfcFurnishingElementType"
+    ],
+    "IfcFurniture": [
+        "IfcFurnitureType"
+    ],
+    "IfcSystemFurnitureElement": [
+        "IfcSystemFurnitureElementType"
+    ],
+    "IfcGeographicElement": [
+        "IfcGeographicElementType"
+    ],
+    "IfcTransportElement": [
+        "IfcTransportElementType"
+    ],
+    "IfcVirtualElement": []
+}

@@ -1,0 +1,179 @@
+{
+    "IfcBeam": [
+        "IfcBeam"
+    ],
+    "IfcBuildingElementComponent": [
+        "IfcBuildingElementComponent"
+    ],
+    "IfcBuildingElementPart": [
+        "IfcBuildingElementPart",
+        "IfcBuildingElementComponent"
+    ],
+    "IfcReinforcingElement": [
+        "IfcReinforcingElement",
+        "IfcBuildingElementComponent"
+    ],
+    "IfcReinforcingBar": [
+        "IfcReinforcingBar",
+        "IfcReinforcingElement",
+        "IfcBuildingElementComponent"
+    ],
+    "IfcReinforcingMesh": [
+        "IfcReinforcingMesh",
+        "IfcReinforcingElement",
+        "IfcBuildingElementComponent"
+    ],
+    "IfcTendon": [
+        "IfcTendon",
+        "IfcReinforcingElement",
+        "IfcBuildingElementComponent"
+    ],
+    "IfcTendonAnchor": [
+        "IfcTendonAnchor",
+        "IfcReinforcingElement",
+        "IfcBuildingElementComponent"
+    ],
+    "IfcBuildingElementProxy": [
+        "IfcBuildingElementProxy"
+    ],
+    "IfcColumn": [
+        "IfcColumn"
+    ],
+    "IfcCovering": [
+        "IfcCovering"
+    ],
+    "IfcCurtainWall": [
+        "IfcCurtainWall"
+    ],
+    "IfcDoor": [
+        "IfcDoor"
+    ],
+    "IfcFooting": [
+        "IfcFooting"
+    ],
+    "IfcMember": [
+        "IfcMember"
+    ],
+    "IfcPile": [
+        "IfcPile"
+    ],
+    "IfcPlate": [
+        "IfcPlate"
+    ],
+    "IfcRailing": [
+        "IfcRailing"
+    ],
+    "IfcRamp": [
+        "IfcRamp"
+    ],
+    "IfcRampFlight": [
+        "IfcRampFlight"
+    ],
+    "IfcRoof": [
+        "IfcRoof"
+    ],
+    "IfcSlab": [
+        "IfcSlab"
+    ],
+    "IfcStair": [
+        "IfcStair"
+    ],
+    "IfcStairFlight": [
+        "IfcStairFlight"
+    ],
+    "IfcWall": [
+        "IfcWall"
+    ],
+    "IfcWallStandardCase": [
+        "IfcWallStandardCase",
+        "IfcWall"
+    ],
+    "IfcWindow": [
+        "IfcWindow"
+    ],
+    "IfcDistributionControlElement": [
+        "IfcDistributionControlElement"
+    ],
+    "IfcDistributionFlowElement": [
+        "IfcDistributionFlowElement"
+    ],
+    "IfcDistributionChamberElement": [
+        "IfcDistributionChamberElement",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcEnergyConversionDevice": [
+        "IfcEnergyConversionDevice",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcFlowController": [
+        "IfcFlowController",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcElectricDistributionPoint": [
+        "IfcElectricDistributionPoint",
+        "IfcFlowController",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcFlowFitting": [
+        "IfcFlowFitting",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcFlowMovingDevice": [
+        "IfcFlowMovingDevice",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcFlowSegment": [
+        "IfcFlowSegment",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcFlowStorageDevice": [
+        "IfcFlowStorageDevice",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcFlowTerminal": [
+        "IfcFlowTerminal",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcFlowTreatmentDevice": [
+        "IfcFlowTreatmentDevice",
+        "IfcDistributionFlowElement"
+    ],
+    "IfcDiscreteAccessory": [
+        "IfcDiscreteAccessory"
+    ],
+    "IfcFastener": [
+        "IfcFastener"
+    ],
+    "IfcMechanicalFastener": [
+        "IfcMechanicalFastener",
+        "IfcFastener"
+    ],
+    "IfcFeatureElementAddition": [
+        "IfcFeatureElementAddition"
+    ],
+    "IfcProjectionElement": [
+        "IfcProjectionElement",
+        "IfcFeatureElementAddition"
+    ],
+    "IfcFeatureElementSubtraction": [
+        "IfcFeatureElementSubtraction"
+    ],
+    "IfcEdgeFeature": [
+        "IfcEdgeFeature",
+        "IfcFeatureElementSubtraction"
+    ],
+    "IfcChamferEdgeFeature": [
+        "IfcChamferEdgeFeature",
+        "IfcEdgeFeature",
+        "IfcFeatureElementSubtraction"
+    ],
+    "IfcRoundedEdgeFeature": [
+        "IfcRoundedEdgeFeature",
+        "IfcEdgeFeature",
+        "IfcFeatureElementSubtraction"
+    ],
+    "IfcOpeningElement": [
+        "IfcOpeningElement",
+        "IfcFeatureElementSubtraction"
+    ]
+}
