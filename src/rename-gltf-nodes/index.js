@@ -1,4 +1,5 @@
 const fs = require('fs');
+const path = require('path');
 const StreamPromises = require("stream/promises");
 const {JsonStreamStringify} = require("json-stream-stringify");
 
@@ -81,7 +82,7 @@ async function renameGltfNodes(inputGltfFileName, objectsJsonFileName, outputGlt
         }
     }
 
-
+    fs.mkdirSync(path.dirname(outputGltfName), { recursive: true })
     await writeJson(gltf, outputGltfName);
 }
 
