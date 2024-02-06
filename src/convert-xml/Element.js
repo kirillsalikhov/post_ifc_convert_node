@@ -65,6 +65,17 @@ class Element {
         return this.parser.schema.getAncestor(this.ifcType) || this.ifcType;
     }
 
+    // returns other entity
+    // IfcWall => IfcWallType
+    getTypeEntity() {
+        const typeNames = this.parser.schema.getTypeEntity(this.ifcType) || [];
+        let typeEl = this.dataChildren.find(el => typeNames.includes(el.ifcType));
+        if (typeEl) {
+            typeEl = typeEl.ref ? this.parser.getByRef(typeEl.ref) : typeEl;
+        }
+        return typeEl;
+    }
+
     // used for key in parent json
     get groupingName() {
         return this._groupName(this);

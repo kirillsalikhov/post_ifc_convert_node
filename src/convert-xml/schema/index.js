@@ -44,6 +44,10 @@ class Schema {
         return this.entityAncestorsIdx[ifcType]?.at(-1);
     }
 
+    getTypeEntity(ifcType) {
+        return this.entityTypeIdx[ifcType];
+    }
+
     getPset(psetName) {
         const _psetName = psetName.toUpperCase();
         const pset = this.psetsIdx[_psetName];

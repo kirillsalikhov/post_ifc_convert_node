@@ -146,9 +146,9 @@ const categoryId = (el, res) => {
 }
 
 const revitFamilyAttrs = (el, res) => {
-    if (el.attributes["ObjectType"]) {
-        let familyName = "", typeName = "";
+    let familyName = "", typeName = "";
 
+    if (el.attributes["ObjectType"]) {
         const parts = el.attributes["ObjectType"].split(":")
 
         if (parts.length === 2) {
@@ -165,9 +165,16 @@ const revitFamilyAttrs = (el, res) => {
             // should not get here
             console.warn(`Object type strange split for element ${el.id}`);
         }
-        res["FamilyName"] = familyName;
-        res["TypeName"] = typeName;
+    } else {
+        const typeEntity = el.getTypeEntity();
+        if (typeEntity?.attributes.Name) {
+            typeName = typeEntity?.attributes.Name
+        } else if (el.attributes?.Name) {
+            typeName = el.attributes.Name
+        }
     }
+    res["FamilyName"] = familyName;
+    res["TypeName"] = typeName;
 }
 
 const internal = (el, res) => {
