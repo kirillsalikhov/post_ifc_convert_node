@@ -9,7 +9,7 @@ def serialize_entity_type_map(schema, out_path):
 
 
 def entity_type_map(schema):
-    root = schema.declaration_by_name("IfcElement")
+    root = schema.declaration_by_name("IfcProduct")
     idx = {}
 
     def _traverse(element):

@@ -148,31 +148,34 @@ const categoryId = (el, res) => {
 const revitFamilyAttrs = (el, res) => {
     let familyName = "", typeName = "";
 
-    if (el.attributes["ObjectType"]) {
-        const parts = el.attributes["ObjectType"].split(":")
+    let objectType = el.attributes["ObjectType"] || "";
 
-        if (parts.length === 2) {
-            [familyName, typeName] = parts;
-        } else if (parts.length === 1) {
-            // for some reason in smeta5d xml file
-            // if there's no ':', only typeName is used
-            typeName = parts[0];
-        } else if (parts.length > 2) {
-            // was one example with two ':' 'Монолитная площадка:Толщина: 300 мм'
-            familyName = parts.shift();
-            typeName = parts.join(":")
-        } else {
-            // should not get here
-            console.warn(`Object type strange split for element ${el.id}`);
-        }
-    } else {
+    if (!objectType) {
         const typeEntity = el.getTypeEntity();
         if (typeEntity?.attributes.Name) {
-            typeName = typeEntity?.attributes.Name
+            objectType = typeEntity?.attributes.Name
         } else if (el.attributes?.Name) {
-            typeName = el.attributes.Name
+            objectType = el.attributes.Name
         }
     }
+
+    const parts = objectType.split(":")
+
+    if (parts.length === 2) {
+        [familyName, typeName] = parts;
+    } else if (parts.length === 1) {
+        // for some reason in smeta5d xml file
+        // if there's no ':', only typeName is used
+        typeName = parts[0];
+    } else if (parts.length > 2) {
+        // was one example with two ':' 'Монолитная площадка:Толщина: 300 мм'
+        familyName = parts.shift();
+        typeName = parts.join(":")
+    } else {
+        // should not get here
+        console.warn(`Object type strange split for element ${el.id}`);
+    }
+
     res["FamilyName"] = familyName;
     res["TypeName"] = typeName;
 }

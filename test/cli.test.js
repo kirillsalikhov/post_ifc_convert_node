@@ -94,10 +94,21 @@ const validateAgainstSmeta5d = (smeta5dXmlJs, objects) => {
 
     //note: this relies on the XML structure being very specific.
     for (const s5dElement of smeta5dXmlJs.Document.Elements[0].Element) {
-        const {Id, CategoryId} = s5dElement.$;
+        const {Id, CategoryId, FamilyName, TypeName} = s5dElement.$;
         const obj = objById.get(Id);
-        expect(obj).not.toBeUndefined();
-        expect(obj.CategoryId).toBe(CategoryId);
+        try {
+            expect(obj).not.toBeUndefined();
+            expect(obj.CategoryId).toBe(CategoryId);
+            if (!obj.FamilyName.includes(':') && !(FamilyName ?? "").includes(':')) {
+                expect(obj.FamilyName).toBe(FamilyName ?? "");
+            }
+            if (!obj.TypeName.includes(':') && !(TypeName ?? "").includes(':')) {
+                expect(obj.TypeName).toBe(TypeName ?? "");
+            }
+        } catch (e) {
+            e.message = `${e.message}\n\nsmeta5dElement.id = ${Id}`;
+            throw e;
+        }
     }
 };
 
@@ -130,7 +141,7 @@ describe('convert-xml', () => {
         {sampleName: 'erp-sample', xml: 'origin.xml', smeta5d: 'smeta5d.xml'},
         {sampleName: 'small-ifc', xml: 'origin.xml', smeta5d: 'small-smeta5d.xml'},
         {sampleName: 'erp-sample-big', xml: '10116_Р_АР_published_new_2x3_view2_величины.xml', smeta5d: '10116_Р_АР_published_new_2x3_view2_величины.smeta_5d.xml'},
-    ])('doesn\'t fail', async ({sampleName, xml, smeta5d}) => {
+    ])('doesn\'t fail on $sampleName', async ({sampleName, xml, smeta5d}) => {
         const { spawnResult, outputDirectoryPath} = spawnConvertXml(sampleName, xml);
         validateSpawnResult(spawnResult);
 
@@ -145,7 +156,7 @@ describe('rename-gltf-nodes', () => {
     test.each([
         {sampleName: 'erp-sample-big'},
         {sampleName: 'circles'},
-    ])('produces valid result', ({sampleName}) => {
+    ])('produces valid result for $sampleName', ({sampleName}) => {
         const {spawnResult, inputObjectsJsonPath, outputGltfPath} = spawnRenameGltfNodes('samples', sampleName, 'model.gltf', 'objects.json', 'model.gltf');
         validateSpawnResult(spawnResult);
 
@@ -159,7 +170,7 @@ describe('adjust-materials', () => {
     test.each([
         {sampleName: 'erp-sample-big'},
         {sampleName: 'circles'},
-    ])('produces valid result on erp-sample-big', ({sampleName}) => {
+    ])('produces valid result on $sampleName', ({sampleName}) => {
         const {spawnResult, inputGltfPath, outputGltfPath} = spawnAdjustMaterials('samples', sampleName, 'model.gltf', 'model.gltf');
         validateSpawnResult(spawnResult);
 

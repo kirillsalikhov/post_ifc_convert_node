@@ -1,4 +1,6 @@
 {
+    "IfcProduct": [],
+    "IfcAnnotation": [],
     "IfcElement": [],
     "IfcBuildingElement": [],
     "IfcBeam": [
@@ -387,5 +389,43 @@
     "IfcTransportElement": [
         "IfcTransportElementType"
     ],
-    "IfcVirtualElement": []
+    "IfcVirtualElement": [],
+    "IfcGrid": [],
+    "IfcPort": [],
+    "IfcDistributionPort": [],
+    "IfcProxy": [],
+    "IfcSpatialElement": [],
+    "IfcExternalSpatialStructureElement": [],
+    "IfcExternalSpatialElement": [],
+    "IfcSpatialStructureElement": [],
+    "IfcBuilding": [],
+    "IfcBuildingStorey": [],
+    "IfcSite": [],
+    "IfcSpace": [
+        "IfcSpaceType"
+    ],
+    "IfcSpatialZone": [
+        "IfcSpatialZoneType"
+    ],
+    "IfcStructuralActivity": [],
+    "IfcStructuralAction": [],
+    "IfcStructuralCurveAction": [],
+    "IfcStructuralLinearAction": [],
+    "IfcStructuralPointAction": [],
+    "IfcStructuralSurfaceAction": [],
+    "IfcStructuralPlanarAction": [],
+    "IfcStructuralReaction": [],
+    "IfcStructuralCurveReaction": [],
+    "IfcStructuralPointReaction": [],
+    "IfcStructuralSurfaceReaction": [],
+    "IfcStructuralItem": [],
+    "IfcStructuralConnection": [],
+    "IfcStructuralCurveConnection": [],
+    "IfcStructuralPointConnection": [],
+    "IfcStructuralSurfaceConnection": [],
+    "IfcStructuralMember": [],
+    "IfcStructuralCurveMember": [],
+    "IfcStructuralCurveMemberVarying": [],
+    "IfcStructuralSurfaceMember": [],
+    "IfcStructuralSurfaceMemberVarying": []
 }

@@ -1,4 +1,6 @@
 {
+    "IfcProduct": [],
+    "IfcAnnotation": [],
     "IfcElement": [],
     "IfcBuiltElement": [
         "IfcBuiltElementType"
@@ -437,5 +439,62 @@
     "IfcVehicle": [
         "IfcVehicleType"
     ],
-    "IfcVirtualElement": []
+    "IfcVirtualElement": [],
+    "IfcLinearElement": [],
+    "IfcAlignmentCant": [],
+    "IfcAlignmentHorizontal": [],
+    "IfcAlignmentSegment": [],
+    "IfcAlignmentVertical": [],
+    "IfcPort": [],
+    "IfcDistributionPort": [],
+    "IfcPositioningElement": [],
+    "IfcGrid": [],
+    "IfcLinearPositioningElement": [],
+    "IfcAlignment": [],
+    "IfcReferent": [],
+    "IfcSpatialElement": [],
+    "IfcExternalSpatialStructureElement": [],
+    "IfcExternalSpatialElement": [],
+    "IfcSpatialStructureElement": [],
+    "IfcBuildingStorey": [],
+    "IfcFacility": [],
+    "IfcBridge": [],
+    "IfcBuilding": [],
+    "IfcMarineFacility": [],
+    "IfcRailway": [],
+    "IfcRoad": [],
+    "IfcFacilityPart": [],
+    "IfcBridgePart": [],
+    "IfcFacilityPartCommon": [],
+    "IfcMarinePart": [],
+    "IfcRailwayPart": [],
+    "IfcRoadPart": [],
+    "IfcSite": [],
+    "IfcSpace": [
+        "IfcSpaceType"
+    ],
+    "IfcSpatialZone": [
+        "IfcSpatialZoneType"
+    ],
+    "IfcStructuralActivity": [],
+    "IfcStructuralAction": [],
+    "IfcStructuralCurveAction": [],
+    "IfcStructuralLinearAction": [],
+    "IfcStructuralPointAction": [],
+    "IfcStructuralSurfaceAction": [],
+    "IfcStructuralPlanarAction": [],
+    "IfcStructuralReaction": [],
+    "IfcStructuralCurveReaction": [],
+    "IfcStructuralPointReaction": [],
+    "IfcStructuralSurfaceReaction": [],
+    "IfcStructuralItem": [],
+    "IfcStructuralConnection": [],
+    "IfcStructuralCurveConnection": [],
+    "IfcStructuralPointConnection": [],
+    "IfcStructuralSurfaceConnection": [],
+    "IfcStructuralMember": [],
+    "IfcStructuralCurveMember": [],
+    "IfcStructuralCurveMemberVarying": [],
+    "IfcStructuralSurfaceMember": [],
+    "IfcStructuralSurfaceMemberVarying": []
 }

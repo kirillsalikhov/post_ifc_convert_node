@@ -1,4 +1,6 @@
 {
+    "IfcProduct": [],
+    "IfcAnnotation": [],
     "IfcElement": [
         "IfcDistributionElementType",
         "IfcFurnishingElementType",
@@ -405,5 +407,43 @@
         "IfcDistributionElementType",
         "IfcFurnishingElementType",
         "IfcTransportElementType"
-    ]
+    ],
+    "IfcGrid": [],
+    "IfcPort": [],
+    "IfcDistributionPort": [],
+    "IfcProxy": [],
+    "IfcSpatialStructureElement": [
+        "IfcSpaceType"
+    ],
+    "IfcBuilding": [
+        "IfcSpaceType"
+    ],
+    "IfcBuildingStorey": [
+        "IfcSpaceType"
+    ],
+    "IfcSite": [
+        "IfcSpaceType"
+    ],
+    "IfcSpace": [
+        "IfcSpaceType"
+    ],
+    "IfcStructuralActivity": [],
+    "IfcStructuralAction": [],
+    "IfcStructuralLinearAction": [],
+    "IfcStructuralLinearActionVarying": [],
+    "IfcStructuralPlanarAction": [],
+    "IfcStructuralPlanarActionVarying": [],
+    "IfcStructuralPointAction": [],
+    "IfcStructuralReaction": [],
+    "IfcStructuralPointReaction": [],
+    "IfcStructuralItem": [],
+    "IfcStructuralConnection": [],
+    "IfcStructuralCurveConnection": [],
+    "IfcStructuralPointConnection": [],
+    "IfcStructuralSurfaceConnection": [],
+    "IfcStructuralMember": [],
+    "IfcStructuralCurveMember": [],
+    "IfcStructuralCurveMemberVarying": [],
+    "IfcStructuralSurfaceMember": [],
+    "IfcStructuralSurfaceMemberVarying": []
 }
