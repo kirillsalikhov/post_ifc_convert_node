@@ -41,6 +41,9 @@ const erpSerializersConfig = {
     "IfcElementQuantity": [combineModifiers([
         dataChildren
     ]), nameTitle],
+    "IfcPhysicalComplexQuantity": [combineModifiers([
+        dataChildren
+    ]), nameTitle],
 
     "IfcMaterialLayerSetUsage":[combineModifiers([
         attrsWithDef,

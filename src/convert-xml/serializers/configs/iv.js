@@ -42,6 +42,9 @@ const ivSerializersConfig = {
     "IfcElementQuantity": [combineModifiers([
         dataChildren
     ]), nameTitle],
+    "IfcPhysicalComplexQuantity": [combineModifiers([
+        dataChildren
+    ]), nameTitle],
 
     "IfcMaterialLayerSetUsage":[combineModifiers([
         attrs,
