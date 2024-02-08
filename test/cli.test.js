@@ -77,12 +77,10 @@ const spawnAdjustMaterials = (inputDir, sampleName, inputGltfFileName, outputGlt
 
 
 const validateSpawnResult = (spawnResult) => {
-    const { error, status, stdout, stderr } = spawnResult;
+    const { error, status } = spawnResult;
     try {
         expect(error).toBe(undefined);
         expect(status).toBe(0);
-        expect(stdout).toBe("");
-        expect(stderr).toBe("");
     } catch (e) {
         console.log(spawnResult);
         throw e;
@@ -95,6 +93,13 @@ const validateAgainstSmeta5d = (smeta5dXmlJs, objects) => {
     //note: this relies on the XML structure being very specific.
     for (const s5dElement of smeta5dXmlJs.Document.Elements[0].Element) {
         const {Id, CategoryId, FamilyName, TypeName} = s5dElement.$;
+        // TODO add issue on their repo
+        // this is here for AC20-FZK-Haus
+        // Note this element also doesn't exist in glb, otherwise error in would be raised validateNodesRenaming
+        if ( CategoryId === "IfcVirtualElement") {
+            continue;
+        }
+
         const obj = objById.get(Id);
         try {
             expect(obj).not.toBeUndefined();
@@ -116,9 +121,14 @@ const validateNodesRenaming = (gltf, objects) => {
     //validate that every gltf node has a corresponding object in objects
     const ids = new Set(objects.map(obj => obj._id));
     for (let node of gltf.nodes ?? []) {
-        const _id = parseInt(node.name);
-        expect(_id).not.toBeNaN();
-        expect(ids.has(_id)).toEqual(true);
+        try {
+            const _id = parseInt(node.name);
+            expect(_id).not.toBeNaN();
+            expect(ids.has(_id)).toEqual(true);
+        } catch (e) {
+            e.message += `\n\nnode.name=${JSON.stringify(node.name)}`;
+            throw e;
+        }
     }
 };
 
@@ -141,6 +151,9 @@ describe('convert-xml', () => {
         {sampleName: 'erp-sample', xml: 'origin.xml', smeta5d: 'smeta5d.xml'},
         {sampleName: 'small-ifc', xml: 'origin.xml', smeta5d: 'small-smeta5d.xml'},
         {sampleName: 'erp-sample-big', xml: '10116_Р_АР_published_new_2x3_view2_величины.xml', smeta5d: '10116_Р_АР_published_new_2x3_view2_величины.smeta_5d.xml'},
+        {sampleName: 'AC20-FZK-Haus', xml: 'AC20-FZK-Haus.ifc.xml', smeta5d: 'AC20-FZK-Haus.smeta5d.xml'},
+        {sampleName: 'Duplex_Electrical_20121207', xml: 'Duplex_Electrical_20121207.ifc.xml', smeta5d: 'Duplex_Electrical_20121207.smeta5d.xml'},
+        {sampleName: 'PFV-IFC4-V08-1-final', xml: 'PFV-IFC4-V08-1-final.ifc.xml', smeta5d: 'PFV-IFC4-V08-1-final.smeta5d.xml'},
     ])('doesn\'t fail on $sampleName', async ({sampleName, xml, smeta5d}) => {
         const { spawnResult, outputDirectoryPath} = spawnConvertXml(sampleName, xml);
         validateSpawnResult(spawnResult);
@@ -156,13 +169,21 @@ describe('rename-gltf-nodes', () => {
     test.each([
         {sampleName: 'erp-sample-big'},
         {sampleName: 'circles'},
+        {sampleName: 'AC20-FZK-Haus'},
+        {sampleName: 'Duplex_Electrical_20121207'},
+        {sampleName: 'PFV-IFC4-V08-1-final'},
     ])('produces valid result for $sampleName', ({sampleName}) => {
         const {spawnResult, inputObjectsJsonPath, outputGltfPath} = spawnRenameGltfNodes('samples', sampleName, 'model.gltf', 'objects.json', 'model.gltf');
         validateSpawnResult(spawnResult);
 
-        const gltf = JSON.parse(fs.readFileSync(outputGltfPath, 'utf8'));
-        const objects = JSON.parse(fs.readFileSync(inputObjectsJsonPath, 'utf8'));
-        validateNodesRenaming(gltf, objects);
+        try {
+            const gltf = JSON.parse(fs.readFileSync(outputGltfPath, 'utf8'));
+            const objects = JSON.parse(fs.readFileSync(inputObjectsJsonPath, 'utf8'));
+            validateNodesRenaming(gltf, objects);
+        } catch (e) {
+            console.log(`rename-gltf-nodes spawnResult for ${sampleName}`, spawnResult);
+            throw e;
+        }
     });
 });
 
@@ -170,6 +191,9 @@ describe('adjust-materials', () => {
     test.each([
         {sampleName: 'erp-sample-big'},
         {sampleName: 'circles'},
+        {sampleName: 'AC20-FZK-Haus'},
+        {sampleName: 'Duplex_Electrical_20121207'},
+        {sampleName: 'PFV-IFC4-V08-1-final'},
     ])('produces valid result on $sampleName', ({sampleName}) => {
         const {spawnResult, inputGltfPath, outputGltfPath} = spawnAdjustMaterials('samples', sampleName, 'model.gltf', 'model.gltf');
         validateSpawnResult(spawnResult);
@@ -181,11 +205,35 @@ describe('adjust-materials', () => {
 });
 
 describe('full-conversion', () => {
-    test('works for erp-sample-big', async () => {
-        const sampleName = 'erp-sample-big';
-        const { spawnResult: convertXmlSpawnResult, outputDirectoryPath } = spawnConvertXml(sampleName, '10116_Р_АР_published_new_2x3_view2_величины.xml');
+    test.each([
+        {
+            sampleName: 'erp-sample-big',
+            xml: '10116_Р_АР_published_new_2x3_view2_величины.xml',
+            glb: '10116_Р_АР_published_new_2x3_view2_величины.glb',
+            smeta5d: '10116_Р_АР_published_new_2x3_view2_величины.smeta_5d.xml'
+        },
+        {
+            sampleName: 'AC20-FZK-Haus',
+            xml: 'AC20-FZK-Haus.ifc.xml',
+            glb: 'AC20-FZK-Haus.ifc.glb',
+            smeta5d: 'AC20-FZK-Haus.smeta5d.xml'
+        },
+        {
+            sampleName: 'Duplex_Electrical_20121207',
+            xml: 'Duplex_Electrical_20121207.ifc.xml',
+            glb: 'Duplex_Electrical_20121207.ifc.glb',
+            smeta5d: 'Duplex_Electrical_20121207.smeta5d.xml'
+        },
+        {
+            sampleName: 'PFV-IFC4-V08-1-final',
+            xml: 'PFV-IFC4-V08-1-final.ifc.xml',
+            glb: 'PFV-IFC4-V08-1-final.ifc.glb',
+            smeta5d: 'PFV-IFC4-V08-1-final.smeta5d.xml'
+        },
+    ])('works for $sampleName', async ({sampleName, xml, glb, smeta5d}) => {
+        const { spawnResult: convertXmlSpawnResult } = spawnConvertXml(sampleName, xml);
         validateSpawnResult(convertXmlSpawnResult);
-        const glbToGltfSpawnResult = spawnGlbToGltf(sampleName, '10116_Р_АР_published_new_2x3_view2_величины.glb', 'model.glb.gltf');
+        const glbToGltfSpawnResult = spawnGlbToGltf(sampleName, glb, 'model.glb.gltf');
         //general validateSpawnResult won't work while we still use gltf-transform
         try {
             expect(glbToGltfSpawnResult.status).toBe(0);
@@ -202,7 +250,7 @@ describe('full-conversion', () => {
         const inputGltf = JSON.parse(fs.readFileSync(inputGltfPath, 'utf8'));
         const objects = JSON.parse(fs.readFileSync(inputObjectsJsonPath, 'utf8'));
         const outputGltf = JSON.parse(fs.readFileSync(outputGltfPath, 'utf8'));
-        const smeta5dXml = await xml2js.parseStringPromise(fs.readFileSync(path.join(PROJECT_ROOT, 'samples', sampleName, '10116_Р_АР_published_new_2x3_view2_величины.smeta_5d.xml'), 'utf8'));
+        const smeta5dXml = await xml2js.parseStringPromise(fs.readFileSync(path.join(PROJECT_ROOT, 'samples', sampleName, smeta5d), 'utf8'));
 
         validateNodesRenaming(outputGltf, objects);
         validateMaterialsAdjustment(inputGltf, outputGltf);

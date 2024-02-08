@@ -148,16 +148,15 @@ const categoryId = (el, res) => {
 const revitFamilyAttrs = (el, res) => {
     let familyName = "", typeName = "";
 
-    let objectType = el.attributes["ObjectType"] || "";
+    let objectType = el.attributes.ObjectType;
 
-    if (!objectType) {
+    if (objectType === undefined) {
         const typeEntity = el.getTypeEntity();
-        if (typeEntity?.attributes.Name) {
-            objectType = typeEntity?.attributes.Name
-        } else if (el.attributes?.Name) {
-            objectType = el.attributes.Name
-        }
+        // even if there's no Name on type entity or element, we replicate Smeta5D logic
+        objectType = typeEntity ? typeEntity.attributes.Name : el.attributes.Name
     }
+
+    objectType ||= "";
 
     const parts = objectType.split(":")
 
