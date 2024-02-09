@@ -12,6 +12,10 @@
     {
       "name": "glb",
       "type": "file"
+    },
+    {
+      "name": "serializer",
+      "type": "string"
     }
   ],
   "output": [
