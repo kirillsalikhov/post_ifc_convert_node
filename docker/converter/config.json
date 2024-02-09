@@ -2,17 +2,16 @@
   "name": "post_ifc_convert_node",
   "input": [
     {
+      "name": "ifc",
+      "type": "file"
+    },
+    {
       "name": "xml",
       "type": "file"
     },
     {
       "name": "glb",
       "type": "file"
-    },
-    {
-      "name": "doubleSided",
-      "type": "boolean",
-      "default": "false"
     }
   ],
   "output": [
