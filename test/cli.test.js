@@ -88,7 +88,14 @@ const validateSpawnResult = (spawnResult) => {
     }
 };
 
-const validateAgainstSmeta5d = (smeta5dXmlJs, objects) => {
+const validateObjectsForGltfRenaming = (objects) => {
+    for (const obj of objects) {
+        expect(typeof obj.id).toBe('string');
+        expect(typeof obj._id).toBe('number');
+    }
+};
+
+const validateObjectsAgainstSmeta5d = (smeta5dXmlJs, objects) => {
     const objById = new Map(objects.map(o => [o.GlobalId, o]));
 
     //note: this relies on the XML structure being very specific.
@@ -147,7 +154,11 @@ const validateMaterialsAdjustment = (inputGltf, outputGltf) => {
     }
 };
 
-describe('convert-xml', () => {
+describe.each([
+    {serializer: 'erp'},
+    {serializer: 'iv'},
+    {serializer: 'min'}
+])('convert-xml with serializer=$serializer', ({serializer}) => {
     test.each([
         {sampleName: 'erp-sample', xml: 'origin.xml', smeta5d: 'smeta5d.xml'},
         {sampleName: 'small-ifc', xml: 'origin.xml', smeta5d: 'small-smeta5d.xml'},
@@ -156,13 +167,17 @@ describe('convert-xml', () => {
         {sampleName: 'Duplex_Electrical_20121207', xml: 'Duplex_Electrical_20121207.ifc.xml', smeta5d: 'Duplex_Electrical_20121207.smeta5d.xml'},
         {sampleName: 'PFV-IFC4-V08-1-final', xml: 'PFV-IFC4-V08-1-final.ifc.xml', smeta5d: 'PFV-IFC4-V08-1-final.smeta5d.xml'},
     ])('doesn\'t fail on $sampleName', async ({sampleName, xml, smeta5d}) => {
-        const { spawnResult, outputDirectoryPath} = spawnConvertXml(sampleName, xml, 'erp');
+        const { spawnResult, outputDirectoryPath} = spawnConvertXml(sampleName, xml, serializer);
         validateSpawnResult(spawnResult);
 
-        const smeta5dXml = fs.readFileSync(path.join(PROJECT_ROOT, 'samples', sampleName, smeta5d), 'utf8');
-        const smeta5dXml2Js = await xml2js.parseStringPromise(smeta5dXml);
         const objects = JSON.parse(fs.readFileSync(path.join(outputDirectoryPath, 'objects.json'), 'utf8'));
-        validateAgainstSmeta5d(smeta5dXml2Js, objects);
+        validateObjectsForGltfRenaming(objects);
+
+        if (serializer === 'erp') {
+            const smeta5dXml = fs.readFileSync(path.join(PROJECT_ROOT, 'samples', sampleName, smeta5d), 'utf8');
+            const smeta5dXml2Js = await xml2js.parseStringPromise(smeta5dXml);
+            validateObjectsAgainstSmeta5d(smeta5dXml2Js, objects);
+        }
     })
 });
 
@@ -261,7 +276,7 @@ describe.each([
 
         if (serializer === 'erp') {
             const smeta5dXml = await xml2js.parseStringPromise(fs.readFileSync(path.join(PROJECT_ROOT, 'samples', sampleName, smeta5d), 'utf8'));
-            validateAgainstSmeta5d(smeta5dXml, objects);
+            validateObjectsAgainstSmeta5d(smeta5dXml, objects);
         }
     });
 });
