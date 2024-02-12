@@ -271,6 +271,7 @@ describe.each([
         const objects = JSON.parse(fs.readFileSync(inputObjectsJsonPath, 'utf8'));
         const outputGltf = JSON.parse(fs.readFileSync(outputGltfPath, 'utf8'));
 
+        validateObjectsForGltfRenaming(objects);
         validateNodesRenaming(outputGltf, objects);
         validateMaterialsAdjustment(inputGltf, outputGltf);
 
