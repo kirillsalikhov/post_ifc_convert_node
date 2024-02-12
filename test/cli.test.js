@@ -6,14 +6,15 @@ const xml2js = require('xml2js');
 const PROJECT_ROOT = path.resolve(__dirname, '..');
 
 //name: a sampleName of a subdirectory in the directory "samples"
-const spawnConvertXml = (sampleName, xmlFileName) => {
+const spawnConvertXml = (sampleName, xmlFileName, serializer) => {
     const inputXmlFilePath = path.join(PROJECT_ROOT, 'samples', sampleName, xmlFileName);
     const outputDirectoryPath = path.join(PROJECT_ROOT, 'tmp', sampleName);
 
     const spawnResult = cp.spawnSync('src/cli.js', [
         'convert-xml',
         '--input-xml', inputXmlFilePath,
-        '--output', outputDirectoryPath
+        '--output', outputDirectoryPath,
+        '--serializer', serializer
     ], {
         encoding: 'utf-8'
     });
@@ -155,7 +156,7 @@ describe('convert-xml', () => {
         {sampleName: 'Duplex_Electrical_20121207', xml: 'Duplex_Electrical_20121207.ifc.xml', smeta5d: 'Duplex_Electrical_20121207.smeta5d.xml'},
         {sampleName: 'PFV-IFC4-V08-1-final', xml: 'PFV-IFC4-V08-1-final.ifc.xml', smeta5d: 'PFV-IFC4-V08-1-final.smeta5d.xml'},
     ])('doesn\'t fail on $sampleName', async ({sampleName, xml, smeta5d}) => {
-        const { spawnResult, outputDirectoryPath} = spawnConvertXml(sampleName, xml);
+        const { spawnResult, outputDirectoryPath} = spawnConvertXml(sampleName, xml, 'erp');
         validateSpawnResult(spawnResult);
 
         const smeta5dXml = fs.readFileSync(path.join(PROJECT_ROOT, 'samples', sampleName, smeta5d), 'utf8');
@@ -204,7 +205,11 @@ describe('adjust-materials', () => {
     });
 });
 
-describe('full-conversion', () => {
+describe.each([
+    {serializer: 'erp'},
+    {serializer: 'iv'},
+    {serializer: 'min'},
+])('full-conversion with serializer=$serializer', ({serializer}) => {
     test.each([
         {
             sampleName: 'erp-sample-big',
@@ -231,7 +236,7 @@ describe('full-conversion', () => {
             smeta5d: 'PFV-IFC4-V08-1-final.smeta5d.xml'
         },
     ])('works for $sampleName', async ({sampleName, xml, glb, smeta5d}) => {
-        const { spawnResult: convertXmlSpawnResult } = spawnConvertXml(sampleName, xml);
+        const { spawnResult: convertXmlSpawnResult } = spawnConvertXml(sampleName, xml, serializer);
         validateSpawnResult(convertXmlSpawnResult);
         const glbToGltfSpawnResult = spawnGlbToGltf(sampleName, glb, 'model.glb.gltf');
         //general validateSpawnResult won't work while we still use gltf-transform
@@ -250,10 +255,13 @@ describe('full-conversion', () => {
         const inputGltf = JSON.parse(fs.readFileSync(inputGltfPath, 'utf8'));
         const objects = JSON.parse(fs.readFileSync(inputObjectsJsonPath, 'utf8'));
         const outputGltf = JSON.parse(fs.readFileSync(outputGltfPath, 'utf8'));
-        const smeta5dXml = await xml2js.parseStringPromise(fs.readFileSync(path.join(PROJECT_ROOT, 'samples', sampleName, smeta5d), 'utf8'));
 
         validateNodesRenaming(outputGltf, objects);
         validateMaterialsAdjustment(inputGltf, outputGltf);
-        validateAgainstSmeta5d(smeta5dXml, objects);
+
+        if (serializer === 'erp') {
+            const smeta5dXml = await xml2js.parseStringPromise(fs.readFileSync(path.join(PROJECT_ROOT, 'samples', sampleName, smeta5d), 'utf8'));
+            validateAgainstSmeta5d(smeta5dXml, objects);
+        }
     });
 });
