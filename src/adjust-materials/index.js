@@ -16,6 +16,28 @@ async function adjustMaterials(inputGltfFilePath, outputGltfFilePath) {
 
     if (gltf.materials) {
         for (const mat of gltf.materials) {
+            if (mat.pbrMetallicRoughness === undefined) {
+                mat.pbrMetallicRoughness = {};
+            }
+
+            const isDefaultMetallicRoughness = mat.pbrMetallicRoughness.metallicFactor === 0 && mat.pbrMetallicRoughness.roughnessFactor === undefined;
+            if (isDefaultMetallicRoughness) {
+                const isTransparent = mat.pbrMetallicRoughness.baseColorFactor && mat.pbrMetallicRoughness.baseColorFactor[3] !== 1;
+                if (isTransparent) {
+                    mat.pbrMetallicRoughness.metallicFactor = 0;
+                    mat.pbrMetallicRoughness.roughnessFactor = 0;
+                    if (mat.pbrMetallicRoughness.extensions === undefined) {
+                        mat.pbrMetallicRoughness.extensions = {};
+                    }
+                    if (mat.pbrMetallicRoughness.extensions.WG_dielectric_specular === undefined) {
+                        mat.pbrMetallicRoughness.extensions.WG_dielectric_specular = {};
+                    }
+                    mat.pbrMetallicRoughness.extensions.WG_dielectric_specular.factor = 0.3;
+                } else {
+                    mat.pbrMetallicRoughness.metallicFactor = 0.4;
+                    mat.pbrMetallicRoughness.roughnessFactor = 0.2;
+                }
+            }
             mat.doubleSided = true;
         }
     }
