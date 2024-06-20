@@ -3,6 +3,7 @@
 ## Description
 
 Extracts attributes data from ifc, fixes gltf materials, flattens nodes hierarchy
+
 Runs inside Conversion Services after ifc2xml, ifc2glb converters in separate operations
 
 ## Setup
