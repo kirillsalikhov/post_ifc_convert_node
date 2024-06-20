@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "schema-preprocessor"
+version = "0.1.0"
+description = "Generates json descriptions files for IFC2X3, IFC4, IFC4x3 schemes"
+authors = ["kirill <kirill.salikhov@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.13"
+ifcopenshell = "*"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

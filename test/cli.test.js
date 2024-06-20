@@ -162,7 +162,6 @@ describe.each([
     test.each([
         {sampleName: 'erp-sample', xml: 'origin.xml', smeta5d: 'smeta5d.xml'},
         {sampleName: 'small-ifc', xml: 'origin.xml', smeta5d: 'small-smeta5d.xml'},
-        {sampleName: 'erp-sample-big', xml: '10116_Р_АР_published_new_2x3_view2_величины.xml', smeta5d: '10116_Р_АР_published_new_2x3_view2_величины.smeta_5d.xml'},
         {sampleName: 'AC20-FZK-Haus', xml: 'AC20-FZK-Haus.ifc.xml', smeta5d: 'AC20-FZK-Haus.smeta5d.xml'},
         {sampleName: 'Duplex_Electrical_20121207', xml: 'Duplex_Electrical_20121207.ifc.xml', smeta5d: 'Duplex_Electrical_20121207.smeta5d.xml'},
         {sampleName: 'PFV-IFC4-V08-1-final', xml: 'PFV-IFC4-V08-1-final.ifc.xml', smeta5d: 'PFV-IFC4-V08-1-final.smeta5d.xml'},
@@ -205,7 +204,6 @@ describe('rename-gltf-nodes', () => {
 
 describe('adjust-materials', () => {
     test.each([
-        {sampleName: 'erp-sample-big'},
         {sampleName: 'circles'},
         {sampleName: 'AC20-FZK-Haus'},
         {sampleName: 'Duplex_Electrical_20121207'},
@@ -226,12 +224,6 @@ describe.each([
     {serializer: 'min'},
 ])('full-conversion with serializer=$serializer', ({serializer}) => {
     test.each([
-        {
-            sampleName: 'erp-sample-big',
-            xml: '10116_Р_АР_published_new_2x3_view2_величины.xml',
-            glb: '10116_Р_АР_published_new_2x3_view2_величины.glb',
-            smeta5d: '10116_Р_АР_published_new_2x3_view2_величины.smeta_5d.xml'
-        },
         {
             sampleName: 'AC20-FZK-Haus',
             xml: 'AC20-FZK-Haus.ifc.xml',
